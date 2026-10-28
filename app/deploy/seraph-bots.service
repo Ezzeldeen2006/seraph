@@ -1,5 +1,15 @@
 # Seraph AQW party on the home server: headless (no Flash, no screen), restarted if it ever stops.
 # Install: sudo cp seraph-bots.service /etc/systemd/system/ && sudo systemctl daemon-reload && sudo systemctl enable --now seraph-bots
+#
+# SIZE IT FOR YOUR MACHINE. The limits below are for a 2-core 3 GB laptop that also runs other services:
+#   --max-old-space-size (ExecStart)  node's heap: ~150 MB + ~15 MB per character (headless.js says so at start)
+#   MemoryHigh / MemoryMax            node + every Skua engine together; remove both to let it use the machine
+#   CPUWeight / Nice                  how it ranks against other services; remove on a machine that only runs Seraph
+#   Skua engines                      the dashboard's System page or hub.json (maxEngines, engineCeiling,
+#                                     engineMemoryMb, engineHeapMb ...), or here, e.g.:
+#                                       Environment=SERAPH_MAX_ENGINES=16
+#                                       Environment=SERAPH_ENGINE_MEMORY_MB=12000
+#                                     Unset = sized to the machine (lib/enginelimits.js). hub.json wins over these.
 [Unit]
 Description=Seraph AQW bots (headless)
 After=network-online.target

@@ -12,6 +12,7 @@ const { FlashClient } = require('./net/flashclient');
 const { FlashHost } = require('./flashhost');
 const { FlashStandby } = require('./flashstandby');
 const { SkuaEngine } = require('./skua/engine');
+const enginelimits = require('./enginelimits');
 const { Bot } = require('./bot');
 const { Brain } = require('./brain');
 const { Updater } = require('./updater');
@@ -593,12 +594,11 @@ class Hub extends EventEmitter {
   // fit: a logged-in headless character costs ~15 MB inside node ([[Laptop-Server]]: "about 60 MB for all four"),
   // while every running engine is a .NET process of 250-330 MB. 8 characters sharing 3 engines is therefore LIGHTER
   // than 4 characters sharing 5, which is what the laptop ran until 2026-10-21 (1.66 GB, load 6-9, 725 MB in swap).
-  // hub.json `maxEngines` still wins when it is set.
-  static maxEngines(settings = {}, headless = false, total = require('os').totalmem()) {
-    const set = Number(settings.maxEngines);
-    if (set > 0) return set;
-    if (!headless) return 4;
-    return total < 4 * 1073741824 ? 3 : 4;   // 3 GB laptop: 3 engines ~ 900 MB, and other services keep running
+  // hub.json `maxEngines` (or SERAPH_MAX_ENGINES) still wins when it is set; otherwise it is sized to the machine
+  // (lib/enginelimits.js: 3 on the 3 GB laptop, more on bigger machines).
+  static maxEngines(settings = {}, headless = false, total = require('os').totalmem(), cpus = undefined) {
+    const m = { ...enginelimits.machine(), totalBytes: total, ...(cpus ? { cpus } : {}) };
+    return enginelimits.resolve(settings, { machine: m, headless }).values.maxEngines;
   }
 
   // ENGINE BUDGET (the owner 2026-10-23: "push the laptop ... squeeze more skua engines, 4 is delaying a lot of progress").
@@ -610,12 +610,27 @@ class Hub extends EventEmitter {
   // scripts on five of them took both cores to 99 % (load 23) at 07:40; four engines with an ultra raid hit 99 % too.
   // So engineGovernor() also hands a burst engine back when the pressure stays high. Engine patch 16 (memory-mapped
   // compiler references) took an engine from ~180 MB to ~50-75 MB private, which is what makes 8 fit in memory.
-  static engineCeiling(settings = {}, characters = 0) {
-    const set = Number(settings.engineCeiling);
-    const floor = Hub.maxEngines(settings, true);
-    if (settings.engineBurst === false) return floor;
-    const ceiling = set > 0 ? set : Math.min(8, Math.max(floor, characters || 0));
-    return Math.max(floor, ceiling);
+  // 2026-10-29: no fixed 8 any more - one per character unless engineCeiling says otherwise, so a big machine with 30
+  // characters can run 30 (the kernel readings still decide each start above the floor).
+  static engineCeiling(settings = {}, characters = 0, headless = true) {
+    return enginelimits.resolve(settings, { headless, characters }).values.engineCeiling;
+  }
+
+  // Every engine limit for this hub right now (hub.json, then env, then auto) - settings can change from the dashboard.
+  // `this.machine` ({ totalBytes, cpus }) stands in for the real machine where a test models one.
+  engineLimits() {
+    return enginelimits.resolve(this.settings || {}, { headless: !!this.headless, characters: this.bots ? this.bots.size : 0, machine: this.machine }).values;
+  }
+
+  // What the running engines take together: their resident memory where the OS tells (Linux), else the estimate.
+  engineMemoryUsedMb(lim = this.engineLimits()) {
+    let mb = 0;
+    for (const id of this.engineBusy || []) {
+      const eng = this.engines && this.engines.get(id);
+      const rss = eng && typeof eng.rssMb === 'function' ? eng.rssMb() : null;
+      mb += rss != null ? rss : lim.engineMb;
+    }
+    return mb;
   }
 
   // The kernel's view of the service: cgroup v2 cpu.pressure + memory.current/high, /proc/meminfo MemAvailable.
@@ -652,28 +667,34 @@ class Hub extends EventEmitter {
   }
 
   engineRoom(bot, now = Date.now()) {
-    const s = this.settings || {};
+    const lim = Hub.prototype.engineLimits.call(this);
     const busy = (this.engineBusy ? this.engineBusy.size : 0) + Hub.prototype.engineHeld.call(this, now);
-    const floor = Hub.maxEngines(s, this.headless);
+    // The owner's memory budget for all engines (engineMemoryMb) comes before the floor: it is the hard line. One
+    // engine always may run, or nothing would ever move.
+    if (lim.engineMemoryMb > 0 && busy > 0) {
+      const used = Hub.prototype.engineMemoryUsedMb.call(this, lim);
+      if (used + lim.engineMb > lim.engineMemoryMb) return { ok: false, why: `engine memory ${Math.round(used)}/${lim.engineMemoryMb} MB` };
+    }
+    const floor = lim.maxEngines;
     if (busy < floor) return { ok: true };
-    const ceiling = Hub.engineCeiling(s, this.bots ? this.bots.size : 0);
+    const ceiling = lim.engineCeiling;
     if (busy >= ceiling) return { ok: false, why: `${busy}/${ceiling} busy` };
     const load = this.engineLoadNow(now);
     if (!load || !load.ok) return { ok: false, why: `${busy}/${floor} busy` };
     const MB = 1048576;
-    const need = (Number(s.engineMb) || 160) * MB;
+    const need = lim.engineMb * MB;
     if (load.memHigh && load.memCur && load.memCur + need > load.memHigh - 96 * MB) return { ok: false, why: `memory ${Math.round(load.memCur / MB)}/${Math.round(load.memHigh / MB)} MB` };
     if (load.avail && load.avail < need + 256 * MB) return { ok: false, why: `${Math.round(load.avail / MB)} MB free` };
     const raider = !!(bot && this.engineUrgent(bot.id));
     if (raider) return { ok: true, burst: true };
-    const coolMs = (Number(s.engineCoolMin) || 10) * 60000;
-    if (this._engineShedAt && now - this._engineShedAt < coolMs) return { ok: false, why: 'the laptop was overloaded a few minutes ago' };
-    const stagger = (Number(s.engineStaggerSec) || 60) * 1000;
+    const coolMs = lim.engineCoolMin * 60000;
+    if (this._engineShedAt && now - this._engineShedAt < coolMs) return { ok: false, why: 'the machine was overloaded a few minutes ago' };
+    const stagger = lim.engineStaggerSec * 1000;
     if (this._engineStartAt && now - this._engineStartAt < stagger) return { ok: false, why: 'another engine is starting' };
     // An ultra fight gets the cores first: half the usual pressure before another engine joins it.
     const k = this.raid ? 0.5 : 1;
-    const max10 = (Number(s.engineAdmitCpu10) || 60) * k;
-    const max60 = (Number(s.engineAdmitCpu) || 40) * k;
+    const max10 = lim.engineAdmitCpu10 * k;
+    const max60 = lim.engineAdmitCpu * k;
     if (load.cpu.avg10 > max10 || load.cpu.avg60 > max60) return { ok: false, why: `CPU pressure ${Math.round(load.cpu.avg60)} %` };
     return { ok: true, burst: true };
   }
@@ -684,15 +705,16 @@ class Hub extends EventEmitter {
   // back). Admissions then rest engineCoolMin. Live 10-23 21:32: eight engines plus a Gramiel raid start = avg60 72 %.
   engineGovernor(now = Date.now()) {
     if (!this.engineBusy || !this.bots) return null;
-    const s = this.settings || {};
+    const lim = Hub.prototype.engineLimits.call(this);
     const busy = this.engineBusy.size;
-    const floor = Hub.maxEngines(s, this.headless);
+    const floor = lim.maxEngines;
     if (busy <= floor) { this._engineHot = 0; return null; }
     const load = this.engineLoadNow(now);
     if (!load || !load.ok) return null;
     const MB = 1048576;
-    const memHot = !!((load.memHigh && load.memCur && load.memCur > load.memHigh - 32 * MB) || (load.avail && load.avail < 150 * MB));
-    const cpuHot = load.cpu.avg60 > (Number(s.engineShedCpu) || 80) * (this.raid ? 0.6 : 1);
+    const overBudget = lim.engineMemoryMb > 0 && Hub.prototype.engineMemoryUsedMb.call(this, lim) > lim.engineMemoryMb;
+    const memHot = !!(overBudget || (load.memHigh && load.memCur && load.memCur > load.memHigh - 32 * MB) || (load.avail && load.avail < 150 * MB));
+    const cpuHot = load.cpu.avg60 > lim.engineShedCpu * (this.raid ? 0.6 : 1);
     if (!memHot && !cpuHot) { this._engineHot = 0; return null; }
     this._engineHot = (this._engineHot || 0) + 1;
     if (!memHot && this._engineHot < 2) return null;
@@ -708,19 +730,21 @@ class Hub extends EventEmitter {
     this._engineHot = 0;
     if (!pick) return null;
     this._engineShedAt = now;
-    const why = memHot ? `memory ${Math.round((load.memCur || 0) / MB)} MB` : `CPU pressure ${Math.round(load.cpu.avg60)} %`;
-    pick.journal(`handing my Skua engine back: the laptop is overloaded (${why}, ${busy} engines) - back to "${(pick.current && (pick.current.why || pick.current.path)) || 'my work'}" on my next turn`);
+    const why = overBudget ? `engines over the ${lim.engineMemoryMb} MB budget` : memHot ? `memory ${Math.round((load.memCur || 0) / MB)} MB` : `CPU pressure ${Math.round(load.cpu.avg60)} %`;
+    pick.journal(`handing my Skua engine back: the machine is overloaded (${why}, ${busy} engines) - back to "${(pick.current && (pick.current.why || pick.current.path)) || 'my work'}" on my next turn`);
     this.info(`engine budget: ${pick.account.label} steps back (${why}, ${busy} engines)`);
     Promise.resolve(pick.restart()).catch(() => null);
     return pick.id;
   }
 
   engineBudget(now = Date.now()) {
-    const s = this.settings || {};
+    const lim = Hub.prototype.engineLimits.call(this);
     const load = this.engineLoadNow(now);
     return {
-      floor: Hub.maxEngines(s, this.headless),
-      ceiling: Hub.engineCeiling(s, this.bots ? this.bots.size : 0),
+      floor: lim.maxEngines,
+      ceiling: lim.engineCeiling,
+      memoryMb: Math.round(Hub.prototype.engineMemoryUsedMb.call(this, lim)),
+      memoryBudgetMb: lim.engineMemoryMb || null,
       busy: this.engineBusy ? [...this.engineBusy] : [],
       idle: this.engines ? [...this.engines.keys()].filter((id) => !(this.engineBusy && this.engineBusy.has(id))) : [],
       waiting: this.engineWaiting ? [...this.engineWaiting] : [],
@@ -782,10 +806,15 @@ class Hub extends EventEmitter {
     let eng = this.engines.get(bot.id);
     // VibeSkua's per-class adaptive skills inside Skua scripts (engine patch 13), per character: `adaptiveSkills`.
     const adaptiveSkills = bot.settings.adaptiveSkills === true;
-    if (!eng || eng.client !== bot.client || !!eng.opts.adaptiveSkills !== adaptiveSkills) {
+    // The per-engine limits (heap, recycle point, nice) from enginelimits: a change on the dashboard reaches each
+    // character's next script, through a fresh engine.
+    const lim = this.engineLimits();
+    const per = { heapMb: lim.engineHeapMb, recycleMb: lim.engineRecycleMb, nice: lim.engineNice };
+    const changed = eng && ['heapMb', 'recycleMb', 'nice'].some((k) => eng.opts[k] !== per[k]);
+    if (!eng || eng.client !== bot.client || !!eng.opts.adaptiveSkills !== adaptiveSkills || changed) {
       if (eng) eng.dispose();
       this.reclaimIdleEngines(bot.id, max);
-      eng = new SkuaEngine(bot.client, { adaptiveSkills });
+      eng = new SkuaEngine(bot.client, { adaptiveSkills, ...per });
       this.engines.set(bot.id, eng);
     }
     clearTimeout(eng._idle);

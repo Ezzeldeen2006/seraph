@@ -73,6 +73,9 @@ let healthAt = 0;
 let healthLog = [];
 let reportText = '';
 let levelParty = null;
+let engSet = null;            // GET /engine/settings: values, source (hub.json / env / auto), auto, keys, machine
+let engBud = null;            // GET /engine/budget: who runs an engine now, who waits, memory, CPU pressure
+const engDraft = {};          // typed but not saved yet (the System page redraws every 15 s)
 let helpCalls = [];          // open party help calls (GET /help calls): who, boss, squad (Seraph 5)
 let helpAt = 0;
 let mode = localStorage.getItem('orderMode') || 'item';
@@ -162,6 +165,8 @@ async function loadSystem() {
     api('/health').then((r) => { sysHealth = r || { findings: [] }; healthAt = Date.now(); }).catch(() => null),
     sys('/health').then((r) => { healthLog = r; }).catch(() => null),
     api('/levelparty').then((r) => { levelParty = r; }).catch(() => null),
+    api('/engine/settings').then((r) => { engSet = r; }).catch(() => null),
+    api('/engine/budget').then((r) => { engBud = r; }).catch(() => null),
   ]);
   draw(true);
   sys('/scripts/head').then((r) => { libHead = r.head; draw(true); }).catch(() => null);
@@ -222,7 +227,7 @@ function drawRoster() {
     + (party().length ? `<div class="rail-label">Party bots</div>${party().map(rosterButton).join('')}` : '')
     + `<div class="rail-label">My accounts</div>${g.map(rosterButton).join('')}`
     + '<button class="member add" data-addacct><span class="crest ghost">+</span><span class="who"><b>Add account</b><span>your main, an alt, a new bot</span></span></button>'
-    + `<div class="rail-label" style="margin-top:8px">Laptop</div>`
+    + `<div class="rail-label" style="margin-top:8px">Server</div>`
     + `<button class="member${view === 'system' ? ' on' : ''}" data-view="system"><span class="crest ghost">⚙</span><span class="who"><b>System</b><span>${svc ? esc(`${svc.active} · ${num(svc.availableMb)} MB free`) : ''}</span></span></button>`
     + `<button class="member${view === 'flash' ? ' on' : ''}" data-view="flash"><span class="crest ghost">ϟ</span><span class="who"><b>Flash standby</b><span>${flashData && flashData.available ? (flashData.autoOn ? 'ON - real game' : flashData.active && flashData.active.length ? `${flashData.active.length} in Flash` : 'ready') : 'real game backup'}</span></span></button>`;
   if (svc && svc.host) $('host').textContent = svc.host;
@@ -366,7 +371,7 @@ async function saveAccount() {
 
 // ---------------- watch: the character live, read from its game world every 2 s ----------------
 const watching = {};   // id -> { at, frame, pad, room, target, monsters, users } or { err }
-const WATCH_PATHS = { frame: 'world.strFrame', pad: 'world.strPad', room: 'world.curRoom', target: 'world.myAvatar.target', monsters: 'world.monsters', users: 'world.users' };
+const WATCH_PATHS = { frame: 'world.strFrame', pad: 'world.strPad', room: 'world.curRoom', target: 'world.myAvatar.target', monsters: 'world.monsters', users: 'world.users', leaf: 'world.myAvatar.dataLeaf' };
 let watchBusy = false;
 async function loadWatch() {
   const a = botById(view);
@@ -407,8 +412,10 @@ function watchHtml(a) {
   const userRow = (u) => {
     const name = String(u.strUsername || u.uoName || '?');
     const lower = name.toLowerCase();
+    // Its own entry in the room list can lag: the world's cell is live, and the headless client writes its own HP and
+    // state to myAvatar.dataLeaf only (net/headless.js), so the row froze at the join HP (the owner 10-29: main never lost HP).
+    if (lower === me) u = { ...u, strFrame: cell, ...(w.leaf && w.leaf.intHPMax > 1 ? { intHP: w.leaf.intHP, intHPMax: w.leaf.intHPMax, intState: w.leaf.intState } : {}) };
     const p = pct(u.intHP, u.intHPMax);
-    if (lower === me) u = { ...u, strFrame: cell };   // its own entry in the room list can lag; the world's cell is live
     const tag = lower === me ? '<span class="tag">this bot</span>' : partyIds.has(lower) ? '<span class="tag">our bot</span>' : '';
     return `<div class="item"><div class="what"><b>${esc(name)} <span class="mute">lv ${esc(u.intLevel || '?')}</span> ${tag}</b>
       <small>${u.strFrame ? `in ${esc(u.strFrame)}${u.strFrame === cell ? ' (same cell)' : ''}` : 'in the room'}${u.intState === 0 ? ' · dead' : u.intState === 2 ? ' · fighting' : ''}${u.afk ? ' · AFK' : ''}</small>
@@ -804,10 +811,51 @@ function settingsHtml(a) {
 const toggle = (key, on, title, help, inverted = false) => `<label class="toggle item"><input type="checkbox" data-setting="${key}" data-inverted="${inverted ? 1 : 0}" ${on ? 'checked' : ''}><span class="what"><b>${esc(title)}</b><small>${esc(help)}</small></span></label>`;
 
 // ---------------- system page ----------------
+// Skua engines (lib/enginelimits.js): how many run at once and how much memory they may take. Empty = auto, sized to
+// the machine; a value set by an environment variable shows where it came from.
+const ENG_MAIN = ['maxEngines', 'engineCeiling', 'engineMemoryMb', 'engineHeapMb', 'engineRecycleMb'];
+const ENG_MORE = ['engineMb', 'engineNice', 'engineAdmitCpu', 'engineAdmitCpu10', 'engineShedCpu', 'engineStaggerSec', 'engineCoolMin'];
+function engField(key) {
+  const k = engSet.keys[key];
+  const fromHub = engSet.source[key] === 'hub.json';
+  const val = key in engDraft ? engDraft[key] : fromHub ? engSet.values[key] : '';
+  const unit = k.unit && k.unit !== 'engines' ? k.unit : '';
+  const auto = engSet.auto[key] === 0 && k.zero ? k.zero : `${num(engSet.auto[key])}${unit ? ` ${unit}` : ''}`;
+  const note = engSet.source[key] === 'env' ? `from ${k.env}: ${num(engSet.values[key])}` : `auto: ${auto}`;
+  return `<label title="${esc(k.help)}">${esc(k.label)}${unit ? ` (${esc(unit)})` : ''}
+    <input type="number" min="${k.min}" max="${k.max}" data-eng="${key}" value="${esc(val)}" placeholder="${esc(note)}"></label>`;
+}
+function enginesHtml() {
+  if (!engSet || !engSet.keys) return `<section class="panel span"><h2>Skua engines</h2><div class="empty">Loading…</div></section>`;
+  const v = engSet.values;
+  const b = engBud || {};
+  const c = b.load && b.load.cpu;
+  const burst = 'engineBurst' in engDraft ? engDraft.engineBurst : engSet.source.engineBurst === 'hub.json' ? String(v.engineBurst) : '';
+  return `<section class="panel span">
+      <div class="row between" style="margin-bottom:12px"><h2 style="margin:0">Skua engines</h2>
+        <span class="mute" style="font-size:12.5px">this machine: ${num(Math.round(engSet.machine.totalMb / 1024))} GB · ${num(engSet.machine.cpus)} cores</span></div>
+      <dl class="facts">
+        <dt>Running now</dt><dd>${num((b.busy || []).length)} <span class="mute">(always ${num(v.maxEngines)}, up to ${num(v.engineCeiling)}${v.engineBurst ? ' when there is room' : ''})</span></dd>
+        <dt>Waiting</dt><dd>${(b.waiting || []).length ? esc(b.waiting.join(', ')) : 'nobody'}</dd>
+        <dt>Engine memory</dt><dd>${num(b.memoryMb)} MB${v.engineMemoryMb ? ` of ${num(v.engineMemoryMb)} MB` : ''}</dd>
+        <dt>CPU pressure</dt><dd>${c ? `${Math.round(c.avg10)} % · ${Math.round(c.avg60)} % · ${Math.round(c.avg300)} % <span class="mute">(10 s · 1 min · 5 min)</span>` : '<span class="mute">not readable here (Linux only): only the first number runs</span>'}</dd>
+        ${b.room && !b.room.ok ? `<dt>Next start</dt><dd>${esc(b.room.why || 'waits')}</dd>` : ''}
+      </dl>
+      <div class="form" style="margin-top:16px">${ENG_MAIN.map(engField).join('')}</div>
+      <details style="margin-top:14px"><summary class="mute" style="cursor:pointer">More engine settings</summary>
+        <div class="form" style="margin-top:12px">${ENG_MORE.map(engField).join('')}
+          <label title="${esc(engSet.keys.engineBurst.help)}">${esc(engSet.keys.engineBurst.label)}
+            <select data-eng="engineBurst"><option value=""${burst === '' ? ' selected' : ''}>auto (${engSet.auto.engineBurst ? 'on' : 'off'})</option><option value="true"${burst === 'true' ? ' selected' : ''}>on</option><option value="false"${burst === 'false' ? ' selected' : ''}>off</option></select></label>
+        </div></details>
+      <div class="row" style="margin-top:14px"><button class="sm primary" data-engsave>Save engine settings</button><button class="sm" data-engauto>All back to auto</button></div>
+      <p class="mute" style="font-size:12.5px;margin:12px 0 0">Empty = auto, sized to this machine. Engine counts apply to the next engine that starts; heap, fresh-engine size and priority to each character's next script. Hover a field for what it does.</p>
+    </section>`;
+}
+
 function systemHtml() {
   const v = svc || {};
   const ok = v.active === 'active';
-  return `<div class="row between" style="margin-bottom:20px"><div><h1>Laptop</h1><div class="mute">The bots keep running whether this page is open or not.</div></div>
+  return `<div class="row between" style="margin-bottom:20px"><div><h1>Server</h1><div class="mute">The bots keep running whether this page is open or not.</div></div>
       <div class="row tight"><button data-svc="restart">Restart bots</button><button class="stop" data-svc="stop">Stop bots</button><button class="go" data-svc="start">Start bots</button></div></div>
   <div class="panels">
     <section class="panel">
@@ -816,12 +864,13 @@ function systemHtml() {
         <dt>Running for</dt><dd>${v.since ? dur(Date.now() - Date.parse(v.since)) : '—'}</dd>
         <dt>Crash restarts</dt><dd>${num(v.restarts)}</dd>
         <dt>Memory</dt><dd>${num(v.memoryMb)} of ${num(v.memoryMaxMb)} MB</dd>
-        <dt>Laptop memory</dt><dd>${num(v.availableMb)} MB free of ${num(v.totalMb)}</dd>
+        <dt>Free memory</dt><dd>${num(v.availableMb)} MB free of ${num(v.totalMb)}</dd>
         <dt>CPU load</dt><dd>${v.load ? v.load.join(' · ') : '—'} <span class="mute">(${v.cpus || '?'} cores)</span></dd>
         <dt>Disk</dt><dd>${num(v.diskFreeMb)} MB free</dd>
       </dl>
-      <p class="mute" style="font-size:12.5px;margin:12px 0 0">Each Skua script takes about 320 MB while it runs; at most 4 run at once, the others wait their turn.</p>
+      <p class="mute" style="font-size:12.5px;margin:12px 0 0">Each running Skua script is one engine process. How many run at once is set under Skua engines.</p>
     </section>
+    ${enginesHtml()}
     <section class="panel">
       <h2>Party</h2>
       <dl class="facts">
@@ -865,6 +914,7 @@ function systemHtml() {
 document.addEventListener('input', (e) => {
   if (e.target.id === 'scriptQ') { clearTimeout(window._sq); window._sq = setTimeout(searchScripts, 250); }
   if (e.target.id === 'sysLogQ') localStorage.setItem('sysLogQ', e.target.value);
+  if (e.target.dataset && e.target.dataset.eng) engDraft[e.target.dataset.eng] = e.target.value;
   if (e.target.id === 'logQ') {
     logFilter = e.target.value;
     clearTimeout(window._lq);
@@ -886,6 +936,7 @@ document.addEventListener('keydown', (e) => {
 });
 document.addEventListener('change', async (e) => {
   if (e.target.id === 'skuaOnly') { skuaOnly = e.target.checked; draw(true); return; }
+  if (e.target.dataset && e.target.dataset.eng) { engDraft[e.target.dataset.eng] = e.target.value; return; }
   const k = e.target.dataset && e.target.dataset.setting;
   if (k) {
     const value = e.target.dataset.inverted === '1' ? !e.target.checked : e.target.checked;
@@ -1008,6 +1059,17 @@ document.addEventListener('click', async (e) => {
   }
   if (d.room !== undefined) { const room = Number($('partyRoom').value); if (!(room >= 1000 && room <= 99999)) return toast('The room must be between 1000 and 99999', true); return act(`Party room set to ${room}`, () => api('/levelparty', { room }).then(loadSystem)); }
   if (d.group !== undefined) return act(levelParty && levelParty.enabled ? 'Party split up' : 'Party grouped up', () => api('/levelparty', { enabled: !(levelParty && levelParty.enabled) }).then(loadSystem));
+  if (d.engsave !== undefined) {
+    const patch = {};
+    for (const [k, x] of Object.entries(engDraft)) patch[k] = x === '' ? null : k === 'engineBurst' ? x === 'true' : Number(x);
+    if (!Object.keys(patch).length) return toast('Nothing changed');
+    return act('Engine settings saved', () => api('/engine/settings', patch).then((r) => { engSet = r; for (const k of Object.keys(engDraft)) delete engDraft[k]; return loadSystem(); }));
+  }
+  if (d.engauto !== undefined) {
+    const patch = {};
+    for (const k of Object.keys(engSet ? engSet.keys : {})) patch[k] = null;
+    return act('Engine settings back to auto', () => api('/engine/settings', patch).then((r) => { engSet = r; for (const k of Object.keys(engDraft)) delete engDraft[k]; return loadSystem(); }));
+  }
   if (d.health !== undefined) return act('Health checked', () => api('/health?now=1').then((r) => { sysHealth = r; draw(true); }));
   if (d.lib !== undefined) return act('Script library updated', () => sys('/scripts/update', {}).then((r) => { libHead = r.head; draw(true); }));
   if (d.report !== undefined) return act('Report ready', () => fetch('/api/report/text?hours=24').then((r) => r.text()).then((t) => { try { reportText = JSON.parse(t).text || t; } catch (x) { reportText = t; } draw(true); }));

@@ -41,9 +41,11 @@ when one of them can't beat a boss, and has a web dashboard and a Discord bot to
   misapplies.
 - **Dashboard and Discord.** `app/admin` is a password-protected web dashboard for the home network: party frames,
   orders, the raid planner, settings. `app/lib/discordbot.js` provides slash commands, alerts and a daily report.
-- **Shares engines on small machines.** It has been run with eight characters on a 2-core, 3 GB laptop. Engine
-  processes are time-shared, slots are admitted by CPU and memory pressure, and compiled scripts are cached and
-  shared between engines.
+- **Fits the machine it runs on.** It has been run with eight characters on a 2-core, 3 GB laptop, and it scales up
+  from there: the number of Skua engines and the memory they may use are sized to the machine's RAM and cores, and
+  every limit can be set from the dashboard, `hub.json` or environment variables (see
+  [Sizing: engines and memory](#sizing-engines-and-memory)). Engines are time-shared when there are more characters
+  than engines, extra engines are admitted by CPU and memory pressure, and compiled scripts are cached and shared.
 
 ## Architecture
 
@@ -104,10 +106,60 @@ Everything Seraph writes goes under `SERAPH_ROOT` (default `~/seraph`): `account
 | `SERAPH_SCRIPTS` | `$SERAPH_ROOT/Scripts` | the auqw/Scripts checkout |
 | `SERAPH_PORT` | `47101` | local control API |
 | `SERAPH_ADMIN_PORT` | `47180` | dashboard |
+| `SERAPH_MAX_ENGINES` and friends | auto | engine limits, see [Sizing](#sizing-engines-and-memory) |
 | `SKUA_SRC` | `engine/skua-src` | Skua source for `sync-skua.js` |
 
 To run it as a service, `app/deploy/` has systemd units (`seraph-bots`, `seraph-admin`) and a logrotate file. Edit
-the user and paths before you install them.
+the user and paths before you install them. The `seraph-bots` unit's memory and CPU limits are for a small laptop:
+size them for your machine (the unit's header explains each one).
+
+### Sizing: engines and memory
+
+Each character that runs a script gets its own Skua engine, a .NET process (~150-330 MB, most of a core while it
+compiles). Characters themselves are cheap (~15 MB each inside node). So what you size is the **engines**:
+
+- **Engines that always run** (`maxEngines`): this many characters can run a script at once, whatever the load.
+- **Most engines at once** (`engineCeiling`): above the first number, more engines start only while the machine has
+  room. On Linux, Seraph reads the kernel's CPU pressure and memory to decide. Without those readings (Windows), only
+  the first number runs.
+- **Memory for all engines** (`engineMemoryMb`): a hard budget. No new engine starts while the running ones use this
+  much together.
+
+Every value is resolved in this order, first match wins:
+
+1. `hub.json` in `SERAPH_ROOT`. The dashboard's **System → Skua engines** panel writes it and shows where each value
+   came from. Changes apply to the next engine that starts, with no restart.
+2. An environment variable, handy in a systemd unit or a container.
+3. **Auto**, sized to the machine.
+
+| Setting (`hub.json`) | Environment variable | Auto | Meaning |
+|---|---|---|---|
+| `maxEngines` | `SERAPH_MAX_ENGINES` | 3 under 4 GB RAM; else 2 per core, ~330 MB each after 1.5 GB for the system, at least 4 (desktop app: 4) | engines that always run |
+| `engineCeiling` | `SERAPH_ENGINE_CEILING` | one per character | most engines at once; setting it also caps an automatic `maxEngines` |
+| `engineMemoryMb` | `SERAPH_ENGINE_MEMORY_MB` | 0 (no budget) | memory for all engines together |
+| `engineHeapMb` | `SERAPH_ENGINE_HEAP_MB` | 256 under 8 GB, else 512 | .NET heap limit per engine; 0 = no limit |
+| `engineRecycleMb` | `SERAPH_ENGINE_RECYCLE_MB` | heap + 74 | between scripts, an engine this big is replaced by a fresh one; 0 = never |
+| `engineMb` | `SERAPH_ENGINE_MB` | 160 | what one more engine is expected to cost |
+| `engineNice` | `SERAPH_ENGINE_NICE` | 4 | Linux: engines run this much below the hub; 0 = same priority |
+| `engineBurst` | `SERAPH_ENGINE_BURST` | true | false = never more than `maxEngines` |
+| `engineAdmitCpu` / `engineAdmitCpu10` | `SERAPH_ENGINE_ADMIT_CPU` / `..._CPU10` | 40 / 60 % | start an extra engine only below this CPU pressure (1 min / 10 s) |
+| `engineShedCpu` | `SERAPH_ENGINE_SHED_CPU` | 80 % | above this, twice in a row, the newest extra engine goes back to the queue |
+| `engineStaggerSec` | `SERAPH_ENGINE_STAGGER_SEC` | 60 s on 2 cores, less with more cores | wait between two extra engine starts |
+| `engineCoolMin` | `SERAPH_ENGINE_COOL_MIN` | 10 min | no extra engine after an overload for this long |
+
+Some starting points (or leave it all on auto):
+
+```jsonc
+// 2-core, 3 GB laptop that also runs other services (what Seraph was built on)
+{ "maxEngines": 4 }
+// gaming PC, 8 cores, 32 GB, sharing the machine with games: 12 engines, at most 10 GB for them
+{ "maxEngines": 12, "engineMemoryMb": 10000 }
+// dedicated server, 32 cores, 128 GB, 60 characters: one engine each, bigger heaps
+{ "maxEngines": 60, "engineHeapMb": 1024 }
+```
+
+Node's own heap holds the characters: allow ~150 MB plus ~15 MB per character (`--max-old-space-size`). For a big
+party, `headless.js` tells you at start when the limit is too small.
 
 ### Dashboard
 

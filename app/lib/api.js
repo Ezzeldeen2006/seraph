@@ -316,6 +316,22 @@ function start(hub, ui) {
       if (url.pathname === '/engine/calls' && req.method === 'GET') return reply(200, require('./skua/engine').callStats(false).slice(0, Number(url.searchParams.get('top') || 40)));
       // The engine budget (hub.engineRoom/engineGovernor): floor, ceiling, who holds or waits, the kernel's pressure.
       if (url.pathname === '/engine/budget' && req.method === 'GET') return reply(200, hub.engineBudget());
+      // The engine limits (lib/enginelimits.js): every value, where it came from (hub.json / env / auto), the auto value
+      // and the machine. POST {key: number | true/false | null} saves to hub.json; null or "auto" goes back to auto.
+      // Counts apply to the next engine start, heap/recycle/nice to each character's next script.
+      if (url.pathname === '/engine/settings') {
+        const el = require('./enginelimits');
+        if (req.method === 'POST') {
+          const v = el.validate(await body(req));
+          if (!v.ok) return reply(400, { error: v.errors.join('; '), errors: v.errors });
+          Object.assign(hub.settings, v.set);
+          for (const k of v.unset) delete hub.settings[k];
+          hub.saveSettings();
+          hub.info(`engine settings: ${[...Object.entries(v.set).map(([k, x]) => `${k}=${x}`), ...v.unset.map((k) => `${k}=auto`)].join(', ') || 'nothing changed'}`);
+        }
+        const r = el.resolve(hub.settings, { headless: !!hub.headless, characters: hub.bots ? hub.bots.size : 0 });
+        return reply(200, { ...r, keys: el.KEYS });
+      }
       if (url.pathname === '/crew' && req.method === 'GET') return reply(200, hub.crewStatus());
       // A one-off boss round with the party (crew.json "bosses"): {"name":"NightmareCarnax"}.
       if (url.pathname === '/crew/boss' && req.method === 'POST') { const b = await body(req); return reply(200, await hub.crewBossStart(String(b.name || ''))); }

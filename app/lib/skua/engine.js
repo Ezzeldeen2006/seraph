@@ -203,6 +203,12 @@ class SkuaEngine extends EventEmitter {
     };
   }
 
+  // A per-engine limit: what the hub passed (lib/enginelimits.js, hub.json first), else env or the machine's default.
+  limit(opt, key) {
+    if (this.opts[opt] != null) return this.opts[opt];
+    return require('../enginelimits').resolve({}).values[key];
+  }
+
   log(kind, msg) {
     const line = { t: Date.now(), kind, msg: String(msg) };
     this.logs.push(line);
@@ -218,17 +224,22 @@ class SkuaEngine extends EventEmitter {
     seedData(this.dir);
     // Script fixes come from the live folder lib/scriptfix.js builds against today's library (patches re-applied after
     // every Skua update), or the shipped copies before the first build.
-    const env = { ...process.env, SKUA_DIR: this.dir, SKUA_SCRIPTS_DIR: P.SCRIPTS, SKUA_OPTIONS_DIR: OPTIONS_DIR(), SERAPH_FIXES_DIR: require('../scriptfix').engineDir(), SERAPH_SEATS_FILE: path.join(P.ROOT, 'raid-seats.txt'), DOTNET_gcServer: '0', DOTNET_GCHeapHardLimit: process.env.SERAPH_ENGINE_HEAP || '0x10000000', DOTNET_TieredPGO: '0', DOTNET_EnableWriteXorExecute: process.env.SERAPH_ENGINE_WX || '0', DOTNET_GCConserveMemory: process.env.SERAPH_ENGINE_CONSERVE || '5', SERAPH_ADAPTIVE_SKILLS: this.opts.adaptiveSkills ? '1' : '0',
+    const env = { ...process.env, SKUA_DIR: this.dir, SKUA_SCRIPTS_DIR: P.SCRIPTS, SKUA_OPTIONS_DIR: OPTIONS_DIR(), SERAPH_FIXES_DIR: require('../scriptfix').engineDir(), SERAPH_SEATS_FILE: path.join(P.ROOT, 'raid-seats.txt'), DOTNET_gcServer: '0', DOTNET_TieredPGO: '0', DOTNET_EnableWriteXorExecute: process.env.SERAPH_ENGINE_WX || '0', DOTNET_GCConserveMemory: process.env.SERAPH_ENGINE_CONSERVE || '5', SERAPH_ADAPTIVE_SKILLS: this.opts.adaptiveSkills ? '1' : '0',
       // The host answers the option toggles the headless model ignores (killLag, infiniteRange...) itself.
       SERAPH_HEADLESS: this.client.headless ? '1' : '0',
       // The Flash standby: every answer costs ~45 ms of the real game's thread, so polled values are reused for 0.8 s
       // and big reads (backpack, bank, quests) for up to 5 s (host IpcFlashUtil.PollTtlMs / StableMaxMs).
       ...(this.client.flash ? { SERAPH_POLL_MS: process.env.SERAPH_FLASH_POLL_MS || '800', SERAPH_STABLE_MS: process.env.SERAPH_FLASH_STABLE_MS || '5000' } : {}) };
+    // The .NET heap of this engine (engineHeapMb, 256 MB on small machines; 0 = no limit, and an inherited limit goes too).
+    const heapMb = this.limit('heapMb', 'engineHeapMb');
+    if (heapMb > 0) env.DOTNET_GCHeapHardLimit = `0x${Math.round(heapMb * 1048576).toString(16)}`;
+    else delete env.DOTNET_GCHeapHardLimit;
     // The hub answers every engine's calls on one thread, so it goes first when the cores are full: on Linux an engine
-    // runs SERAPH_ENGINE_NICE (4) nice levels below it - through `nice`, so every .NET thread inherits it (setpriority
-    // on a pid only moves the main thread). At 99 % CPU on 10-22 the hub's ms per call doubled and every engine waited.
-    const nice = process.platform === 'linux' && process.env.SERAPH_ENGINE_NICE !== '0' && fs.existsSync('/usr/bin/nice');
-    const [cmd, args] = nice ? ['/usr/bin/nice', ['-n', String(Number(process.env.SERAPH_ENGINE_NICE) || 4), host.cmd, ...host.args]] : [host.cmd, host.args];
+    // runs engineNice (4) nice levels below it - through `nice`, so every .NET thread inherits it (setpriority on a pid
+    // only moves the main thread). At 99 % CPU on 10-22 the hub's ms per call doubled and every engine waited.
+    const niceBy = this.limit('nice', 'engineNice');
+    const nice = process.platform === 'linux' && niceBy > 0 && fs.existsSync('/usr/bin/nice');
+    const [cmd, args] = nice ? ['/usr/bin/nice', ['-n', String(niceBy), host.cmd, ...host.args]] : [host.cmd, host.args];
     this.proc = spawn(cmd, args, { cwd: host.dir, env, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });
     // The model's revisions and polled values, sent before the first call and kept current from then on.
     this._sent = { rev: null, mirror: {} };
@@ -543,8 +554,8 @@ class SkuaEngine extends EventEmitter {
   // laptop (2026-09-21), when reconnects restarted each script every few minutes, and the service hit MemoryHigh.
   // Between scripts, an engine that has run at least two and is over the limit is replaced by a fresh one (a few
   // seconds; compiled scripts come from Skua's cache).
-  async recycleIfBig(limitMb = Number(process.env.SERAPH_ENGINE_RECYCLE_MB || 330)) {
-    if (this.running || !this.proc || (this.runs || 0) < 2) return false;
+  async recycleIfBig(limitMb = this.limit('recycleMb', 'engineRecycleMb')) {
+    if (this.running || !this.proc || (this.runs || 0) < 2 || !(limitMb > 0)) return false;
     const mb = this.rssMb();
     if (mb === null || mb < limitMb) return false;
     this.log('state', `engine uses ${mb} MB after ${this.runs} scripts - starting a fresh one`);

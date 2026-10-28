@@ -287,7 +287,8 @@ test('engines: how many may run is decided in one place, and 8 characters do not
   const { Hub } = require('../lib/hub');
   const GB = 1073741824;
   eq(Hub.maxEngines({}, true, 3 * GB), 3, 'the 3 GB laptop: 3 engines (~900 MB), other services untouched');
-  eq(Hub.maxEngines({}, true, 8 * GB), 4);
+  eq(Hub.maxEngines({}, true, 8 * GB, 2), 4, 'a 2-core box with more RAM: still 4');
+  eq(Hub.maxEngines({}, true, 8 * GB, 4), 8, 'more cores, more engines (lib/enginelimits.js)');
   eq(Hub.maxEngines({}, false, 3 * GB), 4, 'on the PC the Flash client decides, not RAM');
   eq(Hub.maxEngines({ maxEngines: 5 }, true, 3 * GB), 5, 'hub.json still wins');
   // The point of the 2026-10-21 change: the cap is on engines, not characters. A logged-in headless character costs

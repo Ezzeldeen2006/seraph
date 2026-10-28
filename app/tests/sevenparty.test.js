@@ -86,6 +86,7 @@ test('help calls: a newcomer far below the caller stays on her own work; veteran
 function engineHub(holders, now) {
   const h = Object.create(Hub.prototype);
   h.settings = { maxEngines: 2 }; h.infos = []; h.info = (t) => h.infos.push(t); h.raid = null;
+  h.machine = { totalBytes: 3 * 1073741824, cpus: 2 };   // the laptop these numbers come from, on any test machine
   h.bots = new Map();
   const mk = (id, current) => {
     const b = { id, account: { label: id }, current, restarts: 0, journals: [], journal(m) { this.journals.push(m); }, restart() { this.restarts++; return Promise.resolve(true); } };
@@ -180,7 +181,8 @@ test('engine budget: above the floor an engine starts only with room - CPU, memo
   for (const id of ['nova7', 'oren7', 'valen7', 'sunna', 'sable7', 'grail26']) h.mk(id, FJ);
   let load = LOAD(15);
   h.engineLoadNow = () => load;
-  eq(Hub.engineCeiling(h.settings, h.bots.size), 8, 'one per character, at most 8');
+  eq(Hub.engineCeiling(h.settings, h.bots.size), 8, 'one per character');
+  eq(Hub.engineCeiling(h.settings, 12), 12, 'no fixed cap of 8 any more (2026-10-29)');
   eq(Hub.engineCeiling({ maxEngines: 4, engineBurst: false }, 8), 4, 'engineBurst false = the old fixed cap');
   h.engineBusy.delete('edda');
   eq(h.engineRoom(h.bot('nova7'), now).ok, true, 'below the floor: always');

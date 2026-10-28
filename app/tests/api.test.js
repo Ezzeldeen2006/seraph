@@ -53,6 +53,23 @@ async function setup() {
   await new Promise((r) => setTimeout(r, 150));
 }
 
+test('api: engine settings - read with their source, save to hub.json, refuse garbage, back to auto', async () => {
+  await setup();
+  let r = await req('GET', '/engine/settings');
+  eq(r.code, 200);
+  assert(r.json.keys.maxEngines && r.json.machine.cpus > 0, 'keys and machine');
+  eq(r.json.source.maxEngines, 'auto');
+  r = await req('POST', '/engine/settings', { maxEngines: 12, engineMemoryMb: 8000 });
+  eq(r.code, 200);
+  eq([r.json.values.maxEngines, r.json.source.maxEngines, r.json.values.engineMemoryMb], [12, 'hub.json', 8000]);
+  eq([hub.settings.maxEngines, hub.settings.engineMemoryMb], [12, 8000], 'saved in the hub settings (hub.json)');
+  r = await req('POST', '/engine/settings', { maxEngines: 'lots' });
+  eq(r.code, 400);
+  eq(hub.settings.maxEngines, 12, 'a refused change changes nothing');
+  r = await req('POST', '/engine/settings', { maxEngines: null, engineMemoryMb: 'auto' });
+  eq([r.json.source.maxEngines, 'maxEngines' in hub.settings, 'engineMemoryMb' in hub.settings], ['auto', false, false]);
+});
+
 test('api: lists every account with live status', async () => {
   await setup();
   const r = await req('GET', '/accounts');

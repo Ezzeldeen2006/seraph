@@ -47,6 +47,13 @@ function start() {
   if (!list.length) { console.error('no accounts to run'); process.exit(1); }
   console.log(`Seraph headless: ${list.length} character(s) - ${list.map((a) => a.label).join(', ')}`);
   if (planned.length) console.log(`waiting to be created in AQW: ${planned.map((a) => a.label).join(', ')} - press "I created it" on the tile`);
+  // Node's own heap holds every logged-in character (~15 MB each) plus the hub (~150 MB). The systemd unit sizes it for
+  // the 3 GB laptop (--max-old-space-size=320); a big party on a big machine needs more, so say so at start.
+  const heapMb = Math.round(require('v8').getHeapStatistics().heap_size_limit / 1048576);
+  const wantMb = 150 + 15 * list.length;
+  if (heapMb < wantMb) console.log(`node heap limit ${heapMb} MB is tight for ${list.length} characters (~${wantMb} MB): start node with --max-old-space-size=${Math.ceil(wantMb / 64) * 64 + 128} or more`);
+  const eng = require('./lib/enginelimits').resolve(hub.settings, { headless: true, characters: list.length });
+  console.log(`Skua engines: ${eng.values.maxEngines} always, up to ${eng.values.engineCeiling} (${eng.source.maxEngines}); ${eng.values.engineHeapMb || 'no'} MB heap each - change them on the dashboard's System page, in hub.json or with SERAPH_MAX_ENGINES`);
   api.start(hub, noUi);
   hub.start();
   // Open the characters a few seconds apart: four logins at once looks like an attack to the game server.
