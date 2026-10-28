@@ -1,0 +1,318 @@
+{
+ "Seasonal/TalkLikeaPirateDay/BlazeBeardStory.cs": {
+  "base": "5592f11586ca7703b5819271f3503d8235e51c1d278dfecaf017f8acb0d95c45",
+  "why": "upstream cases 4514-4517, 4519 and 4521 farm the previous quest's item; 4517 (Darkness Energy) is never farmed",
+  "added": "2026-09-21"
+ },
+ "Story/LordsofChaos/Core13LoC.cs": {
+  "why": "Ryoku no longer drops the Finalist Medal (quest 382, slot 25): skip the rest of the Kitsune chapter, nothing else needs it; quest 2918 needs map item 1804, which the overworld map hands out from its own code on join (a headless client runs none)",
+  "added": "2026-09-22",
+  "rebased": "2026-09-28: patch-based after upstream fc7e122 (2026-09-26) silently retired the full copy",
+  "patches": [
+   {
+    "find": "        Story.KillQuest(382, \"dragonkoi\", \"Ryoku\");\n",
+    "replace": "        // Seraph fix (2026-09-22): Ryoku no longer drops the Finalist Medal (temp item 2008) since the 2023 /dragonkoi\n        // rebuild - 300+ kills with 382 accepted, /dragonkoi and /dragonkoiz, bracket in order: never dropped. 382 gates\n        // only this chapter (slot 25); the rest of 13 LoC and the Lord of Order dailies do not need it. Skip the rest\n        // of Kitsune instead of hunting Ryoku for ever.\n        if (!Core.isCompletedBefore(382))\n        {\n            Core.Logger(\"[Seraph] Skipping the rest of the Kitsune chapter: Tournament Finalist [382] cannot be completed (Ryoku no longer drops the Finalist Medal).\");\n            return;\n        }\n"
+   },
+   {
+    "find": "        Core.Join(\"overworld\");\n        Story.ChainQuest(2918);\n",
+    "replace": "        // [Seraph] \"Meet with Dage\" is map item 1804, which the overworld map file hands out on join while slot 122\n        // is 9 (town-Overworld-08Nov13.swf). A headless client runs no map code, so ChainQuest waited on it forever.\n        Story.MapItemQuest(2918, \"overworld\", 1804);\n"
+   }
+  ]
+ },
+ "Other/MergeShops/FaizasMerge.cs": {
+  "why": "Sandsea Linen comes from quest 10747 (Majestic Anubians), the last step of the Oasis Duat Palace story (slot 642); upstream registers it without the story, so the server answers every turn-in \"Missing Quest Progress\" (Oren7 looped on it 2026-10-11)",
+  "added": "2026-10-12",
+  "patches": [
+   {
+    "find": "//cs_include Scripts/CoreAdvanced.cs\n",
+    "replace": "//cs_include Scripts/CoreAdvanced.cs\n//cs_include Scripts/CoreStory.cs\n//cs_include Scripts/Story/LordsofChaos/Core13LoC.cs\n//cs_include Scripts/Story/ShadowsOfWar/CoreSoW.cs\n//cs_include Scripts/Story/AgeOfRuin/CoreAOR.cs\n//cs_include Scripts/Story/Oasis/CoreOasis.cs\n"
+   },
+   {
+    "find": "                    Core.RegisterQuests(10747); // TODO: Replace with actual quest ID\n",
+    "replace": "                    // [Seraph] 10747 needs the Duat Palace story (10741-10746) first, or every turn-in fails \"Missing Quest Progress\".\n                    new CoreOasis().DuatPalace();\n                    Core.EquipClass(ClassType.Farm);\n                    Core.RegisterQuests(10747);\n"
+   }
+  ]
+ },
+ "Ultrasv3/IndividualUltras/1UltraEzrajalv3.cs": {
+  "why": "the owner 2026-10-13: the party has LoO / SC / VHL / AP, not VDK / KE yet - VHL may take the VDK slot, AP the King's Echo slot, and Seraph's seats file picks who sits where (v3 stops the raid when a member fits no slot); no potions (the owner: \"there is 0 need of potions\"); opener: LoO / SC buff first, then all four start together (the owner)",
+  "added": "2026-10-13",
+  "patches": [
+   {
+    "find": "        new[] { Dps1 },\n        new[] { Dps2 },\n        new[] { Dps3 },\n        new[] { Dps4 }\n",
+    "replace": "        new[] { Dps1, \"Void Highlord\" },   // Seraph fix: VHL may take the VDK seat\n        new[] { Dps2 },\n        new[] { Dps3 },\n        new[] { Dps4, \"ArchPaladin\" }      // Seraph fix: AP may take the King's Echo seat\n"
+   },
+   {
+    "find": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_ezrajal_class-v3.sync\", allowDuplicates);",
+    "replace": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_ezrajal_class-v3.sync\", allowDuplicates, SeraphSeats());"
+   },
+   {
+    "find": "    private void EquipPresetClasses()\n",
+    "replace": "    // Seraph fix (2026-10-13): the seats Seraph picked for this raid (SERAPH_SEATS_FILE, \"Username=Class\" lines), handed\n    // to the class sync as preferred assignments so each character keeps its own seat.\n    private static System.Collections.Generic.Dictionary<string, string>? SeraphSeats()\n    {\n        try\n        {\n            string? f = System.Environment.GetEnvironmentVariable(\"SERAPH_SEATS_FILE\");\n            if (string.IsNullOrEmpty(f) || !System.IO.File.Exists(f))\n                return null;\n            var d = new System.Collections.Generic.Dictionary<string, string>(System.StringComparer.OrdinalIgnoreCase);\n            foreach (string line in System.IO.File.ReadAllLines(f))\n            {\n                int i = line.IndexOf('=');\n                if (i > 0)\n                    d[line.Substring(0, i).Trim()] = line.Substring(i + 1).Trim();\n            }\n            return d.Count > 0 ? d : null;\n        }\n        catch\n        {\n            return null;\n        }\n    }\n\n    private void EquipPresetClasses()\n"
+   },
+   {
+    "find": "        Pots.EnsureRecommendedPotions(skipThird: false);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner): no potions - Pots.EnsureRecommendedPotions(skipThird: false);\n"
+   },
+   {
+    "find": "        Pots.UseRecommendedPotions(skipThird: false, ensureStock: false);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner): no potions - Pots.UseRecommendedPotions(skipThird: false, ensureStock: false);\n"
+   },
+   {
+    "find": "    private void Prep()\n",
+    "replace": "    // Seraph fix (2026-10-13, the owner): supports buff first, then all four start together.\n    private void SeraphOpener()\n    {\n        string sync = Ultra.ResolveSyncPath(\"ultra_ezrajal_opener.sync\");\n        string me = Bot.Player.Username ?? \"\";\n        string cls = Bot.Player.CurrentClass?.Name ?? \"\";\n        bool support = cls == \"Lord of Order\" || cls == \"StoneCrusher\";\n        Engine.DisableSkills();\n        Ultra.UpdateEntry(sync, me, support ? \"S0\" : \"D\");\n        if (support)\n        {\n            try\n            {\n                var acts = Newtonsoft.Json.Linq.JArray.Parse(Bot.Flash.GetGameObject(\"world.actions.active\") ?? \"[]\");\n                for (int i = 1; i < acts.Count && i <= 4; i++)\n                {\n                    string tgt = acts[i]?[\"tgt\"]?.ToString() ?? \"\";\n                    if (tgt != \"f\" && tgt != \"s\")\n                        continue;\n                    C.Logger($\"[Seraph opener] {cls} buffs: {acts[i]?[\"nam\"]}\");\n                    for (int w = 0; w < 10 && !Bot.ShouldExit && !Bot.Skills.CanUseSkill(i); w++)\n                        Bot.Sleep(300);\n                    Engine.Cast(i);\n                    Bot.Sleep(1600);\n                }\n            }\n            catch (Exception e) { C.Logger($\"[Seraph opener] buff failed: {e.Message}\"); }\n            Ultra.UpdateEntry(sync, me, \"S1\");\n        }\n        DateTime start = DateTime.UtcNow;\n        while (!Bot.ShouldExit && (DateTime.UtcNow - start).TotalSeconds < 30)\n        {\n            long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();\n            int fresh = 0, waiting = 0;\n            foreach (string line in Ultra.ReadLines(sync))\n            {\n                string[] p = line.Split(':');\n                if (p.Length < 3 || !long.TryParse(p[^1], out long ts) || now - ts > 90)\n                    continue;\n                fresh++;\n                if (p[1] == \"S0\")\n                    waiting++;\n            }\n            if (fresh >= 4 && waiting == 0)\n                break;\n            Bot.Sleep(500);\n        }\n        C.Logger(\"[Seraph opener] buffs are up - all four start now\");\n        Engine.EnableSkills();\n    }\n\n    private void Prep()\n"
+   },
+   {
+    "find": "        Engine.ChooseBestCell(boss);\n        Bot.Player.SetSpawnPoint();\n        Bot.Sleep(2000);\n",
+    "replace": "        Engine.ChooseBestCell(boss);\n        Bot.Player.SetSpawnPoint();\n        Bot.Sleep(2000);\n        SeraphOpener();\n"
+   },
+   {
+    "find": "//cs_include Scripts/CoreBots.cs\n",
+    "replace": "//cs_include Scripts/Ultrasv3/DependenciesUltras/UltraAsync.cs\n//cs_include Scripts/CoreBots.cs\n"
+   },
+   {
+    "find": "        Engine.Join(map);\n        UltraWaitForArmy.Instance.NewWaitForArmy(armySize - 1, waitSyncFile, useSkill: true);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner: play like a veteran party): the tanks hold the boss with Scroll of Enrage.\n        int seraphTaunter = SeraphTaunterIndex();\n        if (seraphTaunter >= 0)\n            Engine.EquipEnrage();\n        Engine.Join(map);\n        UltraWaitForArmy.Instance.NewWaitForArmy(armySize - 1, waitSyncFile, useSkill: true);\n"
+   },
+   {
+    "find": "        SeraphOpener();\n",
+    "replace": "        SeraphOpener();\n        SeraphTaunts(seraphTaunter, \"UltraEzrajalSeraphFightTime.sync\");\n"
+   },
+   {
+    "find": "    private void Prep()\n",
+    "replace": "    // Seraph fix (2026-10-13): ArchPaladin taunts first, StoneCrusher second (-1 = not a taunter).\n    private int SeraphTaunterIndex()\n    {\n        string cls = Bot.Player.CurrentClass?.Name ?? \"\";\n        return cls == \"ArchPaladin\" ? 0 : cls == \"StoneCrusher\" ? 1 : -1;\n    }\n\n    private void SeraphTaunts(int index, string syncName)\n    {\n        if (index < 0)\n            return;\n        string path = Ultra.ResolveSyncPath(syncName);\n        DateTime start = index == 0 ? UltraAsync.SetFightTime(C, path) : UltraAsync.GetFightTime(Ultra, C, path);\n        C.Logger($\"[Seraph taunts] {Bot.Player.CurrentClass?.Name} holds the boss (taunter {index + 1} of 2, every 10 s)\");\n        UltraAsync.StartTauntLoop(Bot, C, Engine, start, index, 2);\n    }\n\n    private void Prep()\n"
+   }
+  ]
+ },
+ "Ultrasv3/IndividualUltras/3UltraEngineerv3.cs": {
+  "why": "the owner 2026-10-13: the party has LoO / SC / VHL / AP, not VDK / KE yet - VHL may take the VDK slot, AP the King's Echo slot, and Seraph's seats file picks who sits where (v3 stops the raid when a member fits no slot); no potions (the owner: \"there is 0 need of potions\"); opener: LoO / SC buff first, then all four start together (the owner)",
+  "added": "2026-10-13",
+  "patches": [
+   {
+    "find": "        new[] { Dps1 },\n        new[] { Dps2 },\n        new[] { Dps3 },\n        new[] { Dps4 }\n",
+    "replace": "        new[] { Dps1, \"Void Highlord\" },   // Seraph fix: VHL may take the VDK seat\n        new[] { Dps2 },\n        new[] { Dps3 },\n        new[] { Dps4, \"ArchPaladin\" }      // Seraph fix: AP may take the King's Echo seat\n"
+   },
+   {
+    "find": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_engineer_class-v3.sync\", allowDuplicates);",
+    "replace": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_engineer_class-v3.sync\", allowDuplicates, SeraphSeats());"
+   },
+   {
+    "find": "    private void EquipPresetClasses()\n",
+    "replace": "    // Seraph fix (2026-10-13): the seats Seraph picked for this raid (SERAPH_SEATS_FILE, \"Username=Class\" lines), handed\n    // to the class sync as preferred assignments so each character keeps its own seat.\n    private static System.Collections.Generic.Dictionary<string, string>? SeraphSeats()\n    {\n        try\n        {\n            string? f = System.Environment.GetEnvironmentVariable(\"SERAPH_SEATS_FILE\");\n            if (string.IsNullOrEmpty(f) || !System.IO.File.Exists(f))\n                return null;\n            var d = new System.Collections.Generic.Dictionary<string, string>(System.StringComparer.OrdinalIgnoreCase);\n            foreach (string line in System.IO.File.ReadAllLines(f))\n            {\n                int i = line.IndexOf('=');\n                if (i > 0)\n                    d[line.Substring(0, i).Trim()] = line.Substring(i + 1).Trim();\n            }\n            return d.Count > 0 ? d : null;\n        }\n        catch\n        {\n            return null;\n        }\n    }\n\n    private void EquipPresetClasses()\n"
+   },
+   {
+    "find": "        Pots.EnsureRecommendedPotions(skipThird: false);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner): no potions - Pots.EnsureRecommendedPotions(skipThird: false);\n"
+   },
+   {
+    "find": "        Pots.UseRecommendedPotions(skipThird: false, ensureStock: false);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner): no potions - Pots.UseRecommendedPotions(skipThird: false, ensureStock: false);\n"
+   },
+   {
+    "find": "    private void Prep()\n",
+    "replace": "    // Seraph fix (2026-10-13, the owner): supports buff first, then all four start together.\n    private void SeraphOpener()\n    {\n        string sync = Ultra.ResolveSyncPath(\"ultra_engineer_opener.sync\");\n        string me = Bot.Player.Username ?? \"\";\n        string cls = Bot.Player.CurrentClass?.Name ?? \"\";\n        bool support = cls == \"Lord of Order\" || cls == \"StoneCrusher\";\n        Engine.DisableSkills();\n        Ultra.UpdateEntry(sync, me, support ? \"S0\" : \"D\");\n        if (support)\n        {\n            try\n            {\n                var acts = Newtonsoft.Json.Linq.JArray.Parse(Bot.Flash.GetGameObject(\"world.actions.active\") ?? \"[]\");\n                for (int i = 1; i < acts.Count && i <= 4; i++)\n                {\n                    string tgt = acts[i]?[\"tgt\"]?.ToString() ?? \"\";\n                    if (tgt != \"f\" && tgt != \"s\")\n                        continue;\n                    C.Logger($\"[Seraph opener] {cls} buffs: {acts[i]?[\"nam\"]}\");\n                    for (int w = 0; w < 10 && !Bot.ShouldExit && !Bot.Skills.CanUseSkill(i); w++)\n                        Bot.Sleep(300);\n                    Engine.Cast(i);\n                    Bot.Sleep(1600);\n                }\n            }\n            catch (Exception e) { C.Logger($\"[Seraph opener] buff failed: {e.Message}\"); }\n            Ultra.UpdateEntry(sync, me, \"S1\");\n        }\n        DateTime start = DateTime.UtcNow;\n        while (!Bot.ShouldExit && (DateTime.UtcNow - start).TotalSeconds < 30)\n        {\n            long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();\n            int fresh = 0, waiting = 0;\n            foreach (string line in Ultra.ReadLines(sync))\n            {\n                string[] p = line.Split(':');\n                if (p.Length < 3 || !long.TryParse(p[^1], out long ts) || now - ts > 90)\n                    continue;\n                fresh++;\n                if (p[1] == \"S0\")\n                    waiting++;\n            }\n            if (fresh >= 4 && waiting == 0)\n                break;\n            Bot.Sleep(500);\n        }\n        C.Logger(\"[Seraph opener] buffs are up - all four start now\");\n        Engine.EnableSkills();\n    }\n\n    private void Prep()\n"
+   },
+   {
+    "find": "        Engine.ChooseBestCell(boss);\n        Bot.Player.SetSpawnPoint();\n        Bot.Sleep(2000);\n",
+    "replace": "        Engine.ChooseBestCell(boss);\n        Bot.Player.SetSpawnPoint();\n        Bot.Sleep(2000);\n        SeraphOpener();\n"
+   },
+   {
+    "find": "//cs_include Scripts/CoreBots.cs\n",
+    "replace": "//cs_include Scripts/Ultrasv3/DependenciesUltras/UltraAsync.cs\n//cs_include Scripts/CoreBots.cs\n"
+   },
+   {
+    "find": "        Engine.Join(map);\n        UltraWaitForArmy.Instance.NewWaitForArmy(armySize - 1, waitSyncFile, useSkill: true);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner: play like a veteran party): the tanks hold the boss with Scroll of Enrage.\n        int seraphTaunter = SeraphTaunterIndex();\n        if (seraphTaunter >= 0)\n            Engine.EquipEnrage();\n        Engine.Join(map);\n        UltraWaitForArmy.Instance.NewWaitForArmy(armySize - 1, waitSyncFile, useSkill: true);\n"
+   },
+   {
+    "find": "        SeraphOpener();\n",
+    "replace": "        SeraphOpener();\n        SeraphTaunts(seraphTaunter, \"UltraEngineerSeraphFightTime.sync\");\n"
+   },
+   {
+    "find": "    private void Prep()\n",
+    "replace": "    // Seraph fix (2026-10-13): ArchPaladin taunts first, StoneCrusher second (-1 = not a taunter).\n    private int SeraphTaunterIndex()\n    {\n        string cls = Bot.Player.CurrentClass?.Name ?? \"\";\n        return cls == \"ArchPaladin\" ? 0 : cls == \"StoneCrusher\" ? 1 : -1;\n    }\n\n    private void SeraphTaunts(int index, string syncName)\n    {\n        if (index < 0)\n            return;\n        string path = Ultra.ResolveSyncPath(syncName);\n        DateTime start = index == 0 ? UltraAsync.SetFightTime(C, path) : UltraAsync.GetFightTime(Ultra, C, path);\n        C.Logger($\"[Seraph taunts] {Bot.Player.CurrentClass?.Name} holds the boss (taunter {index + 1} of 2, every 10 s)\");\n        UltraAsync.StartTauntLoop(Bot, C, Engine, start, index, 2);\n    }\n\n    private void Prep()\n"
+   }
+  ]
+ },
+ "Ultrasv3/IndividualUltras/2UltraWardenv3.cs": {
+  "why": "the owner 2026-10-13: the party has LoO / SC / VHL / AP, not VDK / KE yet - VHL may take the VDK slot, AP the King's Echo slot, and Seraph's seats file picks who sits where (v3 stops the raid when a member fits no slot); no potions (the owner: \"there is 0 need of potions\"); opener: LoO / SC buff first, then all four start together (the owner)",
+  "added": "2026-10-13",
+  "patches": [
+   {
+    "find": "        new[] { Taunter1 },\n        new[] { Taunter2 },\n        new[] { Dps1 },\n        new[] { Dps2 }\n",
+    "replace": "        new[] { Taunter1, \"Void Highlord\" },   // Seraph fix: VHL may take the VDK taunter seat\n        new[] { Taunter2 },\n        new[] { Dps1, \"ArchPaladin\" },        // Seraph fix: AP may take the King's Echo seat\n        new[] { Dps2 }\n"
+   },
+   {
+    "find": "        if (className == Taunter1) _role = \"Taunter1\";\n",
+    "replace": "        if (className == Taunter1 || className == \"Void Highlord\") _role = \"Taunter1\";\n"
+   },
+   {
+    "find": "        else if (className == Dps1) _role = \"Dps1\";\n",
+    "replace": "        else if (className == Dps1 || className == \"ArchPaladin\") _role = \"Dps1\";\n"
+   },
+   {
+    "find": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_warden_class-v3.sync\", allowDuplicates);",
+    "replace": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_warden_class-v3.sync\", allowDuplicates, SeraphSeats());"
+   },
+   {
+    "find": "    private void EquipPresetClasses()\n",
+    "replace": "    // Seraph fix (2026-10-13): the seats Seraph picked for this raid (SERAPH_SEATS_FILE, \"Username=Class\" lines), handed\n    // to the class sync as preferred assignments so each character keeps its own seat.\n    private static System.Collections.Generic.Dictionary<string, string>? SeraphSeats()\n    {\n        try\n        {\n            string? f = System.Environment.GetEnvironmentVariable(\"SERAPH_SEATS_FILE\");\n            if (string.IsNullOrEmpty(f) || !System.IO.File.Exists(f))\n                return null;\n            var d = new System.Collections.Generic.Dictionary<string, string>(System.StringComparer.OrdinalIgnoreCase);\n            foreach (string line in System.IO.File.ReadAllLines(f))\n            {\n                int i = line.IndexOf('=');\n                if (i > 0)\n                    d[line.Substring(0, i).Trim()] = line.Substring(i + 1).Trim();\n            }\n            return d.Count > 0 ? d : null;\n        }\n        catch\n        {\n            return null;\n        }\n    }\n\n    private void EquipPresetClasses()\n"
+   },
+   {
+    "find": "        Pots.EnsureRecommendedPotions(skipThird: skipThird);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner): no potions - Pots.EnsureRecommendedPotions(skipThird: skipThird);\n"
+   },
+   {
+    "find": "        Pots.UseRecommendedPotions(skipThird: skipThird, ensureStock: false);\n",
+    "replace": "        // Seraph fix (2026-10-13, the owner): no potions - Pots.UseRecommendedPotions(skipThird: skipThird, ensureStock: false);\n"
+   },
+   {
+    "find": "    private void Prep()\n",
+    "replace": "    // Seraph fix (2026-10-13, the owner): supports buff first, then all four start together.\n    private void SeraphOpener()\n    {\n        string sync = Ultra.ResolveSyncPath(\"ultra_warden_opener.sync\");\n        string me = Bot.Player.Username ?? \"\";\n        string cls = Bot.Player.CurrentClass?.Name ?? \"\";\n        bool support = cls == \"Lord of Order\" || cls == \"StoneCrusher\";\n        Engine.DisableSkills();\n        Ultra.UpdateEntry(sync, me, support ? \"S0\" : \"D\");\n        if (support)\n        {\n            try\n            {\n                var acts = Newtonsoft.Json.Linq.JArray.Parse(Bot.Flash.GetGameObject(\"world.actions.active\") ?? \"[]\");\n                for (int i = 1; i < acts.Count && i <= 4; i++)\n                {\n                    string tgt = acts[i]?[\"tgt\"]?.ToString() ?? \"\";\n                    if (tgt != \"f\" && tgt != \"s\")\n                        continue;\n                    C.Logger($\"[Seraph opener] {cls} buffs: {acts[i]?[\"nam\"]}\");\n                    for (int w = 0; w < 10 && !Bot.ShouldExit && !Bot.Skills.CanUseSkill(i); w++)\n                        Bot.Sleep(300);\n                    Engine.Cast(i);\n                    Bot.Sleep(1600);\n                }\n            }\n            catch (Exception e) { C.Logger($\"[Seraph opener] buff failed: {e.Message}\"); }\n            Ultra.UpdateEntry(sync, me, \"S1\");\n        }\n        DateTime start = DateTime.UtcNow;\n        while (!Bot.ShouldExit && (DateTime.UtcNow - start).TotalSeconds < 30)\n        {\n            long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();\n            int fresh = 0, waiting = 0;\n            foreach (string line in Ultra.ReadLines(sync))\n            {\n                string[] p = line.Split(':');\n                if (p.Length < 3 || !long.TryParse(p[^1], out long ts) || now - ts > 90)\n                    continue;\n                fresh++;\n                if (p[1] == \"S0\")\n                    waiting++;\n            }\n            if (fresh >= 4 && waiting == 0)\n                break;\n            Bot.Sleep(500);\n        }\n        C.Logger(\"[Seraph opener] buffs are up - all four start now\");\n        Engine.EnableSkills();\n    }\n\n    private void Prep()\n"
+   },
+   {
+    "find": "        Engine.ChooseBestCell(boss);\n        Bot.Player.SetSpawnPoint();\n        Bot.Sleep(2000);\n",
+    "replace": "        Engine.ChooseBestCell(boss);\n        Bot.Player.SetSpawnPoint();\n        Bot.Sleep(2000);\n        SeraphOpener();\n"
+   }
+  ]
+ },
+ "Ultrasv3/IndividualUltras/5ChampionDrakathv3.cs": {
+  "why": "2026-10-16: v3's own class sync ignored Seraph's seats (each seat's kit went on the wrong character) and its potion stock-up made Valen farm 5.4 M gold, so the gold rule took him out of every Drakath / Gramiel raid within 2 min and three fought a four-man boss for 3 h - Seraph's seats file + no potion buying, like the Time Inn three (the owner: \"there is 0 need of potions\"). Later 2026-10-16 (the owner): the party wiped at ~14 M Drakath HP six times without potions - they drink the potions they already hold (UseRecommendedPotions, ensureStock false: never buys or farms)",
+  "added": "2026-10-16",
+  "patches": [
+   {
+    "find": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"champion_drakath_class-v3.sync\", allowDuplicates);",
+    "replace": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"champion_drakath_class-v3.sync\", allowDuplicates, SeraphSeats());"
+   },
+   {
+    "find": "    private void EquipPresetClasses()\n",
+    "replace": "    // Seraph fix (2026-10-13): the seats Seraph picked for this raid (SERAPH_SEATS_FILE, \"Username=Class\" lines), handed\n    // to the class sync as preferred assignments so each character keeps its own seat.\n    private static System.Collections.Generic.Dictionary<string, string>? SeraphSeats()\n    {\n        try\n        {\n            string? f = System.Environment.GetEnvironmentVariable(\"SERAPH_SEATS_FILE\");\n            if (string.IsNullOrEmpty(f) || !System.IO.File.Exists(f))\n                return null;\n            var d = new System.Collections.Generic.Dictionary<string, string>(System.StringComparer.OrdinalIgnoreCase);\n            foreach (string line in System.IO.File.ReadAllLines(f))\n            {\n                int i = line.IndexOf('=');\n                if (i > 0)\n                    d[line.Substring(0, i).Trim()] = line.Substring(i + 1).Trim();\n            }\n            return d.Count > 0 ? d : null;\n        }\n        catch\n        {\n            return null;\n        }\n    }\n\n    private void EquipPresetClasses()\n"
+   },
+   {
+    "find": "        Pots.EnsureRecommendedPotions(skipThird: skipThird);\n",
+    "replace": "        // Seraph fix (2026-10-16, the owner): no potions - Pots.EnsureRecommendedPotions(skipThird: skipThird);\n"
+   }
+  ]
+ },
+ "Ultrasv3/IndividualUltras/11UltraGramielv3.cs": {
+  "why": "2026-10-16: v3's own class sync ignored Seraph's seats (each seat's kit went on the wrong character) and its potion stock-up made Valen farm 5.4 M gold, so the gold rule took him out of every Drakath / Gramiel raid within 2 min and three fought a four-man boss for 3 h - Seraph's seats file + no potion buying, like the Time Inn three (the owner: \"there is 0 need of potions\"). Later 2026-10-16 (the owner): the party wiped at ~14 M Drakath HP six times without potions - they drink the potions they already hold (UseRecommendedPotions, ensureStock false: never buys or farms)",
+  "added": "2026-10-16",
+  "patches": [
+   {
+    "find": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_gramiel_class-v3.sync\", allowDuplicates);",
+    "replace": "UltraCustomClassSync.CustomClassSync(Ultra, Bot, classSlots, armySize, \"ultra_gramiel_class-v3.sync\", allowDuplicates, SeraphSeats());"
+   },
+   {
+    "find": "    private void EquipPresetClasses()\n",
+    "replace": "    // Seraph fix (2026-10-13): the seats Seraph picked for this raid (SERAPH_SEATS_FILE, \"Username=Class\" lines), handed\n    // to the class sync as preferred assignments so each character keeps its own seat.\n    private static System.Collections.Generic.Dictionary<string, string>? SeraphSeats()\n    {\n        try\n        {\n            string? f = System.Environment.GetEnvironmentVariable(\"SERAPH_SEATS_FILE\");\n            if (string.IsNullOrEmpty(f) || !System.IO.File.Exists(f))\n                return null;\n            var d = new System.Collections.Generic.Dictionary<string, string>(System.StringComparer.OrdinalIgnoreCase);\n            foreach (string line in System.IO.File.ReadAllLines(f))\n            {\n                int i = line.IndexOf('=');\n                if (i > 0)\n                    d[line.Substring(0, i).Trim()] = line.Substring(i + 1).Trim();\n            }\n            return d.Count > 0 ? d : null;\n        }\n        catch\n        {\n            return null;\n        }\n    }\n\n    private void EquipPresetClasses()\n"
+   },
+   {
+    "find": "        Pots.EnsureRecommendedPotions(skipThird: skipThird, context: \"Gramiel\");\n",
+    "replace": "        // Seraph fix (2026-10-16, the owner): no potions - Pots.EnsureRecommendedPotions(skipThird: skipThird, context: \"Gramiel\");\n"
+   }
+  ]
+ },
+ "Other/Classes/ArchMage/CoreArchMage.cs": {
+  "why": "the owner 2026-10-20: \"if the skua script cant kill nulgath then find another way ... get 4 Roentgenium of nulgath and get mortal coil\". When Seraph's class ladder lost to Nulgath (lib/bossroutes.js writes SKUA_DIR/seraph-routes.txt), The Mortal Coil comes from 4 Roentgenium of Nulgath at the Void Highlord merge shop instead of the kill. Main stopped on it in 0ArchMage (Book of Arcana) 2026-10-20 00:30. 2026-10-20 (community research, vault STRATEGY/Nightbane-Solo): on Arcana Invoker, Insatiable Hunger first prestacks the cycle to XX - Judgement on the /classhall Testing Dummy, then fights Nightbane.",
+  "added": "2026-10-20",
+  "patches": [
+   {
+    "find": "//cs_include Scripts/CoreBots.cs\n",
+    "replace": "//cs_include Scripts/CoreBots.cs\n//cs_include Scripts/Nation/VHL/CoreVHL.cs\n"
+   },
+   {
+    "find": "    private CoreBots Core => CoreBots.Instance;\n",
+    "replace": "    private CoreBots Core => CoreBots.Instance;\n\n    // Seraph fix (2026-10-20, the owner: \"if the skua script cant kill nulgath then find another way\"): bosses Seraph's class\n    // ladder lost to are listed in SKUA_DIR/seraph-routes.txt (\"<boss> <until ms>\" lines, lib/bossroutes.js); their\n    // items then come the long way instead of the kill.\n    private static bool SeraphRoute(string boss)\n    {\n        try\n        {\n            string? dir = System.Environment.GetEnvironmentVariable(\"SKUA_DIR\");\n            if (string.IsNullOrEmpty(dir))\n                return false;\n            string file = System.IO.Path.Combine(dir, \"seraph-routes.txt\");\n            if (!System.IO.File.Exists(file))\n                return false;\n            long now = System.DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();\n            foreach (string raw in System.IO.File.ReadAllLines(file))\n            {\n                string line = raw.Trim();\n                int sp = line.LastIndexOf(' ');\n                if (sp <= 0)\n                    continue;\n                if (!string.Equals(line.Substring(0, sp).Trim(), boss, System.StringComparison.OrdinalIgnoreCase))\n                    continue;\n                if (long.TryParse(line.Substring(sp + 1), out long until) && until > now)\n                    return true;\n            }\n        }\n        catch { }\n        return false;\n    }\n\n    // The Mortal Coil without Nulgath: 4 Roentgenium of Nulgath (Void Highlord's Challenge, one per Elders' Blood)\n    // merged at the Void Highlord merge shop (/tercessuinotlim 1355).\n    private void SeraphMortalCoil()\n    {\n        if (Core.CheckInventory(\"The Mortal Coil\"))\n            return;\n        Core.Logger(\"Seraph route: Nulgath beat every class - The Mortal Coil from 4 Roentgenium of Nulgath instead\");\n        new CoreVHL().VHLChallenge(4);\n        if (!Core.CheckInventory(\"Roentgenium of Nulgath\", 4))\n        {\n            Core.Logger(\"Seraph route: not 4 Roentgenium of Nulgath yet (one per Elders' Blood) - stopping until the next Elders' Blood daily\", stopBot: true);\n            return;\n        }\n        Adv.BuyItem(\"tercessuinotlim\", 1355, \"The Mortal Coil\");\n    }\n\n"
+   },
+   {
+    "find": "                case \"The Mortal Coil\":\n                    Adv.GearStore(EnhAfter: true);\n",
+    "replace": "                case \"The Mortal Coil\":\n                    if (SeraphRoute(\"Nulgath\"))\n                    {\n                        SeraphMortalCoil();\n                        break;\n                    }\n                    Adv.GearStore(EnhAfter: true);\n"
+   },
+   {
+    "find": "    private DateTime lastMove = DateTime.MinValue;\n",
+    "replace": "    // Seraph fix (2026-10-20, vault STRATEGY/Nightbane-Solo): Arcana Invoker solos Nightbane only with its cycle already\n    // built. Nightbane is a 10-15 s DPS race (10k per-hit cap, 100k Blood Frenzy heals); climbing The Fool -> Judgement\n    // (~35 s) in front of him is the \"endless cycle of death\". So: prestack to \"XX - Judgement\" on the Class Hall Testing\n    // Dummy, then walk in - the rotation's id 1 on Judgement opens XXI - The World at the boss (lib/skill-overrides.json).\n    private void SeraphArcanaPrestack()\n    {\n        if (Bot.Player.CurrentClass?.Name != \"Arcana Invoker\")\n            return;\n        if (Bot.Self.HasActiveAura(\"XX - Judgement\") || Bot.Self.HasActiveAura(\"XXI - The World\"))\n            return;\n        Core.Logger(\"Seraph: Arcana Invoker prestack to XX - Judgement at /classhall before Nightbane\");\n        Core.Join(\"classhall\");\n        string? cell = null;\n        foreach (var m in Bot.Monsters.MapMonsters)\n            if (m.Name == \"Testing Dummy\") { cell = m.Cell; break; }\n        if (cell == null)\n        {\n            Core.Logger(\"Seraph prestack: no Testing Dummy in /classhall - fighting from The Fool\");\n            return;\n        }\n        Bot.Map.Jump(cell, \"Left\");\n        Bot.Sleep(1500);\n        Bot.Skills.Stop();\n        System.DateTime end = System.DateTime.Now.AddSeconds(120);\n        while (!Bot.ShouldExit && System.DateTime.Now < end && !Bot.Self.HasActiveAura(\"XX - Judgement\"))\n        {\n            if (!Bot.Player.HasTarget)\n                Bot.Combat.Attack(\"Testing Dummy\");\n            // id 1 starts the cycle (The Fool), then Invocation (id 2) climbs it; Revocation (id 3, 40 mana) and One With\n            // the Cycle (id 4) fill the gaps. id 1 is never pressed again here: on the dummy it would reset the cycle.\n            int s = !Bot.Self.HasActiveAura(\"0 - The Fool\") ? 1\n                : Bot.Skills.CanUseSkill(2) ? 2\n                : Bot.Player.Mana >= 40 && Bot.Skills.CanUseSkill(3) ? 3\n                : Bot.Skills.CanUseSkill(4) ? 4 : -1;\n            if (s > 0 && Bot.Skills.CanUseSkill(s))\n                Bot.Skills.UseSkill(s);\n            Bot.Sleep(150);\n        }\n        Bot.Combat.CancelTarget();\n        Core.Logger(Bot.Self.HasActiveAura(\"XX - Judgement\")\n            ? \"Seraph prestack: on XX - Judgement, going to Nightbane\"\n            : \"Seraph prestack: no Judgement after 120 s - fighting from where the cycle is\");\n    }\n\n    private DateTime lastMove = DateTime.MinValue;\n"
+   },
+   {
+    "find": "                case \"Insatiable Hunger\":\n                    Item(\"voidnightbane\", \"Nightbane\", item, quant);\n",
+    "replace": "                case \"Insatiable Hunger\":\n                    SeraphArcanaPrestack();\n                    Item(\"voidnightbane\", \"Nightbane\", item, quant);\n"
+   }
+  ]
+ },
+ "Enhancement/UnlockForgeEnhancements.cs": {
+  "why": "the owner 2026-10-20: \"if the skua script cant kill nulgath then find another way ... get 4 Roentgenium of nulgath and get mortal coil\". When Seraph's class ladder lost to Nulgath (lib/bossroutes.js writes SKUA_DIR/seraph-routes.txt), The Mortal Coil comes from 4 Roentgenium of Nulgath at the Void Highlord merge shop instead of the kill. Same item for Forge: Acheron (quest 8820).",
+  "added": "2026-10-20",
+  "patches": [
+   {
+    "find": "public class UnlockForgeEnhancements\n{\n    private IScriptInterface Bot => IScriptInterface.Instance;\n    private CoreBots Core => CoreBots.Instance;\n",
+    "replace": "public class UnlockForgeEnhancements\n{\n    private IScriptInterface Bot => IScriptInterface.Instance;\n    private CoreBots Core => CoreBots.Instance;\n\n    // Seraph fix (2026-10-20, the owner: \"if the skua script cant kill nulgath then find another way\"): bosses Seraph's class\n    // ladder lost to are listed in SKUA_DIR/seraph-routes.txt (\"<boss> <until ms>\" lines, lib/bossroutes.js); their\n    // items then come the long way instead of the kill.\n    private static bool SeraphRoute(string boss)\n    {\n        try\n        {\n            string? dir = System.Environment.GetEnvironmentVariable(\"SKUA_DIR\");\n            if (string.IsNullOrEmpty(dir))\n                return false;\n            string file = System.IO.Path.Combine(dir, \"seraph-routes.txt\");\n            if (!System.IO.File.Exists(file))\n                return false;\n            long now = System.DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();\n            foreach (string raw in System.IO.File.ReadAllLines(file))\n            {\n                string line = raw.Trim();\n                int sp = line.LastIndexOf(' ');\n                if (sp <= 0)\n                    continue;\n                if (!string.Equals(line.Substring(0, sp).Trim(), boss, System.StringComparison.OrdinalIgnoreCase))\n                    continue;\n                if (long.TryParse(line.Substring(sp + 1), out long until) && until > now)\n                    return true;\n            }\n        }\n        catch { }\n        return false;\n    }\n\n    // The Mortal Coil without Nulgath: 4 Roentgenium of Nulgath (Void Highlord's Challenge, one per Elders' Blood)\n    // merged at the Void Highlord merge shop (/tercessuinotlim 1355).\n    private void SeraphMortalCoil()\n    {\n        if (Core.CheckInventory(\"The Mortal Coil\"))\n            return;\n        Core.Logger(\"Seraph route: Nulgath beat every class - The Mortal Coil from 4 Roentgenium of Nulgath instead\");\n        new CoreVHL().VHLChallenge(4);\n        if (!Core.CheckInventory(\"Roentgenium of Nulgath\", 4))\n        {\n            Core.Logger(\"Seraph route: not 4 Roentgenium of Nulgath yet (one per Elders' Blood) - stopping until the next Elders' Blood daily\", stopBot: true);\n            return;\n        }\n        Adv.BuyItem(\"tercessuinotlim\", 1355, \"The Mortal Coil\");\n    }\n\n"
+   },
+   {
+    "find": "        Core.HuntMonster(\"tercessuinotlim\", \"Nulgath\", \"The Mortal Coil\", isTemp: false);\n",
+    "replace": "        if (SeraphRoute(\"Nulgath\"))\n            SeraphMortalCoil();\n        else\n            Core.HuntMonster(\"tercessuinotlim\", \"Nulgath\", \"The Mortal Coil\", isTemp: false);\n"
+   }
+  ]
+ },
+ "Seasonal/Mogloween/CoreMogloween.cs": {
+  "why": "quest 10904 is one-time: a character that already finished it (Edda) hunts Darkovian Fur for ever; skip it so 10905 (Champion Ensis/Alpha Grigor) and the Walpurga merge can proceed",
+  "added": "2026-10-26",
+  "patches": [
+   {
+    "find": "        Core.EnsureAccept(10904);\n        Core.HuntMonster(\"birgittamogloween\", UseableMonsters[2], \"Darkovian Fur\", 9);\n        Core.HuntMonster(\"birgittamogloween\", UseableMonsters[5], \"Darkovian Silk\", 9);\n        Core.EnsureComplete(10904);\n",
+    "replace": "        // Seraph fix (2026-10-26): upstream runs 10904 even when it is already done (one-time quest: accept answers\n        // \"One Time Quest Only\", Darkovian Fur never drops) - 731 Lycan Guest kills for nothing, so 10905 was never reached.\n        if (!Core.isCompletedBefore(10904))\n        {\n        Core.EnsureAccept(10904);\n        Core.HuntMonster(\"birgittamogloween\", UseableMonsters[2], \"Darkovian Fur\", 9);\n        Core.HuntMonster(\"birgittamogloween\", UseableMonsters[5], \"Darkovian Silk\", 9);\n        Core.EnsureComplete(10904);\n        }\n"
+   }
+  ]
+ },
+ "Story/AgeOfRuin/CoreAOR.cs": {
+  "why": "Voice in the Sea: the upstream fight re-enhances a Vainglory cape to Lucky (wipes the forge special on the owner's Atlas Stone); wear another cape instead",
+  "added": "2026-10-28",
+  "patches": [
+   {
+    "find": "        if (cape != null)\n            Adv.EnhanceItem(\n                cape.Name,\n                EnhancementType.Lucky,\n                CapeSpecial.None,\n                HelmSpecial.None,\n                WeaponSpecial.None,\n                logging: false,\n                bypassDisableAutoEnhance: true\n            );\n",
+    "replace": "        if (cape != null)\n        {\n            // Seraph fix (2026-10-28): wear another cape instead of re-enhancing this one - Lucky over it wipes its\n            // Vainglory forge special for good (the owner's Atlas Stone). Re-enhance only when no other cape is owned.\n            var other = Bot.Inventory.Items.Find(i => i.Category == ItemCategory.Cape && i.Name != cape.Name && i.EnhancementPatternID != (int)CapeSpecial.Vainglory)\n                ?? Bot.Bank.Items.Find(i => i.Category == ItemCategory.Cape && i.Name != cape.Name && i.EnhancementPatternID != (int)CapeSpecial.Vainglory);\n            if (other != null)\n            {\n                Core.Unbank(other.Name);\n                Core.Equip(other.Name);\n                Core.Logger($\"[Seraph] wearing {other.Name} instead of re-enhancing {cape.Name} (Vainglory)\");\n            }\n            else\n                Adv.EnhanceItem(\n                    cape.Name,\n                    EnhancementType.Lucky,\n                    CapeSpecial.None,\n                    HelmSpecial.None,\n                    WeaponSpecial.None,\n                    logging: false,\n                    bypassDisableAutoEnhance: true\n                );\n        }\n"
+   }
+  ]
+ },
+ "CoreAdvanced.cs": {
+  "why": "the owner 2026-10-28: never re-enhance when an owned item already has what the script asks for - EnhanceEquipped, EnhanceItem and SmartEnhance wear the matching weapon / helm / cape (backpack or bank, most all-damage first) before anything is bought; with DisableAutoEnhance on (his main) matching items still go on, nothing is bought",
+  "added": "2026-10-28",
+  "patches": [
+   {
+    "find": "        bool bypassDisableAutoEnhance\n    )\n    {\n        if (!bypassDisableAutoEnhance)\n        {\n            if (Core.CBOBool(\"DisableAutoEnhance\", out bool _disableAutoEnhance) && _disableAutoEnhance)\n                return;\n        }\n\n        List<InventoryItem> EquippedItems = Bot.Inventory.Items.FindAll(i =>",
+    "replace": "        bool bypassDisableAutoEnhance\n    )\n    {\n        // Seraph: an owned item that already carries the enhancement goes on first - never a re-enhance for it.\n        SeraphWearMatching(type, cSpecial, hSpecial, wSpecial);\n        if (!bypassDisableAutoEnhance)\n        {\n            if (Core.CBOBool(\"DisableAutoEnhance\", out bool _disableAutoEnhance) && _disableAutoEnhance)\n                return;\n        }\n\n        List<InventoryItem> EquippedItems = Bot.Inventory.Items.FindAll(i =>"
+   },
+   {
+    "find": "        bool logging,\n        bool bypassDisableAutoEnhance\n    )\n    {\n        if (string.IsNullOrEmpty(item))\n            return;\n",
+    "replace": "        bool logging,\n        bool bypassDisableAutoEnhance\n    )\n    {\n        if (string.IsNullOrEmpty(item))\n            return;\n\n        // Seraph: the item is worn and another owned one already has this enhancement - wear that one instead.\n        InventoryItem? seraphWorn = Bot.Inventory.Items.Find(i => i.Equipped && i.Name.ToLower().Trim() == item.ToLower().Trim());\n        if (seraphWorn != null && seraphWorn.Category != ItemCategory.Class && SeraphWearMatching(type, cSpecial, hSpecial, wSpecial, seraphWorn))\n            return;\n"
+   },
+   {
+    "find": "        if (EnhDisabled && !ForceEnh)\n        {\n            Core.Logger(\"AutoEnh turned off in CBO, class/items will *not* be enhanced\");\n            return;\n        }\n",
+    "replace": "        // Seraph: with auto-enhance off nothing is bought, but owned items that match the class's set-up still go on.\n        bool seraphWearOnly = EnhDisabled && !ForceEnh;\n"
+   },
+   {
+    "find": "        if (type == null)\n        {\n            Core.Logger($\"SmartEnhance Failed: 'type' for {className} is NULL\");\n            return;\n        }\n",
+    "replace": "        if (type == null)\n        {\n            Core.Logger($\"SmartEnhance Failed: 'type' for {className} is NULL\");\n            return;\n        }\n\n        if (seraphWearOnly)\n        {\n            SeraphWearMatching((EnhancementType)type, cSpecial, hSpecial, weaponOverride ?? wSpecial);\n            Core.Logger(\"AutoEnh turned off in CBO: wore owned items that match, nothing was re-enhanced\");\n            return;\n        }\n"
+   },
+   {
+    "find": "    private bool AlreadyHasRequestedEnhancement(\n        InventoryItem item,",
+    "replace": "    // Seraph (2026-10-28, the owner: \"dont waste money re-enhancing - equip the items that match whatever the script wants\"):\n    // for every worn weapon / helm / cape that lacks the requested enhancement, an owned item of the same slot that has it\n    // (backpack first, then bank; the most all-damage first) is put on instead. Classes can't be swapped. Returns true\n    // when every worn piece (or `only`) now matches.\n    private bool SeraphWearMatching(EnhancementType type, CapeSpecial cSpecial, HelmSpecial hSpecial, WeaponSpecial wSpecial, InventoryItem? only = null)\n    {\n        if (type == 0)\n            return false;\n        bool all = true;\n        try\n        {\n            List<InventoryItem> worn = Bot.Inventory.Items.FindAll(i => i.Equipped\n                && (i.Category == ItemCategory.Cape || i.Category == ItemCategory.Helm || i.ItemGroup == \"Weapon\"));\n            foreach (InventoryItem cur in worn)\n            {\n                if (only != null && cur.ID != only.ID)\n                    continue;\n                if (AlreadyHasRequestedEnhancement(cur, type, cSpecial, hSpecial, wSpecial))\n                    continue;\n                bool Same(InventoryItem i) => cur.Category == ItemCategory.Cape ? i.Category == ItemCategory.Cape\n                    : cur.Category == ItemCategory.Helm ? i.Category == ItemCategory.Helm : i.ItemGroup == \"Weapon\";\n                InventoryItem? pick = Bot.Inventory.Items\n                    .Where(i => !i.Equipped && Same(i) && AlreadyHasRequestedEnhancement(i, type, cSpecial, hSpecial, wSpecial))\n                    .OrderByDescending(SeraphAllDamage).FirstOrDefault()\n                    ?? Bot.Bank.Items\n                    .Where(i => Same(i) && AlreadyHasRequestedEnhancement(i, type, cSpecial, hSpecial, wSpecial))\n                    .OrderByDescending(SeraphAllDamage).FirstOrDefault();\n                if (pick == null)\n                {\n                    all = false;\n                    continue;\n                }\n                if (!Bot.Inventory.Contains(pick.Name))\n                    Core.Unbank(pick.Name);\n                Core.Equip(pick.Name);\n                Core.Logger($\"[Seraph] {cur.Name} -> {pick.Name} (already {type}{(cSpecial != CapeSpecial.None ? \"/\" + cSpecial : \"\")}{(hSpecial != HelmSpecial.None ? \"/\" + hSpecial : \"\")}{(wSpecial != WeaponSpecial.None ? \"/\" + wSpecial : \"\")}) - nothing re-enhanced\");\n                if (!Bot.Inventory.IsEquipped(pick.Name))\n                    all = false;\n            }\n        }\n        catch (Exception e)\n        {\n            Core.Logger($\"[Seraph] matching gear: {e.Message}\");\n            return false;\n        }\n        return all;\n    }\n\n    private static double SeraphAllDamage(InventoryItem i)\n    {\n        try\n        {\n            foreach (string part in (i.Meta ?? \"\").Split(','))\n            {\n                string[] kv = part.Split(':');\n                if (kv.Length == 2 && kv[0].Trim().Equals(\"dmgAll\", StringComparison.OrdinalIgnoreCase)\n                    && double.TryParse(kv[1], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out double v))\n                    return v;\n            }\n        }\n        catch { }\n        return 0;\n    }\n\n    private bool AlreadyHasRequestedEnhancement(\n        InventoryItem item,"
+   }
+  ]
+ },
+ "CoreFarms.cs": {
+  "why": "Alchemy (2026-10-28 audit): upstream (333779e) sends alchDone the moment alchStart is accepted; the server answers {\"cmd\":\"alchDone\",\"ok\":0,\"msg\":\"Finished too quickly.\"}, upstream ignores ok 0 and stops the potion loop after 10 s - every craft failed. Resend alchDone 2.5 s apart (8x max) until ok 1.",
+  "added": "2026-10-28",
+  "patches": [
+   {
+    "find": "    private bool _alchemyCraftCompleted = false;\n",
+    "replace": "    private bool _alchemyCraftCompleted = false;\n    private bool _seraphAlchTooSoon = false;   // Seraph: the server said \"Finished too quickly.\" - send alchDone again\n"
+   },
+   {
+    "find": "            // Send completion packet\n            Core.SendPackets(\"%xt%zm%crafting%1%alchDone%\");\n\n            // Wait for completion (single log)\n            bool completed = WaitForAlchemyFlag(() => _alchemyCraftCompleted, 10000);\n",
+    "replace": "            // Send completion packet. Seraph: sent the moment alchStart is accepted, the server refuses it (\"Finished too\n            // quickly.\"): wait and send it again until the mix is done (8 times, 2.5 s apart, at most).\n            bool completed = false;\n            for (int seraphTry = 0; seraphTry < 8 && !completed; seraphTry++)\n            {\n                lock (_alchemyLock)\n                    _seraphAlchTooSoon = false;\n                Core.SendPackets(\"%xt%zm%crafting%1%alchDone%\");\n                completed = WaitForAlchemyFlag(() => _alchemyCraftCompleted || _seraphAlchTooSoon, 10000) && _alchemyCraftCompleted;\n                if (completed || !_seraphAlchTooSoon)\n                    break;\n                Core.Sleep(2500);\n            }\n"
+   },
+   {
+    "find": "                case \"alchDone\":\n                    lock (_alchemyLock)\n                    {\n                        if (data.ok == 1 && !_alchemyCraftCompleted) // only log once\n                        {\n                            _alchemyCraftCompleted = true;\n                            Core.Logger(\"Alchemy craft completed (confirmed by server)\");\n                        }\n                    }\n                    break;\n",
+    "replace": "                case \"alchDone\":\n                    lock (_alchemyLock)\n                    {\n                        if (data.ok == 1 && !_alchemyCraftCompleted) // only log once\n                        {\n                            _alchemyCraftCompleted = true;\n                            Core.Logger(\"Alchemy craft completed (confirmed by server)\");\n                        }\n                        else if (data.ok != 1)\n                            _seraphAlchTooSoon = true;   // Seraph: \"Finished too quickly.\" - Packet() sends alchDone again\n                    }\n                    break;\n"
+   }
+  ]
+ }
+}

@@ -1,0 +1,6 @@
+{
+  "webhook": "https://discord.com/api/webhooks/<id>/<token>",
+  "token": "<bot token, optional: slash commands and direct messages>",
+  "guildId": "<your server id, optional: registers the slash commands there>",
+  "name": "Seraph"
+}

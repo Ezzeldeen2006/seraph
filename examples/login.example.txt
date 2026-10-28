@@ -1,0 +1,10 @@
+Login file: one block per character. Keep this file private (chmod 600) - it is the only place passwords live.
+accounts.json points at it with "loginFile"; the block whose Username matches the account is used.
+
+[MyBot1]
+Username: MyBot1
+Password: change-me
+
+[MyMain]
+Username: MyMain
+Password: change-me

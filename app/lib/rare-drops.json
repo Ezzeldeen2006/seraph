@@ -1,0 +1,11 @@
+{
+  "_comment": "Items that drop so rarely that an hour of kills without one is normal (drop % from aqwwiki.wikidot.com). Hub.stuckAgain lets a Skua step farming one of these stall up to `stalls` times while kills keep coming, instead of parking it after the second stall. Since 2026-10-13 lib/droprates.js learns every item's kills per drop by itself (4x the mean, 300-3000, 400 before 2 drops) and keeps a farm step going while its monster dies; an entry here may set `kills` to fix one item's budget by hand.",
+  "stalls": 8,
+  "items": {
+    "Everlight Flame": { "pct": 1, "kills": 1500, "from": "Avatar Tyndarius, /fireavatar r9 (CoreArchMage; design notes: 1%). Or the FireAvatar merge: 5 Avatar Tyndarius Insignia + 750k gold. The main ran 400 kills dry on 2026-10-19" },
+    "Asherion Armor": { "pct": 1, "from": "Sir Kut, /stonewooddeep (VerusDoomKnight.cs, quest 9412)" },
+    "Empress' ShadowCloak": { "pct": null, "from": "Krahen, /innershadows (VerusDoomKnight.cs says the rate is fairly low)" },
+    "Taro's Manslayer": { "pct": null, "from": "Taro Blademaster, /tercessuinotlim (wiki: Weird Rarity; non-members farm one per Totem of Nulgath for AFDL / VAS - Nova ~20 kills per 30 min with no drop, parked twice on 2026-10-12)" },
+    "Monster Blood": { "pct": null, "from": "Dethrix (lvl 75 boss, ~1 kill per 4-5 min), /ebondungeon (BocklinArmoryMerge.cs for King's Echo; wiki gives no rate - Oren parked King's Echo 24 h on 2026-10-13 after ~2 h of Dethrix kills with no drop)" }
+  }
+}

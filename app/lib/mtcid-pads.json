@@ -1,0 +1,125 @@
+{
+ "_note": "Server-driven cell moves (Game.as mtcid -> World.moveToCellByIDb): the map SWF's event pads, tID -> [tCell, tPad]. From <work>/mapscan/src (FFDec). Skua's CoreBots.PvPMove waits for these.",
+ "dagepvp": {
+  "1": [
+   "r2",
+   "Center"
+  ],
+  "2": [
+   "r3",
+   "Right"
+  ],
+  "3": [
+   "Enter0",
+   "Top"
+  ],
+  "4": [
+   "r4",
+   "Left"
+  ],
+  "5": [
+   "r2",
+   "Left"
+  ],
+  "6": [
+   "r2",
+   "Right"
+  ],
+  "7": [
+   "r5",
+   "Left"
+  ],
+  "8": [
+   "r4",
+   "Right"
+  ],
+  "9": [
+   "r6",
+   "Left"
+  ],
+  "10": [
+   "r5",
+   "Right"
+  ],
+  "11": [
+   "r7",
+   "Bottom"
+  ],
+  "12": [
+   "r12",
+   "Left"
+  ],
+  "13": [
+   "r8",
+   "Right"
+  ],
+  "14": [
+   "r6",
+   "Center"
+  ],
+  "15": [
+   "r10",
+   "Left"
+  ],
+  "16": [
+   "r9",
+   "Right"
+  ],
+  "17": [
+   "r7",
+   "Left"
+  ],
+  "18": [
+   "r8",
+   "Left"
+  ],
+  "19": [
+   "r7",
+   "Right"
+  ],
+  "20": [
+   "r11",
+   "Left"
+  ],
+  "21": [
+   "r10",
+   "Right"
+  ],
+  "22": [
+   "r6",
+   "Right"
+  ],
+  "23": [
+   "r13",
+   "Left"
+  ],
+  "24": [
+   "r12",
+   "Right"
+  ],
+  "25": [
+   "r14",
+   "Left"
+  ],
+  "26": [
+   "r13",
+   "Right"
+  ],
+  "27": [
+   "Enter1",
+   "Top"
+  ],
+  "28": [
+   "r15",
+   "Left"
+  ],
+  "29": [
+   "r14",
+   "Right"
+  ],
+  "30": [
+   "r14",
+   "Center"
+  ]
+ }
+}

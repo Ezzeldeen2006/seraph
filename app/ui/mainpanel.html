@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My main</title>
+<style>
+  :root { --bg: #0b0e1a; --panel: #121729; --line: #232a45; --ink: #e8eaf6; --mute: #8a90b0; --rune: #8b6cff; --good: #34d399; --bad: #f87171; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; overflow: hidden; }
+  #wrap { display: grid; grid-template-rows: 58px 1fr; height: 100%; }
+  header { display: flex; align-items: center; padding: 0 16px; border-bottom: 1px solid var(--line); background: #0e1222; }
+  header > * + * { margin-left: 10px; }
+  .crest { width: 34px; height: 34px; border-radius: 9px; background: #38bdf8; color: #06121f; display: grid; place-items: center; font-weight: 700; }
+  .name b { display: block; font-size: 15px; }
+  .name span { color: var(--mute); font-size: 12px; }
+  .pill { font-size: 12px; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--line); color: var(--mute); }
+  .pill.good { color: var(--good); border-color: #1d5c46; }
+  .spacer { flex: 1; }
+  button { font: inherit; color: var(--ink); background: #1a2038; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  button:hover { border-color: #3a4569; }
+  button.primary { background: var(--rune); border-color: var(--rune); color: #fff; }
+  button.stop { color: var(--bad); }
+  button.sm { padding: 4px 9px; font-size: 12.5px; }
+  #body { display: grid; grid-template-columns: 1fr 360px; min-height: 0; }
+  #game { position: relative; background: #000; margin: 12px; border-radius: 10px; border: 1px solid var(--line); }
+  #game .hint { position: absolute; top: 50%; left: 0; right: 0; text-align: center; color: var(--mute); }
+  aside { border-left: 1px solid var(--line); display: grid; grid-template-rows: auto auto minmax(120px, 1fr) minmax(140px, 1fr); min-height: 0; }
+  section { padding: 12px 14px; border-bottom: 1px solid var(--line); min-height: 0; display: flex; flex-direction: column; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--mute); margin: 0 0 8px; font-weight: 600; }
+  input { width: 100%; font: inherit; color: var(--ink); background: #0b0f1e; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+  .list { overflow: auto; min-height: 0; }
+  .item { display: flex; align-items: center; padding: 7px 8px; border-radius: 8px; border: 1px solid transparent; }
+  .item:hover { background: #161c33; border-color: var(--line); }
+  .item .what { flex: 1; min-width: 0; margin-right: 8px; }
+  .item .what b { display: block; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item .what small { display: block; color: var(--mute); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .quick { display: flex; flex-wrap: wrap; margin-top: 8px; }
+  .quick button { margin: 0 6px 6px 0; }
+  .doing b { display: block; }
+  .doing small { color: var(--mute); font-family: Consolas, monospace; font-size: 12px; }
+  .log { font: 12px/1.45 Consolas, monospace; color: #c3c8e6; overflow: auto; white-space: pre-wrap; min-height: 0; }
+  .log .t { color: #5d6488; }
+  .mute { color: var(--mute); }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <header>
+    <div class="crest" id="crest">G</div>
+    <div class="name"><b id="who">grail26</b><span id="sub">on this PC</span></div>
+    <span class="pill" id="state">starting…</span>
+    <div class="spacer"></div>
+    <button id="bLogin" title="Seraph logs in for you (or log in yourself inside the game)">Auto log in</button>
+    <button class="stop" id="bStop" title="Stop the script; the character stays in the game">■ Stop script</button>
+    <button id="bBack" title="Back to the party bots (the game keeps running)">← Party bots</button>
+  </header>
+  <div id="body">
+    <div id="game"><div class="hint">The game is loading…</div></div>
+    <aside>
+      <section>
+        <h2>Doing now</h2>
+        <div class="doing"><b id="task">nothing - you're in control</b><small id="step"></small></div>
+      </section>
+      <section>
+        <h2>Run a script</h2>
+        <input id="q" placeholder="Search 1,900 Skua scripts: void aura, legion, daily…" autocomplete="off">
+        <div class="quick">
+          <button class="sm" data-quick="Dailies/0AllDailies.cs">▶ All dailies</button>
+          <button class="sm" data-quick="Farm/GoldFarm.cs">▶ Gold</button>
+          <button class="sm" data-quick="Farm/Leveling.cs">▶ XP</button>
+        </div>
+      </section>
+      <section style="padding-top:0"><div class="list" id="results"><div class="mute" style="padding:8px">Type to search. ▶ starts it at once.</div></div></section>
+      <section style="border-bottom:0">
+        <h2>Log</h2>
+        <div class="log" id="log"></div>
+      </section>
+    </aside>
+  </div>
+</div>
+<script>
+const { ipcRenderer } = require('electron');
+const API = `http://127.0.0.1:${process.env.SERAPH_PORT || 47101}`;
+const ID = process.env.SERAPH_PC_MAIN || 'grail26';
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+async function api(p, data) {
+  const r = await fetch(API + p, data === undefined ? {} : { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
+  const t = await r.text(); let b; try { b = t ? JSON.parse(t) : {}; } catch (e) { b = { error: t }; }
+  if (!r.ok) throw new Error(b.error || `HTTP ${r.status}`);
+  return b;
+}
+const op = (o, extra = {}) => api(`/a/${ID}/bot`, { op: o, ...extra });
+
+// Tell the main process where the game screen goes (it is a separate view laid over #game).
+function sendRect() {
+  const r = $('game').getBoundingClientRect();
+  let w = r.width - 2; let h = w * 550 / 960;
+  if (h > r.height - 2) { h = r.height - 2; w = h * 960 / 550; }
+  ipcRenderer.send('pc', 'gameRect', { x: Math.round(r.left + 1 + (r.width - 2 - w) / 2), y: Math.round(r.top + 1 + (r.height - 2 - h) / 2), width: Math.round(w), height: Math.round(h) });
+}
+window.addEventListener('resize', sendRect);
+setTimeout(sendRect, 50);
+
+let me = null;
+async function refresh() {
+  try {
+    const list = await api('/accounts');
+    me = list.find((a) => a.id === ID);
+    if (!me) { $('state').textContent = 'no account'; return; }
+    $('who').textContent = me.name || me.label;
+    $('crest').textContent = String(me.label || me.id).charAt(0).toUpperCase();
+    $('sub').textContent = [me.level ? `Lv ${me.level}` : '', me.className, me.map ? `/${me.map}` : '', me.server].filter(Boolean).join(' · ') || 'on this PC';
+    const inGame = !!(me.map || me.level);
+    $('state').textContent = me.running && me.current && me.current.type !== 'idle' ? 'running a script' : inGame ? 'in game' : (me.client && me.client.loaded ? 'at the login screen' : 'loading the game');
+    $('state').className = `pill${inGame ? ' good' : ''}`;
+    const t = me.current;
+    $('task').textContent = me.running && t && t.type !== 'idle' ? (t.label || (t.path ? t.path.split('/').pop().replace(/\.cs$/, '') : t.type)) : "nothing - you're in control";
+    const lines = (me.log || []);
+    const step = [...lines].reverse().find((l) => l.includes('[skua]'));
+    $('step').textContent = me.running && step ? String(step).slice(25).replace(/^\[skua\]\s*(\[\d\d:\d\d:\d\d\]\s*)?/, '') : '';
+  } catch (e) { $('state').textContent = 'starting…'; }
+  try {
+    const log = await api(`/a/${ID}/journal?n=120`);
+    const box = $('log'); const atEnd = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
+    box.innerHTML = log.map((l) => `<span class="t">${esc(String(l).slice(11, 19))}</span> ${esc(String(l).slice(25).replace(/^\[skua\]\s*(\[\d\d:\d\d:\d\d\]\s*)?/, '⚙ '))}`).join('\n');
+    if (atEnd) box.scrollTop = box.scrollHeight;
+  } catch (e) { /* not up yet */ }
+}
+setInterval(refresh, 2000); refresh();
+
+let qTimer = null;
+$('q').addEventListener('input', () => { clearTimeout(qTimer); qTimer = setTimeout(search, 250); });
+async function search() {
+  const q = $('q').value.trim();
+  if (!q) { $('results').innerHTML = '<div class="mute" style="padding:8px">Type to search. ▶ starts it at once.</div>'; return; }
+  try {
+    const list = await api(`/scripts?q=${encodeURIComponent(q)}`);
+    $('results').innerHTML = list.slice(0, 60).map((s) => `<div class="item"><div class="what"><b title="${esc(s.path)}">${esc(s.name)}</b><small>${esc(s.description || s.path)}</small></div><button class="sm primary" data-run="${esc(s.path)}" data-name="${esc(s.name)}">▶</button></div>`).join('') || '<div class="mute" style="padding:8px">No script matches that.</div>';
+  } catch (e) { $('results').innerHTML = `<div class="mute" style="padding:8px">${esc(e.message)}</div>`; }
+}
+async function run(path, name) {
+  $('state').textContent = `starting ${name}…`;
+  try {
+    await op('now', { task: { type: 'script', path, label: name, why: `${name} (from the PC)` } });
+    if (!(me && me.running)) await op('start');
+  } catch (e) { $('state').textContent = e.message; }
+  setTimeout(refresh, 800);
+}
+document.addEventListener('click', async (e) => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  if (b.dataset.run) return run(b.dataset.run, b.dataset.name);
+  if (b.dataset.quick) return run(b.dataset.quick, b.textContent.replace('▶', '').trim());
+  if (b.id === 'bStop') { await op('stop').catch(() => null); return refresh(); }
+  if (b.id === 'bLogin') { $('state').textContent = 'logging in…'; op('login').then(refresh).catch((x) => { $('state').textContent = x.message; }); return; }
+  if (b.id === 'bBack') ipcRenderer.send('pc', 'closeMain');
+});
+</script>
+</body>
+</html>

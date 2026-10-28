@@ -1,0 +1,8 @@
+{
+  "_": "Bosses with a second way to their items (the owner 2026-10-20: 'if the skua script cant kill nulgath then find another way'). When the class ladder has lost to the boss on a step that farms one of `items`, Seraph lists the boss in <account>/skua/seraph-routes.txt for `days` and restarts the script; the Seraph fixes in script-fixes/fixes.json read that file and take `how` instead of the kill.",
+  "Nulgath": {
+    "items": ["The Mortal Coil"],
+    "how": "4 Roentgenium of Nulgath (Void Highlord's Challenge) merged into The Mortal Coil at the Void Highlord merge shop (/tercessuinotlim 1355)",
+    "days": 14
+  }
+}

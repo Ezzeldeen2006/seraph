@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Seraph</title>
+<link rel="stylesheet" href="shell.css">
+</head>
+<body>
+
+<!-- Left rail: every page, always visible, icon + word -->
+<aside id="rail">
+  <div class="brand"><div class="logo">✦</div><div><div class="name">Seraph</div><div class="sub" id="gameTitle">AQW party</div></div></div>
+  <nav id="nav">
+    <button data-view="home" class="on"><span class="i">⌂</span>Home</button>
+    <button data-view="live"><span class="i">▦</span>Live screens</button>
+    <button data-view="brain"><span class="i">◉</span>AI Brain <span class="dot-status" id="brainDot"></span></button>
+    <button data-view="ultras"><span class="i">⚔</span>Help my main</button>
+    <button data-view="plan"><span class="i">☰</span>Plan &amp; goals</button>
+    <button data-view="items"><span class="i">⌕</span>Items &amp; drops</button>
+    <button data-view="tools"><span class="i">⚙</span>Army &amp; tools</button>
+    <button data-view="settings"><span class="i">☼</span>Settings</button>
+  </nav>
+  <div class="rail-label">Characters</div>
+  <div id="roster"></div>
+  <div class="rail-foot">
+    <button class="btn ghost small wide" id="btnFix" title="Redraw the window if it goes black (F9)">⟳ Fix display <kbd>F9</kbd></button>
+  </div>
+</aside>
+
+<!-- Top bar: the one place to start anything -->
+<header id="top">
+  <button id="cmdOpen" class="cmd-trigger">
+    <span class="i">⌕</span><span>What do you want to do?</span><kbd>Ctrl K</kbd>
+  </button>
+  <div class="spacer"></div>
+  <div class="top-stats" id="topStats"></div>
+</header>
+
+<!-- Game bar replaces the top bar while one character is watched full size -->
+<header id="gamebar" hidden>
+  <button class="btn ghost" id="btnBack">← Back</button>
+  <div class="avatar sm" id="gbAvatar"></div>
+  <div class="gb-name"><div id="gbName">—</div><div class="muted small" id="gbSub">—</div></div>
+  <span class="pill" id="gbState">offline</span>
+  <div class="spacer"></div>
+  <button class="btn" id="bStart">▶ Start</button>
+  <button class="btn ghost" id="bPause">❚❚ Pause</button>
+  <button class="btn ghost danger" id="bStop">■ Stop</button>
+  <button class="btn ghost" id="bAsk">💬 Ask</button>
+</header>
+
+<main id="main">
+
+  <!-- HOME -->
+  <section class="view" data-view="home">
+    <div class="page-head"><h1 id="hello">Your party</h1><p class="muted" id="heroLine">Loading…</p></div>
+    <div class="quick">
+      <button class="qa" data-cmd="startAll"><span class="qi good">▶</span><b>Start all bots</b><small>every character starts farming</small></button>
+      <button class="qa" data-cmd="pauseAll"><span class="qi warn">❚❚</span><b>Pause all</b><small>freeze in place, resume later</small></button>
+      <button class="qa" data-view-go="live"><span class="qi">▦</span><b>Watch them play</b><small>all game screens at once</small></button>
+      <button class="qa" data-view-go="brain"><span class="qi accent">◉</span><b>Talk to the AI Brain</b><small>ask how, or tell it what to do</small></button>
+      <button class="qa" data-view-go="ultras"><span class="qi bad">⚔</span><b>Help me with ultras</b><small>bots join your character</small></button>
+      <button class="qa" data-view-go="items"><span class="qi">⌕</span><b>Find an item</b><small>search every backpack &amp; bank</small></button>
+    </div>
+    <div class="section-title">Characters</div>
+    <div class="cards" id="cards"></div>
+    <div class="two">
+      <div class="panel"><div class="panel-title">AI Brain says <button class="link" data-view-go="brain">open →</button></div><div id="homeBrain" class="muted">—</div></div>
+      <div class="panel"><div class="panel-title">Recent drops <button class="link" data-view-go="items">all →</button></div><div id="homeDrops" class="feed"></div></div>
+    </div>
+  </section>
+
+  <!-- LIVE -->
+  <section class="view" data-view="live" hidden>
+    <div class="page-head compact"><h1>Live screens</h1><p class="muted">Click a name bar to watch that character full size. You can click inside a screen to play.</p></div>
+    <div id="liveLabels"></div>
+    <div id="liveEmpty" class="empty" hidden>No game is open yet.</div>
+  </section>
+
+  <!-- AI BRAIN: full-height chat (only the message list scrolls) + side column -->
+  <section class="view brain-view" data-view="brain" hidden>
+    <div class="brain-layout">
+      <div class="brain-chat">
+        <div class="brain-head">
+          <div class="bh-title"><span class="bh-dot" id="bhDot"></span><div><b>AI Brain</b><div class="muted small" id="bhSub">local AI · runs on this PC</div></div></div>
+          <div class="bh-actions">
+            <label class="mini-toggle" title="Brain on: it checks the party every few minutes"><input type="checkbox" id="brOn"><span>On</span></label>
+            <label class="mini-toggle" title="Autopilot: acts by itself. Off: suggests, you approve"><input type="checkbox" id="brAuto"><span>Autopilot</span></label>
+            <button class="btn ghost small" id="brThink" title="Check the party now">◉ Check now</button>
+          </div>
+        </div>
+        <div id="brainChat" class="brain-log"></div>
+        <div class="brain-compose">
+          <div class="chips" id="brainHints"></div>
+          <form id="brainForm" class="compose-box">
+            <textarea id="brainInput" rows="1" placeholder="Ask anything, or tell it what the bots should do…  (Enter to send, Shift+Enter new line)" autocomplete="off"></textarea>
+            <button class="btn" type="submit" id="brainSend">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="brain-side">
+        <div class="panel">
+          <div class="panel-title">Status</div>
+          <div id="brainStatus" class="kv"></div>
+        </div>
+        <div class="panel" id="proposalsPanel" hidden>
+          <div class="panel-title">Waiting for your OK</div>
+          <div id="proposals"></div>
+        </div>
+        <div class="panel grow">
+          <div class="panel-title">What it's been thinking</div>
+          <div id="thoughts" class="feed fill"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ULTRAS / ASSIST -->
+  <section class="view" data-view="ultras" hidden>
+    <div class="page-head"><h1>Help my main with ultras</h1><p class="muted">Bots log into your server, /goto your character, stand next to you and each wears a different class the ultra needs.</p></div>
+    <div class="two">
+      <div class="panel">
+        <div class="panel-title">Assist <label class="switch"><input type="checkbox" id="asOn"><span></span></label></div>
+        <div class="form">
+          <label>1 · Your character<input id="asMain" placeholder="GRAIL26"></label>
+          <label>2 · Your server<input id="asServer" list="serverList" placeholder="e.g. Twilly (blank = wherever the bots are)"><datalist id="serverList"></datalist></label>
+          <label>3 · Your class<select id="asClass"></select></label>
+          <div><div class="label">4 · Who helps</div><div class="chips" id="asMembers"></div></div>
+          <button class="btn wide" id="asSave">Save &amp; apply</button>
+          <p class="muted small" id="asNote"></p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">Who takes which slot</div>
+        <div id="ultraTable" class="ultra-table"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN -->
+  <section class="view" data-view="plan" hidden>
+    <div class="page-head"><h1>Plan &amp; goals</h1><p class="muted">Each character's own specialty first; at late game everyone farms the must-haves they're missing. Hover a goal to pause it.</p></div>
+    <div class="stages" id="stages"></div>
+    <div class="plan-cols" id="planCols"></div>
+  </section>
+
+  <!-- ITEMS -->
+  <section class="view" data-view="items" hidden>
+    <div class="page-head"><h1>Items &amp; drops</h1><p class="muted">Search what every character has, in their backpack or bank.</p></div>
+    <div class="two wide-left">
+      <div class="panel">
+        <input id="itemQ" class="big-input" placeholder="Type an item… e.g. Blade of Awe, Legion Token, Moglin">
+        <div id="itemResults" class="table-wrap"></div>
+      </div>
+      <div class="panel"><div class="panel-title">Recent drops</div><div id="dropsFeed" class="feed tall"></div></div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="view" data-view="tools" hidden>
+    <div class="page-head"><h1>Army &amp; tools</h1><p class="muted">Give many bots the same order at once, run scripts, and track dailies.</p></div>
+    <div class="panel lp-panel">
+      <div class="panel-title">Level together <label class="switch"><input type="checkbox" id="lpOn"><span></span></label></div>
+      <div class="muted small" id="lpNote">All bots share one room and an in-game party, and level at the weakest member's spot so the strong carry the weak.</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">1 · Pick characters <button class="link" id="armyAll">select all</button></div>
+      <div class="chips" id="armyMembers"></div>
+      <div class="panel-title mt">2 · Give an order</div>
+      <div class="army-grid">
+        <button class="btn" data-army="start">▶ Start</button>
+        <button class="btn ghost" data-army="pause">❚❚ Pause</button>
+        <button class="btn ghost" data-army="resume">▶ Resume</button>
+        <button class="btn ghost danger" data-army="stop">■ Stop</button>
+        <button class="btn ghost" data-army="clear">✕ Clear queues</button>
+        <button class="btn ghost" data-army-task='{"type":"bankAc"}'>⇩ Bank AC items</button>
+        <button class="btn ghost" data-army-task='{"type":"enhance"}'>✚ Enhance gear</button>
+        <button class="btn ghost" data-army-task='{"type":"sellJunk"}'>$ Sell junk</button>
+      </div>
+      <div class="army-inputs">
+        <div class="row"><input id="armyPlayer" placeholder="Player name"><button class="btn ghost" id="armyGoto">➜ Go to player</button></div>
+        <div class="row"><input id="armyMap" placeholder="map e.g. battleon"><input id="armyCell" placeholder="cell (optional)"><button class="btn ghost" id="armyJoin">➜ Join map</button></div>
+      </div>
+    </div>
+    <div class="two">
+      <div class="panel">
+        <div class="panel-title">Run a community script</div>
+        <input id="scriptQ" placeholder="Search 1,700+ Skua scripts… e.g. archpaladin, legion, mogloween">
+        <ul id="scripts" class="list"></ul>
+      </div>
+      <div class="panel">
+        <div class="panel-title">Dailies today</div>
+        <div id="dailies" class="table-wrap"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="view" data-view="settings" hidden>
+    <div class="page-head"><h1>Settings</h1></div>
+    <div class="two">
+      <div class="panel"><div class="panel-title">Windows notifications</div><div class="toggles" id="notifyToggles"></div></div>
+      <div class="panel">
+        <div class="panel-title">AI Brain</div>
+        <div class="form">
+          <label>Model (Ollama)<input id="setModel" placeholder="qwen3:8b"></label>
+          <label>Think every (minutes)<input id="setEvery" type="number" min="2" max="60"></label>
+          <button class="btn ghost" id="setSaveAi">Save</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">Accounts</div>
+        <button class="btn ghost wide" id="btnAdd">＋ Add account</button>
+        <div class="muted small mt">Logins are in <accounts file></div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">Knowledge &amp; updates</div>
+        <div id="world" class="kv"></div>
+        <div class="row mt"><button class="btn ghost" id="btnUpdate">⟳ Check updates</button><button class="btn ghost" id="btnReport">✎ Write Obsidian report</button></div>
+      </div>
+    </div>
+    <div class="panel mt"><div class="panel-title">Seraph log</div><pre id="hubLog" class="tall"></pre></div>
+  </section>
+</main>
+
+<!-- Command palette -->
+<div id="cmdk" hidden>
+  <div class="cmdk-box">
+    <input id="cmdInput" placeholder="Type what you want… start, watch nova, ask oren, ultras, find item, fix display" autocomplete="off">
+    <div id="cmdList"></div>
+    <div class="cmdk-foot muted small">↑↓ to move · Enter to run · Esc to close</div>
+  </div>
+</div>
+
+<dialog id="askDlg">
+  <div class="dlg-head"><div class="chips" id="askWho"></div><button class="btn ghost small" id="askClose">✕</button></div>
+  <div id="askLog" class="chat-log short"></div>
+  <div class="chips pad" id="askHints"></div>
+  <form id="askForm" class="chat-form"><input id="askInput" placeholder="Did you get Blade of Awe? · Where are you? · What's next?" autocomplete="off"><button class="btn" type="submit">Ask</button></form>
+</dialog>
+
+<dialog id="addDlg">
+  <form method="dialog" id="addForm">
+    <h2>Add account</h2>
+    <label>Username <input name="username" required></label>
+    <label>Password <input name="password" type="password" required></label>
+    <label>Email <input name="email"></label>
+    <label class="check"><input type="checkbox" name="autostart"> Start the bot automatically</label>
+    <div class="row end"><button type="button" class="btn ghost" id="addCancel">Cancel</button><button type="button" class="btn" id="addOk">Add</button></div>
+  </form>
+</dialog>
+
+<div id="toasts"></div>
+<script src="shell.js"></script>
+</body>
+</html>

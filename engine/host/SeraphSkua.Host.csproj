@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Seraph's Skua engine host: runs Skua's real script engine (vendor/Skua.Core, unmodified apart from
+       vendor/PATCHES.md) with no Flash and no window. Every game call goes to Seraph over stdin/stdout. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>SeraphSkua</AssemblyName>
+    <!-- Same version as the vendored Skua, so CoreBots' version checks see a normal Skua. -->
+    <Version>1.4.4.4</Version>
+    <AssemblyVersion>1.4.4.4</AssemblyVersion>
+    <FileVersion>1.4.4.4</FileVersion>
+    <RootNamespace>Seraph.Skua</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <ServerGarbageCollector>false</ServerGarbageCollector>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <TieredPGO>true</TieredPGO>
+    <!-- 2026-10-23: build.bat publishes precompiled (ReadyToRun) code for Skua.Core, Roslyn and Newtonsoft, so an engine
+         start JITs only the scripts: measured on the PC, a cold CoreBots compile 5.2 -> 3.7 s CPU, a cached start
+         1.27 -> 1.08 s (the laptop's E1 is ~5x slower, and every start there used to be 20-30 s of a full core). -->
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <NoWarn>$(NoWarn);CS1591;IL2026;IL2104</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\vendor\Skua.Core\Skua.Core.csproj" />
+    <ProjectReference Include="..\winforms-shim\System.Windows.Forms.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,1388 @@
+{
+"void highlord": [
+3,
+1,
+2,
+4
+],
+"void tracker": [
+3,
+1,
+2,
+4
+],
+"hobo highlord": [
+3,
+1,
+2,
+4
+],
+"frostval barbarian": [
+3,
+1,
+2,
+4
+],
+"dragonlord": [
+3,
+1,
+2,
+4
+],
+"shadowflame dragonlord": [
+3,
+1,
+2,
+4
+],
+"legendary hero": [
+3,
+1,
+2,
+4
+],
+"dark legendary hero": [
+3,
+1,
+2,
+4
+],
+"beastmaster": [
+3,
+1,
+2,
+4
+],
+"not a mod": [
+3,
+1,
+2,
+4
+],
+"simple class": [
+3,
+1,
+2,
+4
+],
+"infinity knight": [
+3,
+1,
+2,
+4
+],
+"interstellar knight": [
+3,
+1,
+2,
+4
+],
+"legion revenant": [
+3,
+4,
+1,
+2
+],
+"archfiend": [
+3,
+4,
+1,
+2
+],
+"verus doomknight": [
+3,
+4,
+1,
+2
+],
+"abyssal angel": [
+3,
+4,
+1,
+2
+],
+"abyssal angel's shadow": [
+3,
+4,
+1,
+2
+],
+"shadow ripper": [
+3,
+4,
+1,
+2
+],
+"witch": [
+3,
+4,
+1,
+2
+],
+"archpaladin": [
+1,
+3,
+2,
+4
+],
+"cryomancer": [
+1,
+3,
+2,
+4
+],
+"dark cryomancer": [
+1,
+3,
+2,
+4
+],
+"sakura cryomancer": [
+1,
+3,
+2,
+4
+],
+"necromancer": [
+1,
+3,
+2,
+4
+],
+"grim necromancer": [
+1,
+3,
+2,
+4
+],
+"nu metal necro": [
+1,
+3,
+2,
+4
+],
+"dark metal necro": [
+1,
+3,
+2,
+4
+],
+"doom metal necro": [
+1,
+3,
+2,
+4
+],
+"heavy metal necro": [
+1,
+3,
+2,
+4
+],
+"neo metal necro": [
+1,
+3,
+2,
+4
+],
+"acolyte": [
+1,
+3,
+2,
+4
+],
+"healer": [
+1,
+3,
+2,
+4
+],
+"battle healer": [
+1,
+3,
+2,
+4
+],
+"oracle": [
+1,
+3,
+2,
+4
+],
+"drakkar knight": [
+1,
+3,
+2,
+4
+],
+"draco knight": [
+1,
+3,
+2,
+4
+],
+"lightcaster": [
+1,
+3,
+4,
+2
+],
+"lightmage": [
+1,
+3,
+4,
+2
+],
+"lord of order": [
+1,
+3,
+4,
+2
+],
+"mindbreaker": [
+1,
+3,
+4,
+2
+],
+"psionic mindbreaker": [
+1,
+3,
+4,
+2
+],
+"troubador of love": [
+1,
+3,
+4,
+2
+],
+"bard": [
+1,
+3,
+4,
+2
+],
+"battle bard": [
+1,
+3,
+4,
+2
+],
+"stonecrusher": [
+2,
+3,
+4,
+1
+],
+"infinity titan": [
+2,
+3,
+4,
+1
+],
+"blood titan": [
+2,
+3,
+4,
+1
+],
+"frostblood titan": [
+2,
+3,
+4,
+1
+],
+"mechajouster": [
+2,
+3,
+4,
+1
+],
+"chaos avenger": [
+4,
+2,
+3,
+1
+],
+"chaos champion prime": [
+4,
+2,
+3,
+1
+],
+"chaos shaper": [
+4,
+2,
+3,
+1
+],
+"chaos slayer berserker": [
+4,
+2,
+3,
+1
+],
+"chaos slayer cleric": [
+4,
+2,
+3,
+1
+],
+"chaos slayer mystic": [
+4,
+2,
+3,
+1
+],
+"chaos slayer thief": [
+4,
+2,
+3,
+1
+],
+"dragon of time": [
+4,
+2,
+1,
+3
+],
+"archmage": [
+3,
+4,
+1,
+2
+],
+"shaman": [
+4,
+2,
+1,
+3
+],
+"evolved shaman": [
+4,
+2,
+1,
+3
+],
+"scarlet sorceress": [
+4,
+2,
+1,
+3
+],
+"blood sorceress": [
+4,
+2,
+1,
+3
+],
+"troll spellsmith": [
+4,
+2,
+1,
+3
+],
+"legion doomknight": [
+4,
+2,
+1,
+3
+],
+"classic legion doomknight": [
+4,
+2,
+1,
+3
+],
+"timeless dark caster": [
+4,
+2,
+1,
+3
+],
+"infinite legion dark caster": [
+4,
+2,
+1,
+3
+],
+"dark harbinger": [
+4,
+2,
+1,
+3
+],
+"exalted harbinger": [
+4,
+2,
+1,
+3
+],
+"soul cleaver": [
+4,
+2,
+1,
+3
+],
+"exalted soul cleaver": [
+4,
+2,
+1,
+3
+],
+"classic soul cleaver": [
+4,
+2,
+1,
+3
+],
+"dark caster": [
+4,
+2,
+1,
+3
+],
+"arcane dark caster": [
+4,
+2,
+1,
+3
+],
+"mystical dark caster": [
+4,
+2,
+1,
+3
+],
+"immortal dark caster": [
+4,
+2,
+1,
+3
+],
+"evolved dark caster": [
+4,
+2,
+1,
+3
+],
+"lich": [
+4,
+2,
+1,
+3
+],
+"king's echo": [
+4,
+2,
+1,
+3
+],
+"blaze binder": [
+1,
+4,
+3,
+2
+],
+"pyromancer": [
+1,
+4,
+3,
+2
+],
+"firelord summoner": [
+1,
+4,
+3,
+2
+],
+"flame dragon warrior": [
+1,
+4,
+3,
+2
+],
+"scion of flames": [
+1,
+4,
+3,
+2
+],
+"mage": [
+1,
+4,
+3,
+2
+],
+"sorcerer": [
+1,
+4,
+3,
+2
+],
+"battlemage": [
+1,
+4,
+3,
+2
+],
+"dark battlemage": [
+1,
+4,
+3,
+2
+],
+"royal battlemage": [
+1,
+4,
+3,
+2
+],
+"battlemage of love": [
+1,
+4,
+3,
+2
+],
+"pink romancer": [
+1,
+4,
+3,
+2
+],
+"pinkomancer": [
+1,
+4,
+3,
+2
+],
+"shadow rocker": [
+1,
+4,
+3,
+2
+],
+"vampire lord": [
+4,
+3,
+1,
+2
+],
+"royal vampire lord": [
+4,
+3,
+1,
+2
+],
+"enchanted vampire lord": [
+4,
+3,
+1,
+2
+],
+"vampire": [
+4,
+3,
+1,
+2
+],
+"lycan": [
+4,
+3,
+1,
+2
+],
+"alpha doommega": [
+4,
+3,
+1,
+2
+],
+"alpha omega": [
+4,
+3,
+1,
+2
+],
+"blood ancient": [
+4,
+3,
+1,
+2
+],
+"elemental dracomancer": [
+4,
+3,
+1,
+2
+],
+"grunge rocker": [
+4,
+3,
+1,
+2
+],
+"heavy metal rockstar": [
+4,
+3,
+1,
+2
+],
+"yami no ronin": [
+2,
+1,
+4,
+3
+],
+"arachnomancer": [
+2,
+1,
+4,
+3
+],
+"assassin": [
+2,
+1,
+4,
+3
+],
+"ninja": [
+2,
+1,
+4,
+3
+],
+"classic ninja": [
+2,
+1,
+4,
+3
+],
+"ninja warrior": [
+2,
+1,
+4,
+3
+],
+"chunin": [
+2,
+1,
+4,
+3
+],
+"imperial chunin": [
+2,
+1,
+4,
+3
+],
+"dragon shinobi": [
+2,
+1,
+4,
+3
+],
+"dragon soul shinobi": [
+2,
+1,
+4,
+3
+],
+"shadow dragon shinobi": [
+2,
+1,
+4,
+3
+],
+"chronoassassin": [
+4,
+1,
+2,
+3
+],
+"thief of hours": [
+4,
+1,
+2,
+3
+],
+"doomknight": [
+4,
+1,
+2,
+3
+],
+"doomknight overlord": [
+4,
+1,
+2,
+3
+],
+"classic doomknight": [
+4,
+1,
+2,
+3
+],
+"deathknight": [
+4,
+1,
+2,
+3
+],
+"deathknight lord": [
+4,
+1,
+2,
+3
+],
+"shadowstalker of time": [
+4,
+1,
+2,
+3
+],
+"shadowwalker of time": [
+4,
+1,
+2,
+3
+],
+"shadowweaver of time": [
+4,
+1,
+2,
+3
+],
+"timekeeper": [
+4,
+1,
+2,
+3
+],
+"timekiller": [
+4,
+1,
+2,
+3
+],
+"chronomancer": [
+4,
+1,
+2,
+3
+],
+"chronomancer prime": [
+4,
+1,
+2,
+3
+],
+"corrupted chronomancer": [
+4,
+1,
+2,
+3
+],
+"underworld chronomancer": [
+4,
+1,
+2,
+3
+],
+"overworld chronomancer": [
+4,
+1,
+2,
+3
+],
+"timeless chronomancer": [
+4,
+1,
+2,
+3
+],
+"immortal chronomancer": [
+4,
+1,
+2,
+3
+],
+"eternal chronomancer": [
+4,
+1,
+2,
+3
+],
+"continuum chronomancer": [
+4,
+1,
+2,
+3
+],
+"empyrean chronomancer": [
+4,
+1,
+2,
+3
+],
+"quantum chronomancer": [
+4,
+1,
+2,
+3
+],
+"obsidian paladin chronomancer": [
+4,
+1,
+2,
+3
+],
+"phantasm chronomancer": [
+4,
+1,
+2,
+3
+],
+"phantom chronomancer": [
+4,
+1,
+2,
+3
+],
+"paladin chronomancer": [
+4,
+1,
+2,
+3
+],
+"chrono chaorruptor": [
+4,
+1,
+2,
+3
+],
+"chrono commandant": [
+4,
+1,
+2,
+3
+],
+"chrono dataknight": [
+4,
+1,
+2,
+3
+],
+"chrono dragonknight": [
+4,
+1,
+2,
+3
+],
+"chrono shadowhunter": [
+4,
+1,
+2,
+3
+],
+"chrono shadowslayer": [
+4,
+1,
+2,
+3
+],
+"chronocommander": [
+4,
+1,
+2,
+3
+],
+"chronocorruptor": [
+4,
+1,
+2,
+3
+],
+"necrotic chronomancer": [
+4,
+1,
+2,
+3
+],
+"nechronomancer": [
+4,
+1,
+2,
+3
+],
+"glacial berserker": [
+2,
+1,
+3,
+4
+],
+"glaceran warlord": [
+2,
+1,
+3,
+4
+],
+"dark glaceran warlord": [
+2,
+1,
+3,
+4
+],
+"savage glaceran warlord": [
+2,
+1,
+3,
+4
+],
+"glacial warlord": [
+2,
+1,
+3,
+4
+],
+"berserker": [
+2,
+1,
+3,
+4
+],
+"beta berserker": [
+2,
+1,
+3,
+4
+],
+"brutal berserker": [
+2,
+1,
+3,
+4
+],
+"dark chaos berserker": [
+2,
+1,
+3,
+4
+],
+"eternal inversionist": [
+2,
+3,
+1,
+4
+],
+"the collector": [
+2,
+3,
+1,
+4
+],
+"dark lord": [
+2,
+3,
+1,
+4
+],
+"daimon": [
+2,
+3,
+1,
+4
+],
+"rogue": [
+1,
+2,
+3,
+4
+],
+"pirate": [
+1,
+2,
+3,
+4
+],
+"alpha pirate": [
+1,
+2,
+3,
+4
+],
+"classic pirate": [
+1,
+2,
+3,
+4
+],
+"classic alpha pirate": [
+1,
+2,
+3,
+4
+],
+"barber": [
+1,
+2,
+3,
+4
+],
+"classic barber": [
+1,
+2,
+3,
+4
+],
+"leprechaun": [
+1,
+2,
+3,
+4
+],
+"undead leperchaun": [
+1,
+2,
+3,
+4
+],
+"unlucky leperchaun": [
+1,
+2,
+3,
+4
+],
+"great thief": [
+1,
+2,
+3,
+4
+],
+"naval commander": [
+1,
+2,
+3,
+4
+],
+"heroic naval commander": [
+1,
+2,
+3,
+4
+],
+"highseas commander": [
+1,
+2,
+3,
+4
+],
+"legendary naval commander": [
+1,
+2,
+3,
+4
+],
+"renegade": [
+1,
+2,
+3,
+4
+],
+"warrior": [
+1,
+2,
+3,
+4
+],
+"mercenary": [
+1,
+2,
+3,
+4
+],
+"beast warrior": [
+1,
+2,
+3,
+4
+],
+"dragonslayer": [
+1,
+2,
+3,
+4
+],
+"dragonslayer general": [
+1,
+2,
+3,
+4
+],
+"paladin": [
+1,
+2,
+3,
+4
+],
+"classic paladin": [
+1,
+2,
+3,
+4
+],
+"legion paladin": [
+1,
+2,
+3,
+4
+],
+"silver paladin": [
+1,
+2,
+3,
+4
+],
+"paladin highlord": [
+1,
+2,
+3,
+4
+],
+"paladinslayer": [
+1,
+2,
+3,
+4
+],
+"undeadslayer": [
+1,
+2,
+3,
+4
+],
+"defender": [
+1,
+2,
+3,
+4
+],
+"classic defender": [
+1,
+2,
+3,
+4
+],
+"guardian": [
+1,
+2,
+3,
+4
+],
+"classic guardian": [
+1,
+2,
+3,
+4
+],
+"drakel warlord": [
+1,
+2,
+3,
+4
+],
+"warlord": [
+1,
+2,
+3,
+4
+],
+"warriorscythe general": [
+1,
+2,
+3,
+4
+],
+"master martial artist": [
+1,
+2,
+3,
+4
+],
+"martial artist": [
+1,
+2,
+3,
+4
+],
+"rustbucket": [
+1,
+2,
+3,
+4
+],
+"enforcer": [
+1,
+2,
+3,
+4
+],
+"protosartorium": [
+1,
+2,
+3,
+4
+],
+"clawsuit": [
+1,
+2,
+3,
+4
+],
+"evolved clawsuit": [
+1,
+2,
+3,
+4
+],
+"prismatic clawsuit": [
+1,
+2,
+3,
+4
+],
+"star captain": [
+1,
+2,
+3,
+4
+],
+"starlord": [
+1,
+2,
+3,
+4
+],
+"skycharged grenadier": [
+1,
+2,
+3,
+4
+],
+"skyguard grenadier": [
+1,
+2,
+3,
+4
+],
+"arcana invoker": [
+3,
+4,
+2,
+1
+],
+"archivist of time": [
+2,
+3,
+4,
+1
+],
+"artifact hunter": [
+4,
+2,
+3,
+1
+],
+"blazebinder": [
+1,
+4,
+3,
+2
+],
+"darkblood stormking": [
+2,
+3,
+4,
+1
+],
+"elemental warrior": [
+2,
+3,
+4,
+1
+],
+"frost spiritreaver": [
+2,
+3,
+4,
+1
+],
+"kings echo": [
+4,
+2,
+1,
+3
+],
+"legion swordmaster assassin": [
+2,
+3,
+4,
+1
+],
+"mecha jouster": [
+2,
+3,
+4,
+1
+],
+"master ranger": [
+2,
+3,
+4,
+1
+],
+"northlands monk": [
+3,
+2,
+4,
+1
+],
+"sentinel": [
+2,
+3,
+4,
+1
+],
+"shadowscythe general": [
+2,
+3,
+4,
+1
+],
+"swordmaster": [
+2,
+3,
+4,
+1
+],
+"swordmaster assassin": [
+2,
+3,
+4,
+1
+],
+"ultra omniknight": [
+2,
+3,
+4,
+1
+],
+"undead goat": [
+2,
+3,
+4,
+1
+]
+}

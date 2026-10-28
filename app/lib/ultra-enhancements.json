@@ -1,0 +1,506 @@
+{
+ "default": {
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Absolution"
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Awe_Blast",
+   "weaponFallback": "Arcanas_Concerto",
+   "helm": null,
+   "cape": "Absolution"
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Absolution"
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": "Lacerate",
+   "helm": "Forge",
+   "cape": "Lament"
+  },
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": "Valiance",
+   "helm": "Examen",
+   "cape": "Vainglory"
+  },
+  "dragon of time": {
+   "type": "Wizard",
+   "weapon": "Elysium",
+   "weaponFallback": null,
+   "helm": "Pneuma",
+   "cape": "Vainglory"
+  },
+  "arachnomancer": {
+   "type": "Fighter",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "void highlord": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Lament"
+  },
+  "archfiend": {
+   "type": "Healer",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Lament"
+  },
+  "scion of flames": {
+   "type": "Healer",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Lament"
+  },
+  "chaos avenger": {
+   "type": "Lucky",
+   "weapon": "Dauntless",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Vainglory"
+  },
+  "legion revenant": {
+   "type": "Wizard",
+   "weapon": "Ravenous",
+   "weaponFallback": "Valiance",
+   "helm": "Pneuma",
+   "cape": "Vainglory"
+  }
+ },
+ "tyndarius": {
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Awe_Blast",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Penitence"
+  },
+  "shaman": {
+   "type": "Healer",
+   "weapon": "Elysium",
+   "weaponFallback": "Mana_Vamp",
+   "helm": null,
+   "cape": "Lament"
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Penitence"
+  },
+  "arachnomancer": {
+   "type": "Fighter",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "scion of flames": {
+   "type": "Healer",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "dragon of time": {
+   "type": "Wizard",
+   "weapon": "Elysium",
+   "weaponFallback": "Mana_Vamp",
+   "helm": null,
+   "cape": null
+  },
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": "Valiance",
+   "helm": "Examen",
+   "cape": "Penitence"
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Penitence"
+  },
+  "archfiend": {
+   "type": "Healer",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": null
+  }
+ },
+ "dage": {
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Vainglory"
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Vainglory"
+  },
+  "stonecrusher": {
+   "type": "Healer",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Vainglory"
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Lament"
+  },
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": "Examen",
+   "cape": "Vainglory"
+  },
+  "*": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Vainglory"
+  }
+ },
+ "drakath": {
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Absolution"
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Awe_Blast",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Absolution"
+  },
+  "shaman": {
+   "type": "Healer",
+   "weapon": "Elysium",
+   "weaponFallback": "Mana_Vamp",
+   "helm": "Forge",
+   "cape": "Lament"
+  },
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Praxis",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Lament"
+  }
+ },
+ "darkon": {
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Awe_Blast",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Absolution"
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Absolution"
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Lament"
+  },
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": "Valiance",
+   "helm": "Examen",
+   "cape": "Lament"
+  },
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Absolution"
+  }
+ },
+ "speaker": {
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Absolution"
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Praxis",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Penitence"
+  },
+  "void highlord": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": "Valiance",
+   "helm": "Forge",
+   "cape": "Lament"
+  }
+ },
+ "gramiel": {
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Awe_Blast",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Lament"
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Valiance",
+   "weaponFallback": "Health_Vamp",
+   "helm": "Forge",
+   "cape": "Absolution"
+  },
+  "archfiend": {
+   "type": "Healer",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "shaman": {
+   "type": "Healer",
+   "weapon": "Mana_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Lament"
+  }
+ },
+ "nulgath": {
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Absolution"
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Arcanas_Concerto",
+   "weaponFallback": "Valiance",
+   "helm": null,
+   "cape": "Absolution"
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Absolution"
+  },
+  "dragon of time": {
+   "type": "Wizard",
+   "weapon": "Elysium",
+   "weaponFallback": "Valiance",
+   "helm": null,
+   "cape": "Vainglory"
+  },
+  "void highlord": {
+   "type": "Lucky",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Vainglory"
+  },
+  "scion of flames": {
+   "type": "Healer",
+   "weapon": "Arcanas_Concerto",
+   "weaponFallback": "Valiance",
+   "helm": null,
+   "cape": "Lament"
+  },
+  "arachnomancer": {
+   "type": "Fighter",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": null
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": "Forge",
+   "cape": "Lament"
+  },
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": "Valiance",
+   "helm": "Examen",
+   "cape": "Vainglory"
+  }
+ },
+ "astralempyrean": {
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": "Valiance",
+   "helm": "Examen",
+   "cape": "Vainglory"
+  },
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Lacerate",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Absolution"
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Mana_Vamp",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Absolution"
+  },
+  "stonecrusher": {
+   "type": "Fighter",
+   "weapon": "Valiance",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Absolution"
+  },
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Praxis",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Lament"
+  },
+  "scion of flames": {
+   "type": "Wizard",
+   "weapon": "Elysium",
+   "weaponFallback": null,
+   "helm": "Pneuma",
+   "cape": "Lament"
+  }
+ },
+ "kolr": {
+  "verus doomknight": {
+   "type": "Lucky",
+   "weapon": "Ravenous",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": "Lament"
+  },
+  "void highlord": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": "Anima",
+   "cape": null
+  },
+  "lord of order": {
+   "type": "Lucky",
+   "weapon": "Health_Vamp",
+   "weaponFallback": null,
+   "helm": null,
+   "cape": "Penitence"
+  },
+  "archpaladin": {
+   "type": "Lucky",
+   "weapon": "Praxis",
+   "weaponFallback": "Lacerate",
+   "helm": "Anima",
+   "cape": "Lament"
+  },
+  "king's echo": {
+   "type": "Lucky",
+   "weapon": "Mana_Vamp",
+   "weaponFallback": null,
+   "helm": "Examen",
+   "cape": "Lament"
+  }
+ },
+ "novainglory": {}
+}

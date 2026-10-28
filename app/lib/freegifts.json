@@ -1,0 +1,47 @@
+{
+  "_about": "the owner 2026-10-05: 'make sure that the bots are aware of the AQW birthday event and they claim the free acs'. One-time claims, run while their event is live (brain step 4, ahead of event wishes), once per version of the script: Skua rewrites the yearly free-AC script for each year's quest, and the new file is claimed again on its own. `until` = the day the quest goes rare. Two failed tries per version, then it waits for a new version. 2026-10-13: until is a day of the year (\"11-01\", with fromMonth) so the gifts recur every year; staleQuests = last year's quest ids (the script waits until Skua rewrites it for the new quest); Frostval Chilly's Participation makes the account eligible for the ACs players donate during Frostval.",
+  "gifts": [
+    {
+      "id": "free-ac",
+      "label": "500 free ACs (18th Birthday, Cysero's quest)",
+      "event": "AqwBirthday",
+      "script": "Other/FreeAcGifts[Yearly]/202xFreeAcs.cs",
+      "minLevel": 20,
+      "until": "11-01",
+      "fromMonth": 10,
+      "staleQuests": [
+        10584
+      ]
+    },
+    {
+      "id": "birthday-badge",
+      "label": "Birthday Hero of DOOM character page badge (18th birthday)",
+      "event": "AqwBirthday",
+      "script": "Seasonal/AqwBirthday/18thBirthdayHeroBadge.cs",
+      "minLevel": 20,
+      "until": "11-15",
+      "fromMonth": 10
+    },
+    {
+      "id": "frostval-chilly",
+      "label": "Chilly's Participation (Frostval: eligible for the ACs players donate)",
+      "event": "Frostvale",
+      "script": "Seasonal/Frostvale/ChillysParticipation.cs",
+      "minLevel": 30,
+      "until": "01-15",
+      "fromMonth": 12,
+      "staleQuests": [
+        10510
+      ]
+    }
+  ],
+  "_birthdayBadge": "2026-10-21: minLevel 1 -> 20. Its quest (6554) hunts Birthday Cake, which killed the level-2 Vexa and Edda over and over; two failed tries end the claim for the year.",
+  "_staleVersions": "sha256[:16] of script versions that must not run. 0448a64699e22b46 = the 2025 202xFreeAcs.cs (quest 10584, now gone: the server kicks the account).",
+  "staleVersions": [
+    "0448a64699e22b46"
+  ],
+  "_notGifts": "Scripts the free-AC watch (freegifts.discover) flags that were checked on the wiki and give no AC.",
+  "notGifts": [
+    "Seasonal/AqwBirthday/20thAnniversary.cs"
+  ]
+}

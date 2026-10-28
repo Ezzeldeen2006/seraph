@@ -1,0 +1,64 @@
+# Seraph AQW party on the home server: headless (no Flash, no screen), restarted if it ever stops.
+# Install: sudo cp seraph-bots.service /etc/systemd/system/ && sudo systemctl daemon-reload && sudo systemctl enable --now seraph-bots
+[Unit]
+Description=Seraph AQW bots (headless)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=seraph
+WorkingDirectory=/home/seraph/seraph/app
+Environment=SERAPH_ROOT=/home/seraph/seraph
+Environment=SERAPH_SCRIPTS=/home/seraph/seraph/Scripts
+Environment=SERAPH_VAULT=/home/seraph/seraph/no-vault
+Environment=SERAPH_NO_AI=1
+Environment=NODE_ENV=production
+# The owner is on local time: the 20:00 daily report means his 20:00, not the server clock (UTC).
+Environment=TZ=UTC
+# Skua's real engine (lib/skua/engine.js) runs on .NET 10, installed per user by dotnet-install.sh.
+Environment=DOTNET_ROOT=/home/seraph/.dotnet
+Environment=DOTNET_CLI_TELEMETRY_OPTOUT=1
+Environment=DOTNET_NOLOGO=1
+ExecStart=/usr/bin/node --max-old-space-size=320 /home/seraph/seraph/app/headless.js
+Restart=always
+RestartSec=30
+# Keep the laptop healthy: the bots may never take the other services on the server down with them.
+#
+# 2026-10-21, the 8-character change. What costs memory here is NOT the number of characters: a logged-in headless
+# character is ~15 MB inside node (60 MB for four, [[Laptop-Server]]), so eight are ~120 MB and node lands at
+# ~230 MB RSS at six characters with a 320 MB heap (measured 10-21, far below the 480 MB first budgeted here).
+# What costs memory is each RUNNING Skua engine: a .NET process of 250-330 MB, measured 240-334 MB on 10-21.
+# So the cap that matters is hub.json maxEngines (Hub.maxEngines):
+#     node ~260 MB + 4 engines ~1.0 GB = ~1.3 GB, inside MemoryHigh
+# Set to 3 on 10-21 and raised to 4 the same evening: at 3, six characters queued in engineFor() often enough to
+# show in the log. Eight characters on 4 engines is still LIGHTER than the four on 5 engines this ran until 10-21
+# (1.66 GB, load 6-9, 725 MB in swap) - because that run was also fighting the drop-ins below.
+# Other services on the server keep running: there was never a need to switch the
+# other services off, because 222 MB is less than one engine.
+#
+# 2026-10-21: two runtime drop-ins from an old `systemctl set-property` were overriding MemoryHigh/Max with
+# 2100M/2500M, i.e. the limits below were NOT in force. Removed with `systemctl revert seraph-bots`.
+# If the limits ever look wrong, read `systemctl cat seraph-bots`, not this file.
+# 2026-10-21 night, engine parse cache (engine/host/IpcFlashUtil.cs): a profile showed 85-99% of every engine's CPU
+# was re-parsing unchanged bank/backpack JSON; with the cache an engine uses 7-12% of a core (was 40-50%), and with
+# W^X off ~225 MB (was ~265). 2026-10-22: maxEngines 6 was WRONG - with 8 characters busy the laptop sat at load
+# 23 (CPU pressure 96%, 22-33 runnable threads on 2 cores); back to 4 the load fell to 1.7 in 5 min. CPU, not
+# memory, caps the engine count on this E1-2100: 4 engines, the 5th-8th character takes turns (hub.engineYield).
+# 2026-10-24 correction (sar history): that load 23 came from forge scripts on five characters at once - six engines
+# had run 10 h at ~55 % CPU before it. The engine count now follows the kernel's pressure files (hub.engineRoom /
+# engineGovernor, floor 4, up to 8), and engine patch 16 took an engine from ~165 MB to ~50-110 MB private.
+MemoryHigh=1800M
+MemoryMax=2100M
+# 2026-10-24: CPUWeight instead of CPUQuota=180%. The hard quota throttled the whole service (the hub too, so every
+# engine call stalled) in ~30 % of 100 ms periods with eight engines, while the other services on the server together
+# use ~5 % of a core. Under cgroup v2, Nice=5 never protected those services (nice only ranks threads inside this
+# cgroup); cpu.weight is what ranks services: at 30 against their 100 they win every contended moment, and the bots
+# get every idle cycle of both cores. Inside the service the hub (Nice=5) goes before the engines (nice 9, engine.js).
+CPUWeight=30
+Nice=5
+StandardOutput=append:/home/seraph/seraph/logs/bots.log
+StandardError=append:/home/seraph/seraph/logs/bots.log
+
+[Install]
+WantedBy=multi-user.target

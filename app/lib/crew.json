@@ -1,0 +1,71 @@
+{
+  "_about": "Crew dailies (the owner 2026-10-25): 'NSoD daily bosses allow 7 in the room ... the Nulgath farming item daily should be run by all bots daily and they all help each other so no one gets stuck'. A crew daily is not run by each character alone: lib/crewdaily.js puts every character that still needs it in the party's room at the same time, boss by boss (each hunt step of the daily is a stage), until every one of them holds that stage's quest item; then each turns the quest in. Characters that already have it today come along as helpers (maxRoom = the room limit of the NSoD bosses). Add a daily here to crew it; its steps come from the generated dailies list (knowledge.js).",
+  "dailies": {
+    "NSoDDaily": {
+      "minLevel": 75,
+      "note": "Void Auras: Warlord Icewing, Hydra Head 90 x3, Flibbitiestgibbet"
+    },
+    "EldersBlood": {
+      "minLevel": 1,
+      "note": "Nulgath farming item (Elders' Blood -> Roentgenium of Nulgath): 50 Gorillaphant"
+    }
+  },
+  "scripts": {
+    "Flibbitiestgibbet": {
+      "_about": "the owner 2026-10-25: any comp, but his main plays Legion Revenant and at least one of Void Highlord, StoneCrusher and Lord of Order is in it, the rest whatever they want; LR, LoO and SC buff before the fight starts. Runs the Ultras-v3 army script (tools/vendor-ultras.js fixes) instead of the generic party fight, which died in 90 s four rounds in a row.",
+      "script": "SeraphUltras/ChallengeBosses/Flibbitiestgibbetv3.cs",
+      "storage": "Flibbitiestgibbet-v3",
+      "needMain": "Legion Revenant",
+      "need": [
+        "Lord of Order",
+        "StoneCrusher",
+        "Void Highlord"
+      ],
+      "maxMin": 25,
+      "tries": 2,
+      "potions": false
+    },
+    "Nightmare Carnax": {
+      "_about": "the owner 2026-10-28: the party army for Calamitous Ruin (ArchMage) instead of 2 M of potions. The Ultras-v3 army script (Class1..4) with the Seraph laser dodge; the script's own line-up: ArchPaladin x2, Lord of Order, King's Echo - his main as King's Echo (51 % Ravenous). Two Dragon of Time seats (first try) killed it once in 30 min: too little damage, the fights dragged on and the army trickle-died. No potions bought.",
+      "script": "SeraphUltras/ChallengeBosses/NightmareCarnaxv3.cs",
+      "storage": "NightmareCarnax-v3",
+      "needMain": "King's Echo",
+      "need": [
+        "Lord of Order",
+        "ArchPaladin",
+        "ArchPaladin"
+      ],
+      "maxMin": 30,
+      "tries": 3,
+      "potions": true,
+      "_potions": "On: the v3 script drinks owned potions (its buying is cut out by the vendor fix). Off, nobody drank anything and the army respawned without the HP to survive the next bite (29 deaths in 6 min, 10-28 12:51)."
+    }
+  },
+  "maxRoom": 7,
+  "minCrew": 3,
+  "stageMaxMin": 20,
+  "stageTries": 2,
+  "maxRounds": 4,
+  "afterResetMin": 10,
+  "pauseAfterRoundMin": 5,
+  "fallbackHours": 14,
+  "wallDeaths": 14,
+  "stragglerMin": 4,
+  "bosses": {
+    "_about": "One-off boss rounds (POST /crew/boss {name}): one stage run by its army script; every crew member without the item needs it, the round ends when they all hold it (the script turns its quest in itself).",
+    "NightmareCarnax": {
+      "minLevel": 90,
+      "maxRoom": 4,
+      "_maxRoom": "Psion Pulse (the +1400 % Endurance buff that keeps a character alive) hits 4 players: with 6 in the room two stay at ~3 k HP and die every few seconds (54 deaths in 5 min, 10-28 11:47), the room wipes and Carnax resets. The v3 script's own ArmySize is 4.",
+      "stage": {
+        "map": "darkcarnax",
+        "cell": "Boss",
+        "pad": "Right",
+        "monster": "Nightmare Carnax",
+        "item": "Calamitous Ruin",
+        "qty": 1,
+        "quest": 8872
+      }
+    }
+  }
+}

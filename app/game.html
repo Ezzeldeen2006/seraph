@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Seraph game</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #swf { width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+<embed id="swf" src="skua.swf" type="application/x-shockwave-flash"
+       allowScriptAccess="always" allowNetworking="all" wmode="direct" quality="high">
+<script>
+  const { ipcRenderer } = require('electron');
+  const swf = document.getElementById('swf');
+  const account = new URLSearchParams(location.search).get('account') || '';
+  const send = (kind, data) => ipcRenderer.send('flash', account, kind, data);
+
+  // Callbacks the Skua AS3 bridge invokes with ExternalInterface.call(name, [args])
+  const first = (a) => Array.isArray(a) ? a[0] : a;
+  window.requestLoadGame = () => { send('state', 'bridge-ready'); setTimeout(() => swf.loadClient(), 50); };
+  window['pre-load'] = () => send('state', 'pre-load');
+  window.loaded = () => send('state', 'loaded');
+  window.pext = (a) => send('pext', first(a));
+  window.packetFromServer = (a) => send('packet', first(a));
+  window.packetFromClient = (a) => send('packetOut', first(a));
+  window.packet = (a) => send('packetOut', first(a));      // skua.swf catchPackets(): what the client sends
+  window.debug = (a) => send('debug', first(a));
+  window.openWebsite = () => {};
+
+  // Called from the main process: run one bridge function and hand back its result.
+  window.__call = (fn, args) => {
+    try {
+      const f = swf[fn];
+      if (typeof f !== 'function') return { ok: false, error: `no bridge function '${fn}'` };
+      return { ok: true, value: f.apply(swf, args || []) };
+    } catch (e) {
+      return { ok: false, error: String(e && e.message || e) };
+    }
+  };
+  send('state', 'page');
+</script>
+</body>
+</html>

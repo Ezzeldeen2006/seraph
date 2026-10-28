@@ -1,0 +1,5 @@
+{
+  "watch": ["WatchedPlayer"],
+  "requestFrom": null,
+  "scanner": { "username": "", "everyMin": 5 }
+}

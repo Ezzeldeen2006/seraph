@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Seraph Flash</title>
+<style>
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  body { width: 960px; } iframe { display: inline-block; vertical-align: top; border: 0; }
+</style>
+</head>
+<body>
+<!-- One page for every character (main.js FLASH_ONEPAGE): each game is a same-origin iframe of game.html, so all of
+     them share one renderer process (~100 MB saved per extra character on the 3 GB laptop). -->
+<script>
+  window.__add = (id, w, h) => {
+    if (document.getElementById(`g_${id}`)) return true;
+    const f = document.createElement('iframe');
+    f.id = `g_${id}`;
+    f.width = w; f.height = h;
+    f.src = `game.html?account=${encodeURIComponent(id)}`;
+    document.body.appendChild(f);
+    return true;
+  };
+  window.__remove = (id) => { const f = document.getElementById(`g_${id}`); if (f) f.remove(); return true; };
+  window.__reload = (id) => { const f = document.getElementById(`g_${id}`); if (f) f.contentWindow.location.reload(); return true; };
+  window.__rect = (id) => { const f = document.getElementById(`g_${id}`); if (!f) return null; const r = f.getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height }; };
+  window.__batchIn = (id, calls) => {
+    const f = document.getElementById(`g_${id}`);
+    if (!f || !f.contentWindow || typeof f.contentWindow.__batch !== 'function') return null;
+    return f.contentWindow.__batch(calls);
+  };
+  window.__callIn = (id, fn, args) => {
+    const f = document.getElementById(`g_${id}`);
+    if (!f || !f.contentWindow || typeof f.contentWindow.__call !== 'function') return { ok: false, error: 'no game view' };
+    return f.contentWindow.__call(fn, args);
+  };
+</script>
+</body>
+</html>

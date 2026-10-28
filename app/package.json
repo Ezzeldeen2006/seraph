@@ -1,0 +1,7 @@
+{
+  "name": "seraph",
+  "productName": "Seraph",
+  "version": "0.1.0",
+  "description": "Seraph: a headless AQW party bot that runs Skua scripts on a Linux server",
+  "main": "main.js"
+}

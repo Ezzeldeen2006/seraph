@@ -1,0 +1,7889 @@
+{
+ "generated": "2026-10-27T11:13:49.552Z",
+ "maps": 614,
+ "hooks": {
+  "Oaklore/town-Oaklore-11Aug26.swf": [
+   {
+    "mapItem": 5716,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Alina_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Alina_APOP.frame7"
+   }
+  ],
+  "Doomwood/town-doomforest-21Aug26.swf": [
+   {
+    "mapItem": 426,
+    "on": "other",
+    "fn": "equipItem",
+    "cls": "Arryd_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Arryd_APOP.equipItem"
+   },
+   {
+    "mapItem": 1496,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Artix_APOP",
+    "quest": 2447,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Artix_APOP.frame1"
+   },
+   {
+    "mapItem": 433,
+    "on": "event",
+    "event": "monDeath",
+    "quest": 1066,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   },
+   {
+    "mapItem": 983,
+    "on": "cell",
+    "cell": "r8",
+    "quest": 2031,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame63"
+   }
+  ],
+  "Battleon/town-BattleUnderB-9Apr21r1.swf": [
+   {
+    "mapItem": 253,
+    "on": "join",
+    "fn": "setupNewLevel",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LockGame.setupNewLevel"
+   },
+   {
+    "mapItem": 253,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LockGame.onskipClick"
+   }
+  ],
+  "events/20thAnni/town-yulgarparty-Safiria.swf": [
+   {
+    "mapItem": 10675,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Alina_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Alina_APOP.frame1"
+   },
+   {
+    "mapItem": 10677,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Artix_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Artix_APOP.frame1"
+   },
+   {
+    "mapItem": 10683,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Bean_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Bean_APOP.frame1"
+   },
+   {
+    "mapItem": 10681,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Beleen_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Beleen_APOP.frame1"
+   },
+   {
+    "mapItem": 10684,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Cemaros_APOP",
+    "quest": 8875,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cemaros_APOP.frame1"
+   },
+   {
+    "mapItem": 10692,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Crulon_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Crulon_APOP.frame1"
+   },
+   {
+    "mapItem": 10693,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Cylisse_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cylisse_APOP.frame1"
+   },
+   {
+    "mapItem": 10691,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Dage_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dage_APOP.frame1"
+   },
+   {
+    "mapItem": 10695,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Darkon_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Darkon_APOP.frame1"
+   },
+   {
+    "mapItem": 10699,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ghost_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ghost_APOP.frame1"
+   },
+   {
+    "mapItem": 10682,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gravy_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame1"
+   },
+   {
+    "mapItem": 10694,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "J6_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "J6_APOP.frame1"
+   },
+   {
+    "mapItem": 10698,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Memet_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Memet_APOP.frame1"
+   },
+   {
+    "mapItem": 10696,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Nythera_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Nythera_APOP.frame1"
+   },
+   {
+    "mapItem": 10689,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Reens_APOP",
+    "quest": 8875,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Reens_APOP.frame1"
+   },
+   {
+    "mapItem": 10685,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Rhubarb_APOP",
+    "quest": 8875,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rhubarb_APOP.frame1"
+   },
+   {
+    "mapItem": 10676,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Rolith_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rolith_APOP.frame1"
+   },
+   {
+    "mapItem": 10697,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Sora_APOP",
+    "quest": 8876,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sora_APOP.frame1"
+   },
+   {
+    "mapItem": 10687,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Spider_APOP",
+    "quest": 8875,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Spider_APOP.frame1"
+   },
+   {
+    "mapItem": 10679,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Twig_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Twig_APOP.frame1"
+   },
+   {
+    "mapItem": 10678,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Twilly_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Twilly_APOP.frame1"
+   },
+   {
+    "mapItem": 10690,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 8875,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   },
+   {
+    "mapItem": 10686,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Yoshino_APOP",
+    "quest": 8875,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Yoshino_APOP.frame1"
+   },
+   {
+    "mapItem": 10688,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Zhoom_APOP",
+    "quest": 8875,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Zhoom_APOP.frame1"
+   },
+   {
+    "mapItem": 10680,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Zorbak_APOP",
+    "quest": 8874,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Zorbak_APOP.frame1"
+   }
+  ],
+  "events/school/town-extracredit-31July26.swf": [
+   {
+    "mapItem": 16001,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "YesMaam_APOP",
+    "quest": 10822,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "YesMaam_APOP.frame1"
+   }
+  ],
+  "Etherstorm/town-earthstorm-9Jan20.swf": [
+   {
+    "mapItem": 862,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "basehoneycombhiceb1_127.onClick"
+   },
+   {
+    "mapItem": 863,
+    "on": "join",
+    "fn": "checkCrystal",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.checkCrystal"
+   }
+  ],
+  "Arcangrove/town-Arcangrove-5July24.swf": [
+   {
+    "mapItem": 1752,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "Rayst_APOP",
+    "quest": 2861,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rayst_APOP.frame42"
+   },
+   {
+    "mapItem": 7370,
+    "on": "other",
+    "fn": "frame23",
+    "cls": "Reens_APOP",
+    "quest": 7515,
+    "questValue": {
+     "slot": 353,
+     "op": "==",
+     "value": 5
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Reens_APOP.frame23"
+   }
+  ],
+  "shadowrealm/hollowborn/town-shadowrealm-20Feb26.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Aciel_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Aciel_APOP.frame1"
+   }
+  ],
+  "Lair/town-Lair-29Dec24.swf": [
+   {
+    "mapItem": 5928,
+    "on": "other",
+    "fn": "frame49",
+    "cls": "Galanoth_APOP",
+    "quest": 6424,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Galanoth_APOP.frame49"
+   },
+   {
+    "mapItem": 5928,
+    "on": "other",
+    "fn": "frame55",
+    "cls": "Galanoth_APOP",
+    "quest": 6424,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Galanoth_APOP.frame55"
+   }
+  ],
+  "events/TLaPD/town-Pirate-15Sep26-TLAPD.swf": [
+   {
+    "mapItem": 19,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.onChestClick"
+   }
+  ],
+  "Swordhaven/town-CastleUndead-24Feb18.swf": [
+   {
+    "mapItem": 38,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Guard1_APOP",
+    "quest": 179,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Guard1_APOP.frame1"
+   },
+   {
+    "mapItem": 38,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Guard2_APOP",
+    "quest": 179,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Guard2_APOP.frame1"
+   },
+   {
+    "mapItem": 38,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Guard3_APOP",
+    "quest": 179,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Guard3_APOP.frame1"
+   },
+   {
+    "mapItem": 38,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Guard4_APOP",
+    "quest": 179,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Guard4_APOP.frame1"
+   },
+   {
+    "mapItem": 38,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Guard5_APOP",
+    "quest": 179,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Guard5_APOP.frame1"
+   }
+  ],
+  "Battleon/town-Museum-14July26.swf": [
+   {
+    "mapItem": 118,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 7240,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 1770,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 1938,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 11735,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 11736,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 2230,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 11396,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 2576,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 4411,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 4493,
+    "on": "timer",
+    "fn": "onTimer",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onTimer"
+   }
+  ],
+  "GreenGuard/town-GreenguardEast-2Jun23.swf": [
+   {
+    "mapItem": 54,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "swordorcrunning_423",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "swordorcrunning_423.onEnter"
+   }
+  ],
+  "Dwarfhold/town-stalagbite-17May23.swf": [
+   {
+    "mapItem": 63,
+    "on": "join",
+    "fn": "getItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.getItem"
+   }
+  ],
+  "ThroneOfDarkness/TowerOfMirrors/town-hedgemaze-7Jun20.swf": [
+   {
+    "mapItem": 4614,
+    "on": "join",
+    "fn": "equipItem2",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem2"
+   },
+   {
+    "mapItem": 4679,
+    "on": "cell",
+    "cell": "r11",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 1
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame138"
+   },
+   {
+    "mapItem": 4680,
+    "on": "cell",
+    "cell": "r11",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 3
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame138"
+   },
+   {
+    "mapItem": 4678,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Popup_136.onButtonPress"
+   },
+   {
+    "mapItem": 4678,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Popup_256.onButtonPress"
+   }
+  ],
+  "ThroneOfDarkness/TowerOfMirrors/town-towerofmirrors-27Sep23.swf": [
+   {
+    "mapItem": 4614,
+    "on": "join",
+    "fn": "equipItem2",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem2"
+   },
+   {
+    "mapItem": 4697,
+    "on": "cell",
+    "cell": "r16",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 33
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame130"
+   },
+   {
+    "mapItem": 4692,
+    "on": "cell",
+    "cell": "r17",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 17
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame138"
+   },
+   {
+    "mapItem": 4693,
+    "on": "cell",
+    "cell": "r19",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 20
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame154"
+   },
+   {
+    "mapItem": 4694,
+    "on": "cell",
+    "cell": "r21",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 23
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame170"
+   },
+   {
+    "mapItem": 4695,
+    "on": "cell",
+    "cell": "r23",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 26
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame186"
+   },
+   {
+    "mapItem": 4696,
+    "on": "cell",
+    "cell": "r25",
+    "quest": null,
+    "questValue": {
+     "slot": 211,
+     "op": "==",
+     "value": 29
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame202"
+   }
+  ],
+  "town-xanCave-31Mar23.swf": [
+   {
+    "mapItem": 1221,
+    "on": "join",
+    "fn": "checkWin",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.checkWin"
+   }
+  ],
+  "Firestorm/Fireforge/town-fireforge-1Feb21.swf": [
+   {
+    "mapItem": 3325,
+    "on": "event",
+    "event": "playerDeath",
+    "quest": 4230,
+    "questValue": {
+     "slot": 189
+    },
+    "monPad": 23,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "Yokai/ShogunShadows/town-shogunwar-23Aug18.swf": [
+   {
+    "mapItem": 5957,
+    "on": "join",
+    "fn": "init",
+    "quest": 6456,
+    "questValue": {
+     "slot": 277,
+     "op": ">=",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Aiko_APOP.init"
+   },
+   {
+    "mapItem": 5958,
+    "on": "join",
+    "fn": "init",
+    "quest": 6456,
+    "questValue": {
+     "slot": 277,
+     "op": ">=",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Hisao_APOP.init"
+   },
+   {
+    "mapItem": 5959,
+    "on": "join",
+    "fn": "init",
+    "quest": 6456,
+    "questValue": {
+     "slot": 277,
+     "op": ">=",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Miwa_APOP.init"
+   },
+   {
+    "mapItem": 5960,
+    "on": "join",
+    "fn": "init",
+    "quest": 6456,
+    "questValue": {
+     "slot": 277,
+     "op": ">=",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Shou_APOP.init"
+   }
+  ],
+  "Yokai/ShogunShadows/town-shadowfortress-2Feb21.swf": [
+   {
+    "mapItem": 5974,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Miko_APOP",
+    "quest": 6488,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Miko_APOP.frame28"
+   }
+  ],
+  "Swordhaven/town-graveyard-12May26.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Rutilans_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rutilans_APOP.frame1"
+   }
+  ],
+  "town-Farm-24Mar26.swf": [
+   {
+    "mapItem": 15358,
+    "on": "cell",
+    "cell": "Crop1",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame26"
+   }
+  ],
+  "ShadowsOfWar/Finale/town-ruinedcrown-26Aug22.swf": [
+   {
+    "mapItem": 10386,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Cemaros_APOP",
+    "quest": 8786,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cemaros_APOP.frame1"
+   },
+   {
+    "mapItem": 10382,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gravy_APOP",
+    "quest": 8778,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame1"
+   },
+   {
+    "mapItem": 10383,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Victoria_APOP",
+    "quest": 8778,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Victoria_APOP.frame1"
+   }
+  ],
+  "ShadowsOfWar/Finale/town-timekeepr2.swf": [
+   {
+    "mapItem": 10456,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Brentan_APOP",
+    "quest": 8803,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Brentan_APOP.frame1"
+   },
+   {
+    "mapItem": 10457,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Voice_APOP",
+    "quest": 8803,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Voice_APOP.frame1"
+   },
+   {
+    "mapItem": 10455,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 8803,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   }
+  ],
+  "ShadowsOfWar/Finale/town-deadlines.swf": [
+   {
+    "mapItem": 10606,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Brentan_APOP",
+    "quest": 8862,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Brentan_APOP.frame1"
+   },
+   {
+    "mapItem": 10613,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Drakath2_APOP",
+    "quest": 8866,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Drakath2_APOP.frame1"
+   },
+   {
+    "mapItem": 10612,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gar_APOP",
+    "quest": 8865,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Gar_APOP.frame1"
+   },
+   {
+    "mapItem": 10607,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gravy_APOP",
+    "quest": 8863,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame1"
+   },
+   {
+    "mapItem": 10609,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Malgor1_APOP",
+    "quest": 8864,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Malgor1_APOP.frame1"
+   },
+   {
+    "mapItem": 10611,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Malgor2_APOP",
+    "quest": 8865,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Malgor2_APOP.frame1"
+   },
+   {
+    "mapItem": 10614,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Malgor3_APOP",
+    "quest": 8867,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Malgor3_APOP.frame1"
+   },
+   {
+    "mapItem": 10602,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Mumbler_APOP",
+    "quest": 8860,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Mumbler_APOP.frame1"
+   },
+   {
+    "mapItem": 10608,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Noxus_APOP",
+    "quest": 8863,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Noxus_APOP.frame1"
+   },
+   {
+    "mapItem": 10604,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Victoria_APOP",
+    "quest": 8861,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Victoria_APOP.frame1"
+   },
+   {
+    "mapItem": 10610,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 8864,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   },
+   {
+    "mapItem": 10603,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Wyvern1_APOP",
+    "quest": 8861,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Wyvern1_APOP.frame1"
+   },
+   {
+    "mapItem": 10605,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Wyvern2_APOP",
+    "quest": 8862,
+    "questValue": {
+     "slot": 471
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Wyvern2_APOP.frame1"
+   }
+  ],
+  "Shadowfall/town-Shadowfall-23Aug24.swf": [
+   {
+    "mapItem": 5216,
+    "on": "other",
+    "fn": "frame91",
+    "cls": "Gravelyn_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravelyn_APOP.frame91"
+   },
+   {
+    "mapItem": 5216,
+    "on": "other",
+    "fn": "frame92",
+    "cls": "Gravelyn_APOPOLD",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravelyn_APOPOLD.frame92"
+   },
+   {
+    "mapItem": 433,
+    "on": "event",
+    "event": "monDeath",
+    "quest": 2270,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "Mirror/town-ChaosCrypt-22Feb18.swf": [
+   {
+    "mapItem": 5662,
+    "on": "join",
+    "fn": "init",
+    "quest": 6217,
+    "questValue": {
+     "slot": 42,
+     "op": "==",
+     "value": 0
+    },
+    "monPad": null,
+    "args": null,
+    "where": "SirKuss_APOP.init"
+   }
+  ],
+  "ChiralValley/town-Mobius-30June26.swf": [
+   {
+    "mapItem": 48,
+    "on": "other",
+    "fn": "Solve",
+    "cls": "puzzleGame",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "puzzleGame.Solve"
+   },
+   {
+    "mapItem": 44,
+    "on": "cell",
+    "cell": "Side3",
+    "quest": 260,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame26"
+   },
+   {
+    "mapItem": 49,
+    "on": "cell",
+    "cell": "Side3",
+    "quest": 267,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame26"
+   },
+   {
+    "mapItem": 1465,
+    "on": "cell",
+    "cell": "New1",
+    "quest": 2365,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame40"
+   },
+   {
+    "mapItem": 1466,
+    "on": "cell",
+    "cell": "New4",
+    "quest": 2371,
+    "questValue": {
+     "slot": 89,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame63"
+   },
+   {
+    "mapItem": 1466,
+    "on": "cell",
+    "cell": "New4",
+    "quest": 2371,
+    "questValue": {
+     "slot": 89,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame63"
+   }
+  ],
+  "ChiralValley/town-faerieb-18Apr25.swf": [
+   {
+    "mapItem": 14392,
+    "on": "join",
+    "fn": "init",
+    "quest": 10179,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "DewDrop2_APOP.init"
+   }
+  ],
+  "ChiralValley/town-cornelis-30May18.swf": [
+   {
+    "mapItem": 45,
+    "on": "cell",
+    "cell": "Side4",
+    "quest": 261,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame33"
+   },
+   {
+    "mapItem": 46,
+    "on": "cell",
+    "cell": "Side5",
+    "quest": 262,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame40"
+   },
+   {
+    "mapItem": 46,
+    "on": "cell",
+    "cell": "Vault1",
+    "quest": 262,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame47"
+   },
+   {
+    "mapItem": 47,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_95",
+    "quest": 263,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_95.onEnter"
+   }
+  ],
+  "Dwarfhold/town-tavern-24Aug23.swf": [
+   {
+    "mapItem": 56,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "Dizzy_APOP",
+    "quest": 319,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dizzy_APOP.frame5"
+   },
+   {
+    "mapItem": 6114,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Dreamy_APOP",
+    "quest": 6594,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dreamy_APOP.frame1"
+   },
+   {
+    "mapItem": 56,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "Dreamy_APOP",
+    "quest": 319,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dreamy_APOP.frame5"
+   },
+   {
+    "mapItem": 56,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "Nosy_APOP",
+    "quest": 319,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Nosy_APOP.frame5"
+   },
+   {
+    "mapItem": 56,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "Nursey_APOP",
+    "quest": 319,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Nursey_APOP.frame5"
+   },
+   {
+    "mapItem": 56,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "Pouty_APOP",
+    "quest": 319,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Pouty_APOP.frame5"
+   },
+   {
+    "mapItem": 56,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "Sniffly_APOP",
+    "quest": 319,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sniffly_APOP.frame5"
+   },
+   {
+    "mapItem": 56,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "Spazzy_APOP",
+    "quest": 319,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Spazzy_APOP.frame5"
+   }
+  ],
+  "Dwarfhold/town-dwarfhold-24May23r1.swf": [
+   {
+    "mapItem": 1497,
+    "on": "click",
+    "quest": 2448,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "GeopetalNew_APOP.onGemraldPress"
+   },
+   {
+    "mapItem": 60,
+    "on": "join",
+    "fn": "onCl",
+    "quest": 344,
+    "questValue": {
+     "slot": 22
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.onCl"
+   }
+  ],
+  "TerraLacuna/Rivensylth/town-rivensylth-9Dec15.swf": [
+   {
+    "mapItem": 3938,
+    "on": "cell",
+    "cell": "r6",
+    "quest": 4619,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame57"
+   },
+   {
+    "mapItem": 3942,
+    "on": "cell",
+    "cell": "f6",
+    "quest": 4628,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame98"
+   },
+   {
+    "mapItem": 3944,
+    "on": "cell",
+    "cell": "o6",
+    "quest": 4637,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame138"
+   },
+   {
+    "mapItem": 3946,
+    "on": "cell",
+    "cell": "Boss",
+    "quest": 4643,
+    "questValue": {
+     "slot": 199,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame146"
+   },
+   {
+    "mapItem": 3943,
+    "on": "cell",
+    "cell": "Boss",
+    "quest": 4634,
+    "questValue": {
+     "slot": 199,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame146"
+   },
+   {
+    "mapItem": 3941,
+    "on": "cell",
+    "cell": "Boss",
+    "quest": 4625,
+    "questValue": {
+     "slot": 199,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame146"
+   }
+  ],
+  "TerraLacuna/Elfhame/town-elfhame-9Dec15.swf": [
+   {
+    "mapItem": 3984,
+    "on": "other",
+    "fn": "generatePattern",
+    "cls": "LockGame",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LockGame.generatePattern"
+   }
+  ],
+  "Arcangrove/town-Cloister-18Apr25r1.swf": [
+   {
+    "mapItem": 14394,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tree_APOP",
+    "quest": 10181,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tree_APOP.frame1"
+   }
+  ],
+  "Etherstorm/town-FireStorm-25Apr14.swf": [
+   {
+    "mapItem": 2646,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Fire_APOP",
+    "quest": 3497,
+    "questValue": {
+     "slot": 160,
+     "op": "==",
+     "value": 1
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Fire_APOP.frame1"
+   },
+   {
+    "mapItem": 825,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Fire_APOP",
+    "quest": 1577,
+    "questValue": {
+     "slot": 160,
+     "op": "==",
+     "value": 1
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Fire_APOP.frame1"
+   },
+   {
+    "mapItem": 787,
+    "on": "join",
+    "fn": "equipItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem"
+   }
+  ],
+  "events/TLaPD/2022/town-lowtide.swf": [
+   {
+    "mapItem": 10523,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Pyralis_APOP",
+    "quest": 8843,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Pyralis_APOP.frame1"
+   }
+  ],
+  "AgeofRuin/Sea/Nerites/town-Nerites-4Aug25.swf": [
+   {
+    "mapItem": 11665,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "Entry5",
+    "quest": 9228,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Entry5.frame42"
+   }
+  ],
+  "ChaosWar/town-MountDoomSkull-5Nov21.swf": [
+   {
+    "mapItem": 2726,
+    "on": "event",
+    "event": "playerDeath",
+    "quest": 3765,
+    "questValue": {
+     "slot": 175
+    },
+    "monPad": 79,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "Dwarfhold/town-uppercity-27June23.swf": [
+   {
+    "mapItem": 61,
+    "on": "join",
+    "fn": "onCl",
+    "quest": 346,
+    "questValue": {
+     "slot": 22
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.onCl"
+   }
+  ],
+  "Dwarfhold/town-roc-17May23.swf": [
+   {
+    "mapItem": 62,
+    "on": "event",
+    "event": "monDeath",
+    "quest": null,
+    "questValue": {
+     "slot": 22,
+     "op": "==",
+     "value": 33
+    },
+    "monPad": null,
+    "args": 1,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "Yokai/town-Tournament-18Aug23.swf": [
+   {
+    "mapItem": 66,
+    "on": "event",
+    "event": "monDeath",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "watchtower/town-watchtower-28May13.swf": [
+   {
+    "mapItem": 1606,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropManual_CustomNOdrop_189",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropManual_CustomNOdrop_189.onC"
+   },
+   {
+    "mapItem": 1606,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropManual_CustomNOdrop_222",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropManual_CustomNOdrop_222.onC"
+   }
+  ],
+  "Citadel/town-citadelruins.swf": [
+   {
+    "mapItem": 5602,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropSeal1_98",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropSeal1_98.onC"
+   },
+   {
+    "mapItem": 5597,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropSeal2_310",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropSeal2_310.onC"
+   }
+  ],
+  "Legion/town-ravenscar-11Jun18.swf": [
+   {
+    "mapItem": 1771,
+    "on": "join",
+    "fn": "equipItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem"
+   },
+   {
+    "mapItem": 1769,
+    "on": "timer",
+    "fn": "tryLock",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcGame_396.tryLock"
+   }
+  ],
+  "ThroneOfDarkness/MysteriousDungeon/town-mysteriousdungeonr1.swf": [
+   {
+    "mapItem": 4808,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipAlly_280.clickHandlerIA"
+   }
+  ],
+  "/Darkovia/town-DarkoviaForest-24Mar26.swf": [
+   {
+    "mapItem": 15284,
+    "on": "cell",
+    "cell": "f3",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame29"
+   },
+   {
+    "mapItem": 14395,
+    "on": "other",
+    "fn": "endGame",
+    "cls": "mcValves_243",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcValves_243.endGame"
+   }
+  ],
+  "Darkovia/town-Safiria-2Aug24.swf": [
+   {
+    "mapItem": 5114,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Orlok_APOP",
+    "quest": 5639,
+    "questValue": {
+     "slot": 227,
+     "op": "==",
+     "value": 1
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Orlok_APOP.frame1"
+   }
+  ],
+  "Arcangrove/town-Mafic-25Apr25.swf": [
+   {
+    "mapItem": 14402,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Felsic_APOP",
+    "quest": 10207,
+    "questValue": {
+     "slot": 32,
+     "op": ">=",
+     "value": 30
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Felsic_APOP.frame1"
+   }
+  ],
+  "Sandsea/town-Pyramid-7Mar24.swf": [
+   {
+    "mapItem": 304,
+    "on": "join",
+    "fn": "checkQS",
+    "quest": 971,
+    "questValue": {
+     "slot": 36,
+     "op": "==",
+     "value": 9
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.checkQS"
+   }
+  ],
+  "Sandsea/town-Wanders-7Aug18.swf": [
+   {
+    "mapItem": 304,
+    "on": "join",
+    "fn": "checkQS",
+    "quest": 971,
+    "questValue": {
+     "slot": 36,
+     "op": "==",
+     "value": 9
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.checkQS"
+   }
+  ],
+  "events/tlapd/2025/town-PirateAlliance.swf": [
+   {
+    "mapItem": 14926,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "J6_APOP",
+    "quest": 10400,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "J6_APOP.frame1"
+   }
+  ],
+  "TheSpan/town-theSpan-5May26.swf": [
+   {
+    "mapItem": 1363,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Bulbug_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Bulbug_APOP.frame12"
+   },
+   {
+    "mapItem": 7371,
+    "on": "other",
+    "fn": "frame19",
+    "cls": "Bulbug_APOP",
+    "quest": 7516,
+    "questValue": {
+     "slot": 353,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Bulbug_APOP.frame19"
+   },
+   {
+    "mapItem": 1361,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Cysero_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.frame12"
+   },
+   {
+    "mapItem": 1358,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Lucretia_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Lucretia_APOP.frame12"
+   },
+   {
+    "mapItem": 6910,
+    "on": "other",
+    "fn": "frame25",
+    "cls": "Lucretia_APOP",
+    "quest": 7292,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Lucretia_APOP.frame25"
+   },
+   {
+    "mapItem": 6910,
+    "on": "other",
+    "fn": "frame33",
+    "cls": "Lucretia_APOP",
+    "quest": 7292,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Lucretia_APOP.frame33"
+   },
+   {
+    "mapItem": 1360,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Mince_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Mince_APOP.frame12"
+   },
+   {
+    "mapItem": 1474,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tek_APOP",
+    "quest": 2384,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Tek_APOP.frame1"
+   },
+   {
+    "mapItem": 1359,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Tek_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Tek_APOP.frame12"
+   },
+   {
+    "mapItem": 1362,
+    "on": "other",
+    "fn": "frame41",
+    "cls": "Warlic_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame41"
+   }
+  ],
+  "TheSpan/town-TimeLibrary-13May14.swf": [
+   {
+    "mapItem": 1317,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Lock_APOP.onClick"
+   }
+  ],
+  "TheSpan/town-aqlesson-14May18.swf": [
+   {
+    "mapItem": 1469,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Book_APOP",
+    "quest": 2378,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Book_APOP.frame1"
+   }
+  ],
+  "Thunderforge/town-OnslaughtTower-22Sep15.swf": [
+   {
+    "mapItem": 1625,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravelyn_APOP.onClick"
+   }
+  ],
+  "Thunderforge/town-falguard-30June26.swf": [
+   {
+    "mapItem": 1631,
+    "on": "event",
+    "event": "monDeath",
+    "quest": 2672,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "thunderforge/town-Deathpits-27June23.swf": [
+   {
+    "mapItem": 1695,
+    "on": "cell",
+    "cell": "Enter",
+    "quest": 2740,
+    "questValue": {
+     "slot": 113,
+     "op": ">=",
+     "value": 13
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame10"
+   },
+   {
+    "mapItem": 1695,
+    "on": "cell",
+    "cell": "Cut1",
+    "quest": 2740,
+    "questValue": {
+     "slot": 106,
+     "op": "==",
+     "value": 13
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame130"
+   }
+  ],
+  "Mirror/town-battleoff-19Oct19.swf": [
+   {
+    "mapItem": 3975,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "mWarlic_APOP",
+    "quest": 4653,
+    "questValue": {
+     "slot": 122
+    },
+    "monPad": null,
+    "args": null,
+    "where": "mWarlic_APOP.frame1"
+   }
+  ],
+  "Mirror/town-Overworld-08Nov13.swf": [
+   {
+    "mapItem": 1804,
+    "on": "cell",
+    "cell": "Enter",
+    "quest": null,
+    "questValue": {
+     "slot": 122,
+     "op": "==",
+     "value": 9
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame8"
+   }
+  ],
+  "Battleon/town-Yulgar-2July26.swf": [
+   {
+    "mapItem": 85,
+    "on": "click",
+    "quest": 457,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcBtnCysSock_422.onBClick"
+   }
+  ],
+  "7DD/Sloth/town-slothwk2-31May19.swf": [
+   {
+    "mapItem": 5387,
+    "on": "click",
+    "quest": 5948,
+    "questValue": {
+     "slot": 244,
+     "op": "<",
+     "value": 10
+    },
+    "monPad": null,
+    "args": null,
+    "where": "tikiButton_457.onClick"
+   },
+   {
+    "mapItem": 5389,
+    "on": "click",
+    "quest": 5951,
+    "questValue": {
+     "slot": 244,
+     "op": "<",
+     "value": 10
+    },
+    "monPad": null,
+    "args": null,
+    "where": "tikiButton_457.onClick"
+   },
+   {
+    "mapItem": 5391,
+    "on": "click",
+    "quest": 5953,
+    "questValue": {
+     "slot": 244,
+     "op": "<",
+     "value": 10
+    },
+    "monPad": null,
+    "args": null,
+    "where": "tikiButton_457.onClick"
+   }
+  ],
+  "Yokai/town-YokaiGraveyard-3Aug18.swf": [
+   {
+    "mapItem": 93,
+    "on": "event",
+    "event": "monDeath",
+    "quest": null,
+    "questValue": {
+     "slot": 25,
+     "op": "==",
+     "value": 18
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "sandsea/duatpalace/town-DuatPalace-5June26.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Layla_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Layla_APOP.frame1"
+   }
+  ],
+  "events/TLaPD/2023/town-yokaipirate-22Sep23.swf": [
+   {
+    "mapItem": 12135,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Baoyu_APOP",
+    "quest": 9378,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Baoyu_APOP.frame1"
+   },
+   {
+    "mapItem": 12137,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Haruki_APOP",
+    "quest": 9380,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Haruki_APOP.frame1"
+   },
+   {
+    "mapItem": 12139,
+    "on": "other",
+    "fn": "frame54",
+    "cls": "PageRead",
+    "quest": 9384,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "PageRead.frame54"
+   },
+   {
+    "mapItem": 12136,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ramona_APOP",
+    "quest": 9380,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ramona_APOP.frame1"
+   },
+   {
+    "mapItem": 12134,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Yue_APOP",
+    "quest": 9378,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Yue_APOP.frame1"
+   }
+  ],
+  "battleon/town-Battleontown-30July26.swf": [
+   {
+    "mapItem": 1755,
+    "on": "click",
+    "quest": 2869,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Alina_APOP.onClickP"
+   },
+   {
+    "mapItem": 1754,
+    "on": "other",
+    "fn": "frame23",
+    "cls": "Cysero_APOP",
+    "quest": 2863,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.frame23"
+   },
+   {
+    "mapItem": 1756,
+    "on": "other",
+    "fn": "frame29",
+    "cls": "Cysero_APOP",
+    "quest": 2870,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.frame29"
+   },
+   {
+    "mapItem": 2203,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropRecipie_1430",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropRecipie_1430.onC"
+   },
+   {
+    "mapItem": 1484,
+    "on": "cell",
+    "cell": "bs1",
+    "quest": 2426,
+    "questValue": {
+     "slot": 93,
+     "op": "==",
+     "value": 5
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame89"
+   },
+   {
+    "mapItem": 87,
+    "on": "click",
+    "quest": 461,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcBtnGolden_268.onBClick"
+   },
+   {
+    "mapItem": 86,
+    "on": "click",
+    "quest": 458,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcBtnPage_317.onBClick"
+   },
+   {
+    "mapItem": 1753,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Warlic_APOP",
+    "quest": 2862,
+    "questValue": {
+     "slot": 120,
+     "op": "==",
+     "value": 0
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame7"
+   },
+   {
+    "mapItem": 1277,
+    "on": "other",
+    "fn": "frame47",
+    "cls": "Warlic_APOP",
+    "quest": 2200,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame47"
+   }
+  ],
+  "town-volcanotown-1Feb21.swf": [
+   {
+    "mapItem": 923,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "itemDropHole_295",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropHole_295.frame42"
+   },
+   {
+    "mapItem": 925,
+    "on": "cell",
+    "cell": "r11",
+    "quest": 1739,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame99"
+   },
+   {
+    "mapItem": 922,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_443",
+    "quest": 1733,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_443.onEnter"
+   }
+  ],
+  "thirdspell/town-thirdspell_r5.swf": [
+   {
+    "mapItem": 3671,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Cysero_APOP",
+    "quest": 4480,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.frame1"
+   },
+   {
+    "mapItem": 3677,
+    "on": "click",
+    "quest": 4493,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "comp_323.onButtonPress"
+   },
+   {
+    "mapItem": 3672,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_255",
+    "quest": 4483,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_255.onEnter"
+   },
+   {
+    "mapItem": 3675,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_292",
+    "quest": 4481,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_292.onEnter"
+   },
+   {
+    "mapItem": 3674,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_318",
+    "quest": 4490,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_318.onEnter"
+   },
+   {
+    "mapItem": 3676,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_339",
+    "quest": 4492,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_339.onEnter"
+   },
+   {
+    "mapItem": 3677,
+    "on": "click",
+    "quest": 4493,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "WAGONWHEELcopy_324.onButtonPress"
+   }
+  ],
+  "Swordhaven/town-castle-23June26.swf": [
+   {
+    "mapItem": 5217,
+    "on": "other",
+    "fn": "frame86",
+    "cls": "Alteon_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Alteon_APOP.frame86"
+   },
+   {
+    "mapItem": 899,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Ated_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ated_APOP.frame7"
+   },
+   {
+    "mapItem": 5217,
+    "on": "other",
+    "fn": "frame62",
+    "cls": "Victoria_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Victoria_APOP.frame62"
+   }
+  ],
+  "Alina/town-Manor-14Apr23.swf": [
+   {
+    "mapItem": 402,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.onClockClick"
+   }
+  ],
+  "Alina/town-AlinaForest-14Apr23.swf": [
+   {
+    "mapItem": 968,
+    "on": "other",
+    "fn": "frame52",
+    "cls": "itemDropDoor_529",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropDoor_529.frame52"
+   },
+   {
+    "mapItem": 966,
+    "on": "other",
+    "fn": "frame40",
+    "cls": "itemDropHole_396",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropHole_396.frame40"
+   },
+   {
+    "mapItem": 963,
+    "on": "other",
+    "fn": "frame23",
+    "cls": "itemDropRedPlant_326",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropRedPlant_326.frame23"
+   },
+   {
+    "mapItem": 963,
+    "on": "other",
+    "fn": "frame21",
+    "cls": "itemDropRed_321",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropRed_321.frame21"
+   },
+   {
+    "mapItem": 970,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "logs1pot1_684.onClick"
+   }
+  ],
+  "events/TLaPD/2023/town-yokaitreasure-16Feb24.swf": [
+   {
+    "mapItem": 12162,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Baoyu_APOP",
+    "quest": 9396,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Baoyu_APOP.frame1"
+   },
+   {
+    "mapItem": 12165,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Brentan_APOP",
+    "quest": 9399,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Brentan_APOP.frame1"
+   },
+   {
+    "mapItem": 12163,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Haruki_APOP",
+    "quest": 9396,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Haruki_APOP.frame1"
+   },
+   {
+    "mapItem": 12164,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Yue_APOP",
+    "quest": 9396,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Yue_APOP.frame1"
+   }
+  ],
+  "Swordhaven/town-swordhaven-31July26.swf": [
+   {
+    "mapItem": 16000,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Lim_APOP",
+    "quest": 10819,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Lim_APOP.frame28"
+   }
+  ],
+  "Swordhaven/town-ChaosAltar-20Apr23.swf": [
+   {
+    "mapItem": 2127,
+    "on": "event",
+    "event": "monDeath",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "Swordhaven/town-SwordhavenFalls-27Apr23.swf": [
+   {
+    "mapItem": 2158,
+    "on": "join",
+    "fn": "checkKills",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.checkKills"
+   }
+  ],
+  "ChaosWar/town-drakathfight-1Jun20.swf": [
+   {
+    "mapItem": 2894,
+    "on": "event",
+    "event": "monDeath",
+    "quest": null,
+    "questValue": {
+     "slot": 175,
+     "op": "==",
+     "value": 14
+    },
+    "monPad": null,
+    "args": 1,
+    "where": "MainTimeline.eventTrigger"
+   },
+   {
+    "mapItem": 2894,
+    "on": "event",
+    "event": "playerDeath",
+    "quest": 3795,
+    "questValue": {
+     "slot": 175,
+     "op": "==",
+     "value": 14
+    },
+    "monPad": 1,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "ChaosWar/town-falcontower-11Aug20.swf": [
+   {
+    "mapItem": 2798,
+    "on": "join",
+    "fn": "equipItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem"
+   }
+  ],
+  "TitanAttack/town-titanattack-22Jul22.swf": [
+   {
+    "mapItem": 10347,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Alina_APOP",
+    "quest": 8759,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Alina_APOP.frame1"
+   },
+   {
+    "mapItem": 10346,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Artix_APOP",
+    "quest": 8759,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Artix_APOP.frame1"
+   },
+   {
+    "mapItem": 10349,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gal_APOP",
+    "quest": 8759,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gal_APOP.frame1"
+   },
+   {
+    "mapItem": 10345,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Twilly_APOP",
+    "quest": 8759,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Twilly_APOP.frame1"
+   },
+   {
+    "mapItem": 10348,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 8759,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   }
+  ],
+  "events/LivingDungeon/town-treetitanbattle.swf": [
+   {
+    "mapItem": 3521,
+    "on": "join",
+    "fn": "equipItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem"
+   }
+  ],
+  "sepulchure/lynaria/town-bocklingrover1.swf": [
+   {
+    "mapItem": 14429,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Brittany_APOP",
+    "quest": 10230,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Brittany_APOP.frame1"
+   },
+   {
+    "mapItem": 14431,
+    "on": "other",
+    "fn": "frame30",
+    "cls": "mapLetter",
+    "quest": 10233,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapLetter.frame30"
+   },
+   {
+    "mapItem": 14432,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Richard_APOP",
+    "quest": 10237,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Richard_APOP.frame1"
+   }
+  ],
+  "Darkon/ElegyOfMadness/town-firstobservatory-17Jun22.swf": [
+   {
+    "mapItem": 10087,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "comp_301.onButtonPress"
+   }
+  ],
+  "ShadowsOfWar/town-malgor-24Jul20.swf": [
+   {
+    "mapItem": 6371,
+    "on": "event",
+    "event": null,
+    "quest": 6852,
+    "questValue": {
+     "slot": 304,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.responseEvent"
+   }
+  ],
+  "PirateQueenTeja/town-granitecover1.swf": [
+   {
+    "mapItem": 6435,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "AlchemyBook",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "AlchemyBook.frame1"
+   },
+   {
+    "mapItem": 6434,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "CaptainsLog",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "CaptainsLog.frame1"
+   },
+   {
+    "mapItem": 6436,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "LetterRicky",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LetterRicky.frame1"
+   }
+  ],
+  "PirateQueenTeja/town-blackseakeepr2.swf": [
+   {
+    "mapItem": 6448,
+    "on": "click",
+    "quest": 6890,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "_gameLockPick_386.onClick"
+   }
+  ],
+  "JinxTheThief/town-junkhoard-5Sep19.swf": [
+   {
+    "mapItem": 6497,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropTombcopy_237",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropTombcopy_237.onC"
+   }
+  ],
+  "JinxTheThief/town-junkheap-31Mar23.swf": [
+   {
+    "mapItem": 11475,
+    "on": "other",
+    "fn": "onC",
+    "cls": "DarkKeyTreasure_217",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "DarkKeyTreasure_217.onC"
+   }
+  ],
+  "Yokai/Mahou/town-aozorahills-28May24.swf": [
+   {
+    "mapItem": 6645,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Mahou_APOP",
+    "quest": 7051,
+    "questValue": {
+     "slot": 320
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Mahou_APOP.frame7"
+   }
+  ],
+  "ShadowsOfWar/town-darkalliance-25Oct21.swf": [
+   {
+    "mapItem": 7229,
+    "on": "other",
+    "fn": "frame35",
+    "cls": "Dage_APOP",
+    "quest": 7457,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dage_APOP.frame35"
+   },
+   {
+    "mapItem": 7226,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Pyro_APOP",
+    "quest": 7451,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Pyro_APOP.frame1"
+   }
+  ],
+  "BloodMoon/town-maxius-23Oct17.swf": [
+   {
+    "mapItem": 5474,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Bubble_APOP.onCatPress"
+   },
+   {
+    "mapItem": 5474,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Bubble_APOP.onCat2Press"
+   },
+   {
+    "mapItem": 5471,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Constantin_APOP.onDaggerPress"
+   },
+   {
+    "mapItem": 5471,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Constantin_APOP.onDagger2Press"
+   },
+   {
+    "mapItem": 5472,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Kimberly_APOP.onPonyPress"
+   },
+   {
+    "mapItem": 5472,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Kimberly_APOP.onPony2Press"
+   },
+   {
+    "mapItem": 5470,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Safiria_APOP.onOrbPress"
+   },
+   {
+    "mapItem": 5473,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Voltaire_APOP.onKeyPress"
+   },
+   {
+    "mapItem": 5473,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Voltaire_APOP.onKey2Press"
+   }
+  ],
+  "FireWar/town-firewar-16Sep19.swf": [
+   {
+    "mapItem": 5799,
+    "on": "event",
+    "event": "playerDeath",
+    "quest": 6299,
+    "questValue": {
+     "slot": 269,
+     "op": "==",
+     "value": 2
+    },
+    "monPad": 23,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "events/laewed/town-laewed.swf": [
+   {
+    "mapItem": 13772,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Aciel_APOP",
+    "quest": 9946,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Aciel_APOP.frame1"
+   },
+   {
+    "mapItem": 13773,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Hikari_APOP",
+    "quest": 9948,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Hikari_APOP.frame1"
+   },
+   {
+    "mapItem": 13775,
+    "on": "other",
+    "fn": "frame51",
+    "cls": "mapDiary",
+    "quest": 9949,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapDiary.frame51"
+   },
+   {
+    "mapItem": 13774,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "NCS_APOP",
+    "quest": 9948,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "NCS_APOP.frame1"
+   },
+   {
+    "mapItem": 13770,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Snow_APOP",
+    "quest": 9944,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Snow_APOP.frame1"
+   },
+   {
+    "mapItem": 13771,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Teka_APOP",
+    "quest": 9946,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Teka_APOP.frame1"
+   },
+   {
+    "mapItem": 13769,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Thay_APOP",
+    "quest": 9944,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Thay_APOP.frame1"
+   }
+  ],
+  "events/17thbirthday/town-castleparty.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tara_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tara_APOP.frame1"
+   }
+  ],
+  "wizard/town-dragonrune-18Apr25.swf": [
+   {
+    "mapItem": 1923,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Maedoc_APOP",
+    "quest": 3052,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Maedoc_APOP.frame1"
+   },
+   {
+    "mapItem": 2649,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Maedoc_APOP",
+    "quest": 3505,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Maedoc_APOP.frame1"
+   },
+   {
+    "mapItem": 1924,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Mueran_APOP",
+    "quest": 3052,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Mueran_APOP.frame1"
+   },
+   {
+    "mapItem": 2650,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Mueran_APOP",
+    "quest": 3505,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Mueran_APOP.frame1"
+   },
+   {
+    "mapItem": 1921,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Neveya_APOP",
+    "quest": 3052,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Neveya_APOP.frame1"
+   },
+   {
+    "mapItem": 2653,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Neveya_APOP",
+    "quest": 3505,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Neveya_APOP.frame1"
+   },
+   {
+    "mapItem": 2209,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Sora_APOP",
+    "quest": 3190,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sora_APOP.frame1"
+   },
+   {
+    "mapItem": 2652,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Sora_APOP",
+    "quest": 3505,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sora_APOP.frame1"
+   },
+   {
+    "mapItem": 3752,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Sora_APOP",
+    "quest": 4534,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sora_APOP.frame1"
+   },
+   {
+    "mapItem": 1922,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 3052,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   },
+   {
+    "mapItem": 2651,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 3505,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   }
+  ],
+  "events/MagicThief/town-Palacer3.swf": [
+   {
+    "mapItem": 955,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LockGame.showClick"
+   }
+  ],
+  "evilwar/town-seraph-14Mar22.swf": [
+   {
+    "mapItem": 3280,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_298",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_298.onEnter"
+   }
+  ],
+  "ThroneOfDarkness/MysteriousDungeon/town-cursedshopr2.swf": [
+   {
+    "mapItem": 4806,
+    "on": "other",
+    "fn": "frame35",
+    "cls": "Darkwood_APOP",
+    "quest": 5434,
+    "questValue": {
+     "slot": 217,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Darkwood_APOP.frame35"
+   }
+  ],
+  "events/mogloween/2018/town-chromafection.swf": [
+   {
+    "mapItem": 6005,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "CarlyWinky_APOP",
+    "quest": 6536,
+    "questValue": {
+     "slot": 282
+    },
+    "monPad": null,
+    "args": null,
+    "where": "CarlyWinky_APOP.frame5"
+   }
+  ],
+  "events/mogloween/town-CandyShop-21Oct19.swf": [
+   {
+    "mapItem": 69,
+    "on": "other",
+    "fn": "onCPlay",
+    "cls": "Sisters_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sisters_APOP.onCPlay"
+   }
+  ],
+  "GreenGuard/town-Forest-13Aug24.swf": [
+   {
+    "mapItem": 1,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.onChestClick"
+   }
+  ],
+  "guru/town-guru-forest-24Mar26.swf": [
+   {
+    "mapItem": 20,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "GoldenMushroom_99",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "GoldenMushroom_99.onEnter"
+   }
+  ],
+  "battleon/timetravel/town-crashsite-1Mar24.swf": [
+   {
+    "mapItem": 106,
+    "on": "other",
+    "fn": "onC",
+    "cls": "mcDecoder_321",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcDecoder_321.onC"
+   }
+  ],
+  "events/mogloween/2022/town-tricktown.swf": [
+   {
+    "mapItem": 10808,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Carm_APOP",
+    "quest": 8933,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Carm_APOP.frame1"
+   },
+   {
+    "mapItem": 10813,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 8926,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   }
+  ],
+  "town-marsh2-7Dec11.swf": [
+   {
+    "mapItem": 721,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "Plate_138",
+    "quest": 1481,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_138.onEnter"
+   }
+  ],
+  "Crownsreach/ForestReach/town-deepforest-17May21.swf": [
+   {
+    "mapItem": 8415,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "BookBefore",
+    "quest": 8070,
+    "questValue": {
+     "slot": 402,
+     "op": "==",
+     "value": 16
+    },
+    "monPad": null,
+    "args": null,
+    "where": "BookBefore.frame1"
+   },
+   {
+    "mapItem": 8415,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "BookDuring",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "BookDuring.frame1"
+   }
+  ],
+  "AgeofRuin/Sea/Ashray/town-ashray-21Aug26.swf": [
+   {
+    "mapItem": 11665,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "Entry5",
+    "quest": 9228,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Entry5.frame42"
+   },
+   {
+    "mapItem": 11667,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ganx_APOP",
+    "quest": 9231,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ganx_APOP.frame1"
+   },
+   {
+    "mapItem": 11666,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Maya_APOP",
+    "quest": 9229,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Maya_APOP.frame1"
+   },
+   {
+    "mapItem": 11664,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Song_APOP",
+    "quest": 9226,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Song_APOP.frame1"
+   },
+   {
+    "mapItem": 11669,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Song_APOP",
+    "quest": 9233,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Song_APOP.frame1"
+   },
+   {
+    "mapItem": 11663,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Talis_APOP",
+    "quest": 9226,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Talis_APOP.frame1"
+   }
+  ],
+  "coldthunder/town-Balemorale-19July24.swf": [
+   {
+    "mapItem": 13177,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Brentan_APOP",
+    "quest": 9722,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Brentan_APOP.frame28"
+   },
+   {
+    "mapItem": 11625,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Celestia_APOP",
+    "quest": 9213,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Celestia_APOP.frame1"
+   },
+   {
+    "mapItem": 13182,
+    "on": "other",
+    "fn": "frame94",
+    "cls": "mapNotebook",
+    "quest": 9725,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapNotebook.frame94"
+   },
+   {
+    "mapItem": 13180,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Marigold_APOP",
+    "quest": 9723,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Marigold_APOP.frame1"
+   },
+   {
+    "mapItem": 13179,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Song_APOP",
+    "quest": 9723,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Song_APOP.frame28"
+   }
+  ],
+  "coldthunder/town-liatarahill-19July24.swf": [
+   {
+    "mapItem": 13365,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Granville_APOP",
+    "quest": 9808,
+    "questValue": {
+     "slot": 557
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Granville_APOP.frame1"
+   },
+   {
+    "mapItem": 13366,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Henry_APOP",
+    "quest": 9811,
+    "questValue": {
+     "slot": 557
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Henry_APOP.frame1"
+   },
+   {
+    "mapItem": 13368,
+    "on": "other",
+    "fn": "frame59",
+    "cls": "mapScrollUnearth",
+    "quest": 9810,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapScrollUnearth.frame59"
+   },
+   {
+    "mapItem": 13364,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Muusa_APOP",
+    "quest": 9808,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Muusa_APOP.frame1"
+   }
+  ],
+  "events/mogloween/2025/town-EldritchWorld-31Oct25.swf": [
+   {
+    "mapItem": 15041,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "ThokSally_APOP",
+    "quest": 10445,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ThokSally_APOP.frame1"
+   }
+  ],
+  "events/mogloween/2025/town-EldritchBattletown-24Oct25.swf": [
+   {
+    "mapItem": 15042,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "ArcanaKool_APOP",
+    "quest": 10446,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ArcanaKool_APOP.frame1"
+   },
+   {
+    "mapItem": 15044,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "ArcanaThok_APOP",
+    "quest": 10451,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ArcanaThok_APOP.frame1"
+   },
+   {
+    "mapItem": 15040,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Juvania_APOP",
+    "quest": 10444,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Juvania_APOP.frame1"
+   },
+   {
+    "mapItem": 15043,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "MetreaJuvania_APOP",
+    "quest": 10449,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MetreaJuvania_APOP.frame1"
+   },
+   {
+    "mapItem": 15041,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "ThokSerenity_APOP",
+    "quest": 10445,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ThokSerenity_APOP.frame1"
+   }
+  ],
+  "events/mogloween/2023/town-AlnswickCastle.swf": [
+   {
+    "mapItem": 12272,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Hans_APOP",
+    "quest": 9445,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Hans_APOP.frame1"
+   },
+   {
+    "mapItem": 12275,
+    "on": "other",
+    "fn": "frame62",
+    "cls": "LetterBundle1",
+    "quest": 9447,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LetterBundle1.frame62"
+   },
+   {
+    "mapItem": 12278,
+    "on": "other",
+    "fn": "frame64",
+    "cls": "LetterBundle2",
+    "quest": 9449,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LetterBundle2.frame64"
+   },
+   {
+    "mapItem": 12280,
+    "on": "other",
+    "fn": "frame76",
+    "cls": "LetterBundle3",
+    "quest": 9450,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LetterBundle3.frame76"
+   },
+   {
+    "mapItem": 12282,
+    "on": "other",
+    "fn": "frame51",
+    "cls": "LetterBundle4",
+    "quest": 9452,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LetterBundle4.frame51"
+   },
+   {
+    "mapItem": 12274,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Nythera_APOP",
+    "quest": 9447,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Nythera_APOP.frame1"
+   },
+   {
+    "mapItem": 12276,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Skye_APOP",
+    "quest": 9448,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Skye_APOP.frame1"
+   },
+   {
+    "mapItem": 12273,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tara_APOP",
+    "quest": 9446,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tara_APOP.frame1"
+   },
+   {
+    "mapItem": 12277,
+    "on": "cell",
+    "cell": "r4",
+    "quest": 9449,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame34"
+   },
+   {
+    "mapItem": 12283,
+    "on": "cell",
+    "cell": "r10",
+    "quest": 9453,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame82"
+   }
+  ],
+  "FireWar/town-northmountainr2.swf": [
+   {
+    "mapItem": 5813,
+    "on": "other",
+    "fn": "onC1",
+    "cls": "itemDropEquipPlaceRunes_218",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipPlaceRunes_218.onC1"
+   },
+   {
+    "mapItem": 5813,
+    "on": "other",
+    "fn": "onC0",
+    "cls": "itemDropEquipPlaceRunes_218",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipPlaceRunes_218.onC0"
+   },
+   {
+    "mapItem": 5813,
+    "on": "other",
+    "fn": "onC12",
+    "cls": "itemDropEquipPlaceRunes_218",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipPlaceRunes_218.onC12"
+   },
+   {
+    "mapItem": 5813,
+    "on": "other",
+    "fn": "onC13",
+    "cls": "itemDropEquipPlaceRunes_218",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipPlaceRunes_218.onC13"
+   }
+  ],
+  "QueenSaga/TheDestroyer/town-CharredPath-9May23.swf": [
+   {
+    "mapItem": 5270,
+    "on": "other",
+    "fn": "frame56",
+    "cls": "Gravy_APOP",
+    "quest": 5835,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame56"
+   },
+   {
+    "mapItem": 5270,
+    "on": "other",
+    "fn": "frame62",
+    "cls": "Gravy_APOP",
+    "quest": 5835,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame62"
+   },
+   {
+    "mapItem": 5248,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Lim_APOP",
+    "quest": 5803,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Lim_APOP.frame1"
+   },
+   {
+    "mapItem": 5255,
+    "on": "click",
+    "quest": 5810,
+    "questValue": {
+     "slot": 237
+    },
+    "monPad": null,
+    "args": null,
+    "where": "comp_942.onButtonPress"
+   },
+   {
+    "mapItem": 5255,
+    "on": "click",
+    "quest": 5810,
+    "questValue": {
+     "slot": 237
+    },
+    "monPad": null,
+    "args": null,
+    "where": "comp_943.onButtonPress"
+   },
+   {
+    "mapItem": 5254,
+    "on": "click",
+    "quest": 5813,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ext_510.onClick"
+   },
+   {
+    "mapItem": 5251,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropTrees_454.onClick"
+   },
+   {
+    "mapItem": 5251,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropTrees_454",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropTrees_454.onC"
+   }
+  ],
+  "events/newyear/2016-17/town-cathedral-5Apr17-Easter.swf": [
+   {
+    "mapItem": 5108,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Aion_APOP",
+    "quest": 5620,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 0
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Aion_APOP.frame28"
+   },
+   {
+    "mapItem": 5099,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Alteon_APOP",
+    "quest": 5629,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 9
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Alteon_APOP.frame7"
+   },
+   {
+    "mapItem": 5095,
+    "on": "join",
+    "fn": "init",
+    "quest": 5624,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 4
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.init"
+   },
+   {
+    "mapItem": 5100,
+    "on": "click",
+    "quest": 5631,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Erebus_APOP.onClick"
+   },
+   {
+    "mapItem": 5098,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Gravy_APOP",
+    "quest": 5628,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 8
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame7"
+   },
+   {
+    "mapItem": 5094,
+    "on": "click",
+    "quest": 5623,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Heph_APOP.onClick"
+   },
+   {
+    "mapItem": 5103,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Lim_APOP",
+    "quest": 5632,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 12
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Lim_APOP.frame28"
+   },
+   {
+    "mapItem": 5097,
+    "on": "click",
+    "quest": 5627,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Perses_APOP.onClick"
+   },
+   {
+    "mapItem": 5105,
+    "on": "join",
+    "fn": "init",
+    "quest": 5632,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 12
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Twilly_APOP.init"
+   },
+   {
+    "mapItem": 5101,
+    "on": "join",
+    "fn": "init",
+    "quest": 5634,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 14
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.init"
+   },
+   {
+    "mapItem": 5102,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Warlic_APOP",
+    "quest": 5632,
+    "questValue": {
+     "slot": 226,
+     "op": "==",
+     "value": 12
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame28"
+   }
+  ],
+  "/events/CyseroGoose/town-goose.swf": [
+   {
+    "mapItem": 3562,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "BookGame.colorClick"
+   },
+   {
+    "mapItem": 3562,
+    "on": "cell",
+    "cell": "r33",
+    "quest": 4371,
+    "questValue": {
+     "slot": 197,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame267"
+   }
+  ],
+  "Doomwood/Legacy/town-stonewooddeep-12Aug20.swf": [
+   {
+    "mapItem": 7534,
+    "on": "cell",
+    "cell": "r6",
+    "quest": null,
+    "questValue": {
+     "slot": 363,
+     "op": ">=",
+     "value": 5
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame50"
+   }
+  ],
+  "Darkon/ElegyOfMadness/town-eridani-25Mar21.swf": [
+   {
+    "mapItem": 7783,
+    "on": "other",
+    "fn": "frame9",
+    "cls": "Caden_APOP",
+    "quest": 7769,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Caden_APOP.frame9"
+   },
+   {
+    "mapItem": 7784,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Chris_APOP",
+    "quest": 7774,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Chris_APOP.frame1"
+   }
+  ],
+  "Darkon/ElegyOfMadness/town-Astravia-27Aug21.swf": [
+   {
+    "mapItem": 8265,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Carlton_APOP",
+    "quest": 7995,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Carlton_APOP.frame1"
+   },
+   {
+    "mapItem": 8264,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "RosaAnne_APOP",
+    "quest": 7995,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "RosaAnne_APOP.frame1"
+   },
+   {
+    "mapItem": 8266,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Talis_APOP",
+    "quest": 7995,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Talis_APOP.frame1"
+   }
+  ],
+  "Darkon/ElegyOfMadness/town-astraviacastle-9Nov21.swf": [
+   {
+    "mapItem": 8896,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Darkon_APOP",
+    "quest": 8255,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Darkon_APOP.frame1"
+   }
+  ],
+  "Darkon/ElegyOfMadness/town-eridanipast-24Mar22.swf": [
+   {
+    "mapItem": 9681,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Loshe_APOP",
+    "quest": 8521,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Loshe_APOP.frame7"
+   },
+   {
+    "mapItem": 9678,
+    "on": "other",
+    "fn": "frame14",
+    "cls": "YS_APOP",
+    "quest": 8526,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "YS_APOP.frame14"
+   }
+  ],
+  "Darkon/ElegyOfMadness/town-astraviapast.swf": [
+   {
+    "mapItem": 10018,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Drago_APOP",
+    "quest": 8592,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Drago_APOP.frame1"
+   },
+   {
+    "mapItem": 10017,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Drakonis_APOP",
+    "quest": 8592,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Drakonis_APOP.frame1"
+   }
+  ],
+  "Hollowborn/town-trygve-27Jun25.swf": [
+   {
+    "mapItem": 9037,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gen_APOP",
+    "quest": 8291,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gen_APOP.frame1"
+   },
+   {
+    "mapItem": 9038,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Solbiort_APOP",
+    "quest": 8292,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Solbiort_APOP.frame1"
+   },
+   {
+    "mapItem": 9036,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Waelc_APOP",
+    "quest": 8290,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Waelc_APOP.frame1"
+   }
+  ],
+  "ThroneOfDarkness/4DPyramid/Yasaris/town-yasarisr2.swf": [
+   {
+    "mapItem": 4590,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Serepthys_APOP",
+    "quest": 5213,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Serepthys_APOP.frame1"
+   },
+   {
+    "mapItem": 4586,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquiphatoth_257.onClick"
+   },
+   {
+    "mapItem": 4595,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquiphatoth_257",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquiphatoth_257.onC"
+   },
+   {
+    "mapItem": 4580,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquiphieroglyphs_211",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquiphieroglyphs_211.onC"
+   }
+  ],
+  "7DD/Wrath/town-wrath-13Apr21.swf": [
+   {
+    "mapItem": 5540,
+    "on": "click",
+    "quest": 6115,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rhubarb2_APOP.onTurnInClick"
+   },
+   {
+    "mapItem": 5540,
+    "on": "click",
+    "quest": 6115,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rhubarb_APOP.onTurnInClick"
+   }
+  ],
+  "7DD/Greed/town-greed-2July24.swf": [
+   {
+    "mapItem": 5377,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "_gameLockPick_687.onClick"
+   }
+  ],
+  "hollowborn/neotower/town-neotower-27Jun25.swf": [
+   {
+    "mapItem": 13581,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Zlar_APOP",
+    "quest": 9858,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Zlar_APOP.frame1"
+   }
+  ],
+  "hollowborn/dawnsanctum/town-dawnsanctum-27Jun25.swf": [
+   {
+    "mapItem": 13853,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Genevieve_APOP",
+    "quest": 9979,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Genevieve_APOP.frame1"
+   },
+   {
+    "mapItem": 13854,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "mapLetter",
+    "quest": 9981,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapLetter.frame42"
+   }
+  ],
+  "sepulchure/lynaria/town-bocklincastle-23May25.swf": [
+   {
+    "mapItem": 14451,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Chandra_APOP",
+    "quest": 10245,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Chandra_APOP.frame1"
+   },
+   {
+    "mapItem": 14447,
+    "on": "other",
+    "fn": "frame21",
+    "cls": "mapFamilyTree",
+    "quest": 10245,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapFamilyTree.frame21"
+   },
+   {
+    "mapItem": 14448,
+    "on": "other",
+    "fn": "frame30",
+    "cls": "mapLetter",
+    "quest": 10248,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapLetter.frame30"
+   },
+   {
+    "mapItem": 14450,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Memories_APOP",
+    "quest": 10250,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Memories_APOP.frame1"
+   },
+   {
+    "mapItem": 14446,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Richard_APOP",
+    "quest": 10243,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Richard_APOP.frame1"
+   }
+  ],
+  "sepulchure/lynaria/town-bocklinsanctum.swf": [
+   {
+    "mapItem": 14482,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Connection_APOP",
+    "quest": 10263,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Connection_APOP.frame1"
+   },
+   {
+    "mapItem": 14480,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "mapNote",
+    "quest": 10261,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapNote.frame42"
+   },
+   {
+    "mapItem": 14481,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Memory_APOP",
+    "quest": 10263,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Memory_APOP.frame1"
+   },
+   {
+    "mapItem": 14479,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Victoria_APOP",
+    "quest": 10260,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Victoria_APOP.frame1"
+   }
+  ],
+  "Sepulchure/town-darkplaner1.swf": [
+   {
+    "mapItem": 5911,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropforcefield_97",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropforcefield_97.onC"
+   }
+  ],
+  "GreenGuard/town-willowcreek-14Apr22.swf": [
+   {
+    "mapItem": 17,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Calafas_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Calafas_APOP.frame28"
+   },
+   {
+    "mapItem": 14,
+    "on": "other",
+    "fn": "frame6",
+    "cls": "Dwakel_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dwakel_APOP.frame6"
+   },
+   {
+    "mapItem": 16,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "btnInterBone2_520.onBone2Click"
+   },
+   {
+    "mapItem": 15,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "btnInterJournal_527.onJournalClick"
+   }
+  ],
+  "events/OneEyedDoll/town-AsylumCatacombs-25Feb19.swf": [
+   {
+    "mapItem": 1533,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "gameLockPick_316.onClick"
+   }
+  ],
+  "events/mogloween/Poe/town-cask-7Oct15.swf": [
+   {
+    "mapItem": 2952,
+    "on": "other",
+    "fn": "Solve",
+    "cls": "puzzleGame",
+    "quest": 3843,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "puzzleGame.Solve"
+   },
+   {
+    "mapItem": 2947,
+    "on": "other",
+    "fn": "equipItem",
+    "cls": "jester_188",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "jester_188.equipItem"
+   }
+  ],
+  "events/mogloween/MystcroftForest/town-mystcroftforestr3.swf": [
+   {
+    "mapItem": 4800,
+    "on": "other",
+    "fn": "frame35",
+    "cls": "Barb_APOP",
+    "quest": 5426,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Barb_APOP.frame35"
+   }
+  ],
+  "events/mogloween/MystcroftForest/town-masqueradeLRG.swf": [
+   {
+    "mapItem": 6785,
+    "on": "other",
+    "fn": "frame35",
+    "cls": "Bramble_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Bramble_APOP.frame35"
+   },
+   {
+    "mapItem": 6789,
+    "on": "cell",
+    "cell": "Cut2",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame179"
+   }
+  ],
+  "events/mogloween/2019/town-THATr1.swf": [
+   {
+    "mapItem": 6794,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Bubble_APOP.onUnlockClick"
+   },
+   {
+    "mapItem": 6792,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipweb4_301.onClick"
+   },
+   {
+    "mapItem": 6793,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquipweb4_301",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipweb4_301.onC"
+   }
+  ],
+  "events/mogloween/2021/town-necrocarnival-7Oct22.swf": [
+   {
+    "mapItem": 9250,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Laidronette_APOP",
+    "quest": 8364,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Laidronette_APOP.frame1"
+   },
+   {
+    "mapItem": 9254,
+    "on": "other",
+    "fn": "frame28",
+    "cls": "Laidronette_APOP",
+    "quest": 8368,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Laidronette_APOP.frame28"
+   }
+  ],
+  "Doomwood/Legacy/town-thorngarde-29Jul20.swf": [
+   {
+    "mapItem": 7486,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Kygar_APOP",
+    "quest": 7594,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Kygar_APOP.frame1"
+   }
+  ],
+  "yokai/2024/town-HakuVillage-11Oct24r1.swf": [
+   {
+    "mapItem": 12706,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Haruki_APOP",
+    "quest": 9591,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Haruki_APOP.frame1"
+   },
+   {
+    "mapItem": 12707,
+    "on": "other",
+    "fn": "frame77",
+    "cls": "mapBloodline",
+    "quest": 9592,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapBloodline.frame77"
+   },
+   {
+    "mapItem": 12710,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tourist_APOP",
+    "quest": 9594,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tourist_APOP.frame1"
+   },
+   {
+    "mapItem": 12708,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "VillagerA_APOP",
+    "quest": 9593,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "VillagerA_APOP.frame1"
+   },
+   {
+    "mapItem": 12709,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "VillagerB_APOP",
+    "quest": 9593,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "VillagerB_APOP.frame1"
+   }
+  ],
+  "ageofRuin/Sea/town-terminatemple-28Aug26.swf": [
+   {
+    "mapItem": 11625,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Celestia_APOP",
+    "quest": 9213,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Celestia_APOP.frame1"
+   },
+   {
+    "mapItem": 13541,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Felix_APOP",
+    "quest": 9851,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Felix_APOP.frame1"
+   },
+   {
+    "mapItem": 11626,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Hans_APOP",
+    "quest": 9213,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Hans_APOP.frame1"
+   },
+   {
+    "mapItem": 13542,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Illaria_APOP",
+    "quest": 9851,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Illaria_APOP.frame1"
+   },
+   {
+    "mapItem": 11630,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Maya_APOP",
+    "quest": 9214,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Maya_APOP.frame1"
+   },
+   {
+    "mapItem": 11629,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Muusa_APOP",
+    "quest": 9214,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Muusa_APOP.frame1"
+   },
+   {
+    "mapItem": 11625,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Nialla_APOP",
+    "quest": 9213,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Nialla_APOP.frame1"
+   },
+   {
+    "mapItem": 12051,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Rand_APOP",
+    "quest": 9351,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rand_APOP.frame1"
+   },
+   {
+    "mapItem": 11628,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Shakaz_APOP",
+    "quest": 9214,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Shakaz_APOP.frame1"
+   },
+   {
+    "mapItem": 12050,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Song_APOP",
+    "quest": 9351,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Song_APOP.frame1"
+   },
+   {
+    "mapItem": 11627,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 9213,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   }
+  ],
+  "coldthunder/town-CastleEblana-14June24.swf": [
+   {
+    "mapItem": 13206,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Aisling_APOP",
+    "quest": 9738,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Aisling_APOP.frame1"
+   },
+   {
+    "mapItem": 11625,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Celestia_APOP",
+    "quest": 9213,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Celestia_APOP.frame1"
+   },
+   {
+    "mapItem": 13204,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Mabel_APOP",
+    "quest": 9735,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Mabel_APOP.frame1"
+   },
+   {
+    "mapItem": 13203,
+    "on": "other",
+    "fn": "frame83",
+    "cls": "mapNotebook",
+    "quest": 9733,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapNotebook.frame83"
+   },
+   {
+    "mapItem": 13205,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Quince_APOP",
+    "quest": 9737,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Quince_APOP.frame1"
+   },
+   {
+    "mapItem": 13208,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Statue_APOP",
+    "quest": 9739,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Statue_APOP.frame1"
+   }
+  ],
+  "Extinction/town-extinction-30Jan26r2.swf": [
+   {
+    "mapItem": 2955,
+    "on": "other",
+    "fn": "equipItem",
+    "cls": "jester_734",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "jester_734.equipItem"
+   }
+  ],
+  "events/Memet/FreakiTiki/town-freakitiki-26Jul19.swf": [
+   {
+    "mapItem": 5038,
+    "on": "click",
+    "quest": 5560,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "tikiButton_111.onClick"
+   },
+   {
+    "mapItem": 5039,
+    "on": "click",
+    "quest": 5563,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "tikiButton_111.onClick"
+   },
+   {
+    "mapItem": 5040,
+    "on": "click",
+    "quest": 5566,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "tikiButton_111.onClick"
+   }
+  ],
+  "TheSpan/town-theSpan-6Oct26.swf": [
+   {
+    "mapItem": 1363,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Bulbug_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Bulbug_APOP.frame12"
+   },
+   {
+    "mapItem": 7371,
+    "on": "other",
+    "fn": "frame19",
+    "cls": "Bulbug_APOP",
+    "quest": 7516,
+    "questValue": {
+     "slot": 353,
+     "op": "==",
+     "value": 6
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Bulbug_APOP.frame19"
+   },
+   {
+    "mapItem": 1361,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Cysero_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.frame12"
+   },
+   {
+    "mapItem": 1358,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Lucretia_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Lucretia_APOP.frame12"
+   },
+   {
+    "mapItem": 6910,
+    "on": "other",
+    "fn": "frame25",
+    "cls": "Lucretia_APOP",
+    "quest": 7292,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Lucretia_APOP.frame25"
+   },
+   {
+    "mapItem": 6910,
+    "on": "other",
+    "fn": "frame33",
+    "cls": "Lucretia_APOP",
+    "quest": 7292,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Lucretia_APOP.frame33"
+   },
+   {
+    "mapItem": 1360,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Mince_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Mince_APOP.frame12"
+   },
+   {
+    "mapItem": 1474,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tek_APOP",
+    "quest": 2384,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Tek_APOP.frame1"
+   },
+   {
+    "mapItem": 1359,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Tek_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Tek_APOP.frame12"
+   },
+   {
+    "mapItem": 1362,
+    "on": "other",
+    "fn": "frame41",
+    "cls": "Warlic_APOP",
+    "quest": 2239,
+    "questValue": {
+     "slot": 83
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame41"
+   }
+  ],
+  "Mirror/town-BrightFortress-18May20.swf": [
+   {
+    "mapItem": 3641,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Aranx_APOP",
+    "quest": 4446,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Aranx_APOP.frame1"
+   },
+   {
+    "mapItem": 3646,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Beleen_APOP",
+    "quest": 4454,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Beleen_APOP.frame1"
+   },
+   {
+    "mapItem": 3646,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Beleen_APOP2",
+    "quest": 4454,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Beleen_APOP2.frame1"
+   },
+   {
+    "mapItem": 3642,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "GoodRev_APOP",
+    "quest": 4446,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "GoodRev_APOP.frame1"
+   },
+   {
+    "mapItem": 3638,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "HipsterTwig_APOP",
+    "quest": 4454,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "HipsterTwig_APOP.frame1"
+   },
+   {
+    "mapItem": 7372,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "HipsterTwig_APOP",
+    "quest": 7519,
+    "questValue": {
+     "slot": 353,
+     "op": "==",
+     "value": 8
+    },
+    "monPad": null,
+    "args": null,
+    "where": "HipsterTwig_APOP.frame7"
+   },
+   {
+    "mapItem": 3639,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tara_APOP",
+    "quest": 4454,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tara_APOP.frame1"
+   },
+   {
+    "mapItem": 3649,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "gameLockPick_1258.onClick"
+   }
+  ],
+  "Battleon/YulgarBurger/town-borgars-4Jan21.swf": [
+   {
+    "mapItem": 7373,
+    "on": "other",
+    "fn": "frame35",
+    "cls": "Yulgar_APOP",
+    "quest": 7521,
+    "questValue": {
+     "slot": 353,
+     "op": "==",
+     "value": 10
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Yulgar_APOP.frame35"
+   }
+  ],
+  "Sandsea/crocriver/town-crocriver-9Jan25.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Djeba_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Djeba_APOP.frame1"
+   }
+  ],
+  "yokai/2024/town-YokaiPortal-19Apr24r1.swf": [
+   {
+    "mapItem": 12984,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Chen_APOP",
+    "quest": 9667,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Chen_APOP.frame1"
+   },
+   {
+    "mapItem": 12986,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Daisho_APOP",
+    "quest": 9669,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Daisho_APOP.frame1"
+   },
+   {
+    "mapItem": 12992,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "EDaisho_APOP",
+    "quest": 9674,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "EDaisho_APOP.frame1"
+   },
+   {
+    "mapItem": 12989,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "EYuhuanHouse_APOP",
+    "quest": 9672,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "EYuhuanHouse_APOP.frame1"
+   },
+   {
+    "mapItem": 12991,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "EYuhuan_APOP",
+    "quest": 9674,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "EYuhuan_APOP.frame1"
+   },
+   {
+    "mapItem": 12983,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Kana_APOP",
+    "quest": 9667,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Kana_APOP.frame1"
+   },
+   {
+    "mapItem": 12982,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Li_APOP",
+    "quest": 9667,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Li_APOP.frame1"
+   },
+   {
+    "mapItem": 12990,
+    "on": "other",
+    "fn": "frame53",
+    "cls": "mapLetter",
+    "quest": 9672,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapLetter.frame53"
+   },
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Mikoto_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Mikoto_APOP.frame1"
+   },
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "PMiko_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "PMiko_APOP.frame1"
+   },
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Shikigami_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Shikigami_APOP.frame1"
+   },
+   {
+    "mapItem": 12988,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "YBaoyu_APOP",
+    "quest": 9671,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "YBaoyu_APOP.frame1"
+   },
+   {
+    "mapItem": 12993,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "YMiko2_APOP",
+    "quest": 9674,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "YMiko2_APOP.frame1"
+   },
+   {
+    "mapItem": 12995,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "YMiko_APOP",
+    "quest": 9672,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "YMiko_APOP.frame1"
+   },
+   {
+    "mapItem": 12989,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Yuhuan_APOP",
+    "quest": 9672,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Yuhuan_APOP.frame1"
+   },
+   {
+    "mapItem": 12987,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "YYue_APOP",
+    "quest": 9671,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "YYue_APOP.frame1"
+   },
+   {
+    "mapItem": 12985,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Zheng_APOP",
+    "quest": 9669,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Zheng_APOP.frame1"
+   }
+  ],
+  "coldthunder/town-loughshine-21June24.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Caoimhe_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Caoimhe_APOP.frame1"
+   },
+   {
+    "mapItem": 13273,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Felix_APOP",
+    "quest": 9755,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Felix_APOP.frame1"
+   },
+   {
+    "mapItem": 13275,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Kieran_APOP",
+    "quest": 9757,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Kieran_APOP.frame1"
+   },
+   {
+    "mapItem": 13277,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Triquetra_APOP",
+    "quest": 9761,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Triquetra_APOP.frame1"
+   }
+  ],
+  "coldthunder/town-naoisegrave-12July24.swf": [
+   {
+    "mapItem": 13299,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Brentan_APOP",
+    "quest": 9774,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Brentan_APOP.frame1"
+   },
+   {
+    "mapItem": 13296,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Caoimhe_APOP",
+    "quest": 9768,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Caoimhe_APOP.frame1"
+   },
+   {
+    "mapItem": 13298,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Celestia_APOP",
+    "quest": 9774,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Celestia_APOP.frame1"
+   },
+   {
+    "mapItem": 13301,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Deirdre_APOP",
+    "quest": 9773,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Deirdre_APOP.frame1"
+   },
+   {
+    "mapItem": 13297,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Felix_APOP",
+    "quest": 9769,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Felix_APOP.frame1"
+   }
+  ],
+  "events/mogloween/2025/town-elodeatemple.swf": [
+   {
+    "mapItem": 15092,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Holo_APOP",
+    "quest": 10475,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Holo_APOP.frame1"
+   },
+   {
+    "mapItem": 15090,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "MetreaArcana_APOP",
+    "quest": 10470,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MetreaArcana_APOP.frame1"
+   },
+   {
+    "mapItem": 15091,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Thok_APOP",
+    "quest": 10473,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Thok_APOP.frame1"
+   }
+  ],
+  "coldthunder/town-CastleGaheris-23Aug24r1.swf": [
+   {
+    "mapItem": 13378,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Henry_APOP",
+    "quest": 9819,
+    "questValue": {
+     "slot": 557
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Henry_APOP.frame1"
+   },
+   {
+    "mapItem": 13380,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Indradeep_APOP",
+    "quest": 9821,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Indradeep_APOP.frame1"
+   },
+   {
+    "mapItem": 13383,
+    "on": "other",
+    "fn": "frame78",
+    "cls": "mapIonaDiary",
+    "quest": 9826,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapIonaDiary.frame78"
+   },
+   {
+    "mapItem": 13379,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Muusa_APOP",
+    "quest": 9821,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Muusa_APOP.frame1"
+   },
+   {
+    "mapItem": 13382,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Rhubarb_APOP",
+    "quest": 9826,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rhubarb_APOP.frame1"
+   }
+  ],
+  "Yokai/town-Bamboo-7Aug18.swf": [
+   {
+    "mapItem": 90,
+    "on": "other",
+    "fn": "frame11",
+    "cls": "Tree_APOP",
+    "quest": 466,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tree_APOP.frame11"
+   }
+  ],
+  "/Firestorm/Phoenixrise/town-phoenixrise-4Aug15.swf": [
+   {
+    "mapItem": 3282,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropTomb_481.onClick"
+   },
+   {
+    "mapItem": 3282,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropTomb_481",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropTomb_481.onC"
+   },
+   {
+    "mapItem": 3285,
+    "on": "cell",
+    "cell": "r9",
+    "quest": null,
+    "questValue": {
+     "slot": 189,
+     "op": "==",
+     "value": 4
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame82"
+   }
+  ],
+  "Sandsea/DjinnRealm/town-djinngate-7Jan21.swf": [
+   {
+    "mapItem": 5571,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipTeleporter1_186.onClick"
+   },
+   {
+    "mapItem": 5571,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquipTeleporter1_186",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipTeleporter1_186.onC"
+   }
+  ],
+  "IcePlane/town-iceplane-r2.swf": [
+   {
+    "mapItem": 5220,
+    "on": "join",
+    "fn": "init",
+    "quest": 5779,
+    "questValue": {
+     "slot": 235,
+     "op": "==",
+     "value": 2
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Quetzal_APOP.init"
+   },
+   {
+    "mapItem": 5221,
+    "on": "other",
+    "fn": "frame69",
+    "cls": "Quetzal_APOP",
+    "quest": 5780,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Quetzal_APOP.frame69"
+   }
+  ],
+  "Shadowfall/ShadowVault/town-shadowvault.swf": [
+   {
+    "mapItem": 6312,
+    "on": "other",
+    "fn": "frame5",
+    "cls": "doory_229",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "doory_229.frame5"
+   },
+   {
+    "mapItem": 6313,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDrophole_278",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDrophole_278.onC"
+   }
+  ],
+  "AgeofRuin/Sea/SunlightZone/town-sunlightzone-22Aug23r2.swf": [
+   {
+    "mapItem": 11711,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Fa_APOP",
+    "quest": 9248,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Fa_APOP.frame1"
+   },
+   {
+    "mapItem": 11705,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Indradeep_APOP",
+    "quest": 9244,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Indradeep_APOP.frame1"
+   },
+   {
+    "mapItem": 11706,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Iseul_APOP",
+    "quest": 9244,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Iseul_APOP.frame1"
+   },
+   {
+    "mapItem": 11713,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Mi_APOP",
+    "quest": 9250,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Mi_APOP.frame1"
+   },
+   {
+    "mapItem": 11710,
+    "on": "other",
+    "fn": "frame47",
+    "cls": "PageRead",
+    "quest": 9247,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "PageRead.frame47"
+   }
+  ],
+  "AgeofRuin/Sea/TwilightZone/town-twilightzone-22Aug23.swf": [
+   {
+    "mapItem": 11749,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Caesar_APOP",
+    "quest": 9260,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Caesar_APOP.frame1"
+   },
+   {
+    "mapItem": 11751,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Indradeep_APOP",
+    "quest": 9262,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Indradeep_APOP.frame1"
+   },
+   {
+    "mapItem": 11756,
+    "on": "other",
+    "fn": "frame57",
+    "cls": "PageRead",
+    "quest": 9268,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "PageRead.frame57"
+   }
+  ],
+  "AgeofRuin/Sea/MidnightZone/town-midnightzone-22Aug23.swf": [
+   {
+    "mapItem": 11843,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Fa_APOP",
+    "quest": 9292,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Fa_APOP.frame1"
+   },
+   {
+    "mapItem": 11842,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Iseul_APOP",
+    "quest": 9292,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Iseul_APOP.frame1"
+   },
+   {
+    "mapItem": 11845,
+    "on": "other",
+    "fn": "frame47",
+    "cls": "PageRead",
+    "quest": 9293,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "PageRead.frame47"
+   }
+  ],
+  "AgeofRuin/Sea/AbyssalZone/town-abyssalzone-22Aug23.swf": [
+   {
+    "mapItem": 11914,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Fa_APOP",
+    "quest": 9306,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Fa_APOP.frame1"
+   },
+   {
+    "mapItem": 11845,
+    "on": "other",
+    "fn": "frame47",
+    "cls": "PageRead",
+    "quest": 9293,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "PageRead.frame47"
+   },
+   {
+    "mapItem": 11899,
+    "on": "click",
+    "quest": 9314,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "comp_381.onButtonPress"
+   }
+  ],
+  "AgeofRuin/Sea/Trench/town-trenchobserve-7May24.swf": [
+   {
+    "mapItem": 11975,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Fa_APOP",
+    "quest": 9329,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Fa_APOP.frame1"
+   },
+   {
+    "mapItem": 11979,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Xang_APOP",
+    "quest": 9334,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Xang_APOP.frame1"
+   }
+  ],
+  "doomsaga/town-Camlanforest-11Oct24.swf": [
+   {
+    "mapItem": 12252,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "CalmElf_APOP",
+    "quest": 9437,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "CalmElf_APOP.frame1"
+   },
+   {
+    "mapItem": 12249,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "ChantElf_APOP",
+    "quest": 9434,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ChantElf_APOP.frame1"
+   },
+   {
+    "mapItem": 12253,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "DevElf_APOP",
+    "quest": 9437,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "DevElf_APOP.frame1"
+   },
+   {
+    "mapItem": 12254,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Dryden_APOP",
+    "quest": 9437,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dryden_APOP.frame1"
+   },
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gravy_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame1"
+   },
+   {
+    "mapItem": 12255,
+    "on": "other",
+    "fn": "frame14",
+    "cls": "LynariaLetter",
+    "quest": 9439,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LynariaLetter.frame14"
+   },
+   {
+    "mapItem": 11665,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "LynariaLetter",
+    "quest": 9228,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "LynariaLetter.frame42"
+   },
+   {
+    "mapItem": 12250,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "MuttElf_APOP",
+    "quest": 9434,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MuttElf_APOP.frame1"
+   },
+   {
+    "mapItem": 12256,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Sigrid_APOP",
+    "quest": 9439,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sigrid_APOP.frame1"
+   }
+  ],
+  "doomsaga/town-lotustomb-18Oct24.swf": [
+   {
+    "mapItem": 13732,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ginx_APOP",
+    "quest": 9916,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ginx_APOP.frame1"
+   },
+   {
+    "mapItem": 13731,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gravy_APOP",
+    "quest": 9913,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravy_APOP.frame1"
+   },
+   {
+    "mapItem": 13734,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "RegStranger_APOP",
+    "quest": 9918,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "RegStranger_APOP.frame1"
+   }
+  ],
+  "doomsaga/shadow/town-shadowduat-8Nov24.swf": [
+   {
+    "mapItem": 11665,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "mapBoss",
+    "quest": 9228,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapBoss.frame42"
+   }
+  ],
+  "doomsaga/Hidden/town-HiddenDuat.swf": [
+   {
+    "mapItem": 13815,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Astero_APOP",
+    "quest": 9959,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Astero_APOP.frame1"
+   },
+   {
+    "mapItem": 13818,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Bloodied_APOP",
+    "quest": 9962,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Bloodied_APOP.frame1"
+   },
+   {
+    "mapItem": 13813,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Hatchling_APOP",
+    "quest": 9957,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Hatchling_APOP.frame1"
+   },
+   {
+    "mapItem": 13816,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Luscious_APOP",
+    "quest": 9961,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Luscious_APOP.frame1"
+   },
+   {
+    "mapItem": 13817,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Scorched_APOP",
+    "quest": 9961,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Scorched_APOP.frame1"
+   },
+   {
+    "mapItem": 13812,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "SekDuat_APOP",
+    "quest": 9955,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "SekDuat_APOP.frame1"
+   },
+   {
+    "mapItem": 13814,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Violet_APOP",
+    "quest": 9957,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Violet_APOP.frame1"
+   }
+  ],
+  "FableForest/town-fableforest-26Sep23.swf": [
+   {
+    "mapItem": 2425,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropTomb_71",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropTomb_71.onC"
+   }
+  ],
+  "Sepulchure/town-scarsgarde-22Mar21.swf": [
+   {
+    "mapItem": 5860,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Valen_APOP",
+    "quest": null,
+    "questValue": {
+     "slot": 270,
+     "op": "==",
+     "value": 0
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Valen_APOP.frame7"
+   },
+   {
+    "mapItem": 5861,
+    "on": "other",
+    "fn": "frame15",
+    "cls": "Valen_APOP",
+    "quest": null,
+    "questValue": {
+     "slot": 271,
+     "op": "==",
+     "value": 0
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Valen_APOP.frame15"
+   }
+  ],
+  "Sepulchure/town-ebonslate-6Jul18.swf": [
+   {
+    "mapItem": 5900,
+    "on": "event",
+    "event": "playerDeath",
+    "quest": 6381,
+    "questValue": {
+     "slot": 272,
+     "op": "==",
+     "value": 23
+    },
+    "monPad": 24,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "doomsaga/invasion/town-shadowbattleon-20Oct23.swf": [
+   {
+    "mapItem": 10813,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tara_APOP",
+    "quest": 8926,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tara_APOP.frame1"
+   },
+   {
+    "mapItem": 10813,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Warlic_APOP",
+    "quest": 8926,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame1"
+   }
+  ],
+  "Swordhaven/town-Bath-17Oct25.swf": [
+   {
+    "mapItem": 1455,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Cas_APOP",
+    "quest": 2291,
+    "questValue": {
+     "slot": 87
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Cas_APOP.frame7"
+   },
+   {
+    "mapItem": 1457,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Citra_APOP",
+    "quest": 2291,
+    "questValue": {
+     "slot": 87
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Citra_APOP.frame7"
+   },
+   {
+    "mapItem": 1454,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Ivory_APOP",
+    "quest": 2291,
+    "questValue": {
+     "slot": 87
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Ivory_APOP.frame7"
+   },
+   {
+    "mapItem": 1453,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Joy_APOP",
+    "quest": 2291,
+    "questValue": {
+     "slot": 87
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Joy_APOP.frame7"
+   },
+   {
+    "mapItem": 1456,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Miele_APOP",
+    "quest": 2291,
+    "questValue": {
+     "slot": 87
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Miele_APOP.frame7"
+   }
+  ],
+  "Sandsea/DjinnRealm/town-dreampalace.swf": [
+   {
+    "mapItem": 7944,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropOpenDoor_299",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropOpenDoor_299.onC"
+   }
+  ],
+  "Crownsreach/ForestReach/town-transformation-26May21.swf": [
+   {
+    "mapItem": 8435,
+    "on": "other",
+    "fn": "onC1",
+    "cls": "itemDropEquipquest7_268",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipquest7_268.onC1"
+   },
+   {
+    "mapItem": 8436,
+    "on": "other",
+    "fn": "onC12",
+    "cls": "itemDropEquipquest7_268",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipquest7_268.onC12"
+   },
+   {
+    "mapItem": 8437,
+    "on": "other",
+    "fn": "onC0",
+    "cls": "itemDropEquipquest7_268",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipquest7_268.onC0"
+   }
+  ],
+  "shadowrealm/hollowborn/town-hbchallenge-14Nov25.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "SSD_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "SSD_APOP.frame1"
+   },
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Vici_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Vici_APOP.frame1"
+   }
+  ],
+  "QueenSaga/TheReshaper/town-Pilgrimage-12Jun17.swf": [
+   {
+    "mapItem": 5291,
+    "on": "other",
+    "fn": "frame35",
+    "cls": "Eremon_APOP",
+    "quest": 5853,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Eremon_APOP.frame35"
+   },
+   {
+    "mapItem": 5291,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "Eremon_APOP",
+    "quest": 5853,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Eremon_APOP.frame42"
+   }
+  ],
+  "ThroneOfDarkness/DeathPitArena/town-deathpit-6Aug25.swf": [
+   {
+    "mapItem": 4489,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Chud_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Chud_APOP.frame1"
+   },
+   {
+    "mapItem": 4491,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Gall_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gall_APOP.frame1"
+   },
+   {
+    "mapItem": 4485,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Hattori_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Hattori_APOP.frame1"
+   },
+   {
+    "mapItem": 4490,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "HunGar_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "HunGar_APOP.frame1"
+   },
+   {
+    "mapItem": 4484,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Omar_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Omar_APOP.frame1"
+   },
+   {
+    "mapItem": 4487,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Sludgelord_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Sludgelord_APOP.frame1"
+   },
+   {
+    "mapItem": 4486,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Trobble_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Trobble_APOP.frame1"
+   },
+   {
+    "mapItem": 4488,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Twilly_APOP",
+    "quest": 5133,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Twilly_APOP.frame1"
+   }
+  ],
+  "events/17thbirthday/town-castleparty-9Oct26.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tara_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tara_APOP.frame1"
+   }
+  ],
+  "Crownsreach/dualplane/town-dualplane-10Sep20.swf": [
+   {
+    "mapItem": 7460,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "gameLockPick_405.onClick"
+   },
+   {
+    "mapItem": 7459,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Xiang_APOP",
+    "quest": 7563,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Xiang_APOP.frame1"
+   }
+  ],
+  "ShadowsOfChaos/town-brightforest.swf": [
+   {
+    "mapItem": 7755,
+    "on": "timer",
+    "fn": "sitTimerHandler",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Plate_78.sitTimerHandler"
+   }
+  ],
+  "QueenSaga/TheReshaper/town-twistedcavern-12Jun17r1.swf": [
+   {
+    "mapItem": 5291,
+    "on": "other",
+    "fn": "frame35",
+    "cls": "Eremon_APOP",
+    "quest": 5853,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Eremon_APOP.frame35"
+   },
+   {
+    "mapItem": 5291,
+    "on": "other",
+    "fn": "frame42",
+    "cls": "Eremon_APOP",
+    "quest": 5853,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Eremon_APOP.frame42"
+   }
+  ],
+  "Etherstorm/town-waterStorm-5Apr17-Easter.swf": [
+   {
+    "mapItem": 840,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tentacle_APOP",
+    "quest": 1616,
+    "questValue": {
+     "slot": 32
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Tentacle_APOP.frame1"
+   }
+  ],
+  "QuibbleHunt/town-quibblevoidhuntr2.swf": [
+   {
+    "mapItem": 5311,
+    "on": "join",
+    "fn": "init",
+    "quest": 5889,
+    "questValue": {
+     "slot": 239,
+     "op": "==",
+     "value": 11
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Zorbak_APOP.init"
+   }
+  ],
+  "Lair/town-ectocave-31May24.swf": [
+   {
+    "mapItem": 12251,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Diogon_APOP",
+    "quest": 9435,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Diogon_APOP.frame1"
+   }
+  ],
+  "evilwar/2022/town-fiendpast.swf": [
+   {
+    "mapItem": 9560,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "btnHelm_699.onButtonPress"
+   },
+   {
+    "mapItem": 9555,
+    "on": "join",
+    "fn": "equipItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem"
+   }
+  ],
+  "Nulgath/2024/town-contracthideout-19Jan24.swf": [
+   {
+    "mapItem": 12573,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ana_APOP",
+    "quest": 9526,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ana_APOP.frame1"
+   },
+   {
+    "mapItem": 12572,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Jadzia_APOP",
+    "quest": 9524,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Jadzia_APOP.frame1"
+   },
+   {
+    "mapItem": 12575,
+    "on": "other",
+    "fn": "frame64",
+    "cls": "mapNotebook",
+    "quest": 9529,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapNotebook.frame64"
+   }
+  ],
+  "Doomwood/town-Necropolis-4Oct24.swf": [
+   {
+    "mapItem": 3976,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Artix_APOP",
+    "quest": 4651,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Artix_APOP.frame1"
+   }
+  ],
+  "Northlands/town-Northlands-3Oct23-Easter.swf": [
+   {
+    "mapItem": 80,
+    "on": "join",
+    "fn": "wonCoder",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.wonCoder"
+   },
+   {
+    "mapItem": 979,
+    "on": "cell",
+    "cell": "r1",
+    "quest": 2022,
+    "questValue": {
+     "slot": 2
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame18"
+   }
+  ],
+  "events/18thbirthday/town-FortressParty-13Oct26.swf": [
+   {
+    "mapItem": 16250,
+    "on": "other",
+    "fn": "frame14",
+    "cls": "Gravelyn_APOP",
+    "quest": 10891,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Gravelyn_APOP.frame14"
+   },
+   {
+    "mapItem": 12625,
+    "on": "other",
+    "fn": "frame64",
+    "cls": "mapNotebook",
+    "quest": 9551,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapNotebook.frame64"
+   }
+  ],
+  "Doomwood/Legacy/town-techdungeon-29Jul20.swf": [
+   {
+    "mapItem": 7514,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "BorgGuard_APOP",
+    "quest": 7612,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "BorgGuard_APOP.frame7"
+   }
+  ],
+  "events/mogloween/2026/town-BirgittaMogloween.swf": [
+   {
+    "mapItem": 16286,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "CatherineLeofric_APOP",
+    "quest": 10901,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "CatherineLeofric_APOP.frame1"
+   },
+   {
+    "mapItem": 16283,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "HenrySSZ_APOP",
+    "quest": 10899,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "HenrySSZ_APOP.frame1"
+   },
+   {
+    "mapItem": 16288,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ittenbach_APOP",
+    "quest": 10903,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ittenbach_APOP.frame1"
+   },
+   {
+    "mapItem": 16282,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "MarigoldIberis_APOP",
+    "quest": 10897,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MarigoldIberis_APOP.frame1"
+   },
+   {
+    "mapItem": 16281,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Nora_APOP",
+    "quest": 10897,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Nora_APOP.frame1"
+   },
+   {
+    "mapItem": 16287,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Solani_APOP",
+    "quest": 10901,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Solani_APOP.frame1"
+   },
+   {
+    "mapItem": 16284,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Song_APOP",
+    "quest": 10899,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Song_APOP.frame1"
+   }
+  ],
+  "ThroneOfDarkness/4DPyramid/ShiftingPyramid/town-whiteholer2.swf": [
+   {
+    "mapItem": 4539,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquipIsisObelisk_129",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipIsisObelisk_129.onC"
+   },
+   {
+    "mapItem": 4543,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquipKebechetObelisk_209",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipKebechetObelisk_209.onC"
+   },
+   {
+    "mapItem": 4544,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquipThothObelisk_211",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipThothObelisk_211.onC"
+   }
+  ],
+  "events/Memet/2017/town-moonlab.swf": [
+   {
+    "mapItem": 5524,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "gameLockPick_106.onClick"
+   },
+   {
+    "mapItem": 5529,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropEquipmousehole_369",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropEquipmousehole_369.onC"
+   }
+  ],
+  "events/Frostvale/2016/town-icepike-Frostval2020.swf": [
+   {
+    "mapItem": 5090,
+    "on": "other",
+    "fn": "frame21",
+    "cls": "Crystal_APOP",
+    "quest": 5613,
+    "questValue": {
+     "slot": 225,
+     "op": "==",
+     "value": 16
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Crystal_APOP.frame21"
+   }
+  ],
+  "7DD/Gluttony/town-Gluttony-31May19.swf": [
+   {
+    "mapItem": 5345,
+    "on": "click",
+    "quest": 5907,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "comp_518.onButtonPress"
+   },
+   {
+    "mapItem": 5349,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDroplaxel_442.onClick"
+   },
+   {
+    "mapItem": 5349,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDroplaxel_442",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDroplaxel_442.onC"
+   }
+  ],
+  "7DD/Lust/town-lustwk2-31May19.swf": [
+   {
+    "mapItem": 5409,
+    "on": "other",
+    "fn": "frame14",
+    "cls": "Enzio_APOP",
+    "quest": 5962,
+    "questValue": {
+     "slot": 245
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Enzio_APOP.frame14"
+   },
+   {
+    "mapItem": 5405,
+    "on": "join",
+    "fn": "init",
+    "quest": 5962,
+    "questValue": {
+     "slot": 245
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Everis_APOP.init"
+   },
+   {
+    "mapItem": 5406,
+    "on": "join",
+    "fn": "init",
+    "quest": 5962,
+    "questValue": {
+     "slot": 245
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Faolan_APOP.init"
+   },
+   {
+    "mapItem": 5407,
+    "on": "join",
+    "fn": "init",
+    "quest": 5962,
+    "questValue": {
+     "slot": 245
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Ishida_APOP.init"
+   },
+   {
+    "mapItem": 5408,
+    "on": "join",
+    "fn": "init",
+    "quest": 5962,
+    "questValue": {
+     "slot": 245
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Lyona_APOP.init"
+   }
+  ],
+  "ShadowsOfChaos/town-brightforestpast.swf": [
+   {
+    "mapItem": 7758,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Iadoa_APOP",
+    "quest": 7766,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Iadoa_APOP.frame1"
+   },
+   {
+    "mapItem": 7756,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Khas_APOP",
+    "quest": 7761,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Khas_APOP.frame1"
+   }
+  ],
+  "/Death/town-DeathsRealm-23Jul15.swf": [
+   {
+    "mapItem": 1488,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Book_APOP",
+    "quest": 2428,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Book_APOP.frame7"
+   },
+   {
+    "mapItem": 1489,
+    "on": "other",
+    "fn": "frame12",
+    "cls": "Book_APOP",
+    "quest": 2428,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Book_APOP.frame12"
+   },
+   {
+    "mapItem": 1487,
+    "on": "other",
+    "fn": "frame17",
+    "cls": "Book_APOP",
+    "quest": 2428,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Book_APOP.frame17"
+   },
+   {
+    "mapItem": 1491,
+    "on": "join",
+    "fn": "equipItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem"
+   },
+   {
+    "mapItem": 1485,
+    "on": "timer",
+    "fn": "tSum",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.tSum"
+   },
+   {
+    "mapItem": 1490,
+    "on": "click",
+    "quest": 2429,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcCoffin_147.onClick"
+   }
+  ],
+  "events/TLaPD/town-Pirate-17Oct26-NOTLAPD.swf": [
+   {
+    "mapItem": 19,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.onChestClick"
+   }
+  ],
+  "events/ArcAttack/town-mountain-27Jul11.swf": [
+   {
+    "mapItem": 494,
+    "on": "event",
+    "event": "monDeath",
+    "quest": 1169,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ],
+  "/j6/town-moonyard.swf": [
+   {
+    "mapItem": 499,
+    "on": "join",
+    "fn": "equipItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.equipItem"
+   }
+  ],
+  "J6/town-hyperspace-9Aug23.swf": [
+   {
+    "mapItem": 1749,
+    "on": "click",
+    "quest": null,
+    "questValue": {
+     "slot": 28,
+     "op": "==",
+     "value": 33
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Button_301.onButtonPress"
+   },
+   {
+    "mapItem": 1744,
+    "on": "timer",
+    "fn": "tryGetItem",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcSpeedGame_401.tryGetItem"
+   }
+  ],
+  "GreenGuard/town-noobshire-25Jan18.swf": [
+   {
+    "mapItem": 11,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "babyrat_94",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "babyrat_94.onEnter"
+   },
+   {
+    "mapItem": 12,
+    "on": "other",
+    "fn": "onEnter",
+    "cls": "KingRat_115",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "KingRat_115.onEnter"
+   }
+  ],
+  "Battleon/town-Museum-20Oct26.swf": [
+   {
+    "mapItem": 118,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 7240,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 1770,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 1938,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 11735,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 11736,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 2230,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 11396,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 2576,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 4411,
+    "on": "other",
+    "fn": "onCode",
+    "cls": "Valencia_APOP",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onCode"
+   },
+   {
+    "mapItem": 4493,
+    "on": "timer",
+    "fn": "onTimer",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Valencia_APOP.onTimer"
+   }
+  ],
+  "Nulgath/2024/town-voidchasm-17Jan25.swf": [
+   {
+    "mapItem": 12626,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Adimonde_APOP",
+    "quest": 9551,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Adimonde_APOP.frame1"
+   },
+   {
+    "mapItem": 12622,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ana_APOP",
+    "quest": 9547,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ana_APOP.frame1"
+   },
+   {
+    "mapItem": 12623,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "HushedA_APOP",
+    "quest": 9549,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "HushedA_APOP.frame1"
+   },
+   {
+    "mapItem": 12627,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "HushedB_APOP",
+    "quest": 9549,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "HushedB_APOP.frame1"
+   },
+   {
+    "mapItem": 12628,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "HushedC_APOP",
+    "quest": 9549,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "HushedC_APOP.frame1"
+   },
+   {
+    "mapItem": 12620,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Jadzia_APOP",
+    "quest": 9546,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Jadzia_APOP.frame1"
+   },
+   {
+    "mapItem": 12625,
+    "on": "other",
+    "fn": "frame64",
+    "cls": "mapNotebook",
+    "quest": 9551,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapNotebook.frame64"
+   }
+  ],
+  "battleon/town-Battleontown-1Oct26r1.swf": [
+   {
+    "mapItem": 1755,
+    "on": "click",
+    "quest": 2869,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Alina_APOP.onClickP"
+   },
+   {
+    "mapItem": 1754,
+    "on": "other",
+    "fn": "frame23",
+    "cls": "Cysero_APOP",
+    "quest": 2863,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.frame23"
+   },
+   {
+    "mapItem": 1756,
+    "on": "other",
+    "fn": "frame29",
+    "cls": "Cysero_APOP",
+    "quest": 2870,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Cysero_APOP.frame29"
+   },
+   {
+    "mapItem": 2203,
+    "on": "other",
+    "fn": "onC",
+    "cls": "itemDropRecipie_2203",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "itemDropRecipie_2203.onC"
+   },
+   {
+    "mapItem": 1484,
+    "on": "cell",
+    "cell": "bs1",
+    "quest": 2426,
+    "questValue": {
+     "slot": 93,
+     "op": "==",
+     "value": 5
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame89"
+   },
+   {
+    "mapItem": 87,
+    "on": "click",
+    "quest": 461,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcBtnGolden_330.onBClick"
+   },
+   {
+    "mapItem": 86,
+    "on": "click",
+    "quest": 458,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mcBtnPage_269.onBClick"
+   },
+   {
+    "mapItem": 1753,
+    "on": "other",
+    "fn": "frame7",
+    "cls": "Warlic_APOP",
+    "quest": 2862,
+    "questValue": {
+     "slot": 120,
+     "op": "==",
+     "value": 0
+    },
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame7"
+   },
+   {
+    "mapItem": 1277,
+    "on": "other",
+    "fn": "frame47",
+    "cls": "Warlic_APOP",
+    "quest": 2200,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Warlic_APOP.frame47"
+   }
+  ],
+  "events/mogloween/2026/town-BirgittaMogloween-23Oct26.swf": [
+   {
+    "mapItem": 16286,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "CatherineLeofric_APOP",
+    "quest": 10901,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "CatherineLeofric_APOP.frame1"
+   },
+   {
+    "mapItem": 16283,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "HenrySSZ_APOP",
+    "quest": 10899,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "HenrySSZ_APOP.frame1"
+   },
+   {
+    "mapItem": 16288,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Ittenbach_APOP",
+    "quest": 10903,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Ittenbach_APOP.frame1"
+   },
+   {
+    "mapItem": 16282,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "MarigoldIberis_APOP",
+    "quest": 10897,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MarigoldIberis_APOP.frame1"
+   },
+   {
+    "mapItem": 16281,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Nora_APOP",
+    "quest": 10897,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Nora_APOP.frame1"
+   },
+   {
+    "mapItem": 16287,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Solani_APOP",
+    "quest": 10901,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Solani_APOP.frame1"
+   },
+   {
+    "mapItem": 16284,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Song_APOP",
+    "quest": 10899,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Song_APOP.frame1"
+   }
+  ],
+  "flamebeyond/thelimacity/town-thelimacity-17Oct25.swf": [
+   {
+    "mapItem": 14772,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Champion_APOP",
+    "quest": 10349,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Champion_APOP.frame1"
+   },
+   {
+    "mapItem": 14773,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Dahlia_APOP",
+    "quest": 10349,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dahlia_APOP.frame1"
+   },
+   {
+    "mapItem": 14771,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Geopetal_APOP",
+    "quest": 10347,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Geopetal_APOP.frame1"
+   },
+   {
+    "mapItem": 13182,
+    "on": "other",
+    "fn": "frame94",
+    "cls": "mapBillJournal",
+    "quest": 9725,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapBillJournal.frame94"
+   },
+   {
+    "mapItem": 14774,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Song_APOP",
+    "quest": 10351,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Song_APOP.frame1"
+   },
+   {
+    "mapItem": 14770,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tara_APOP",
+    "quest": 10347,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tara_APOP.frame1"
+   }
+  ],
+  "Nightmare/town-somnia-15Apr25.swf": [
+   {
+    "mapItem": 7589,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ItemDropskullycopy_375.clickHandlerIA"
+   },
+   {
+    "mapItem": 7589,
+    "on": "click",
+    "quest": null,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "ItemDropskully_468.clickHandlerIA"
+   }
+  ],
+  "events/mogloween/2016/town-fearhouse-1Nov16.swf": [
+   {
+    "mapItem": 4914,
+    "on": "event",
+    "event": null,
+    "quest": 5512,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.responseEvent"
+   },
+   {
+    "mapItem": 4906,
+    "on": "cell",
+    "cell": "Enter",
+    "quest": 5506,
+    "questValue": {
+     "slot": 221,
+     "op": "==",
+     "value": 2
+    },
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.frame10"
+   }
+  ],
+  "flamebeyond/forgealbedo/town-ForgeAlbedo-25Feb26.swf": [
+   {
+    "mapItem": 14960,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Dahlia_APOP",
+    "quest": 10414,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Dahlia_APOP.frame1"
+   },
+   {
+    "mapItem": 14961,
+    "on": "other",
+    "fn": "frame70",
+    "cls": "mapGuestBook",
+    "quest": 10414,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapGuestBook.frame70"
+   },
+   {
+    "mapItem": 14962,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Rigaud_APOP",
+    "quest": 10415,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rigaud_APOP.frame1"
+   },
+   {
+    "mapItem": 14959,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Tara_APOP",
+    "quest": 10414,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Tara_APOP.frame1"
+   }
+  ],
+  "flamebeyond/fortluma/town-fortluma-10Apr26.swf": [
+   {
+    "mapItem": 15548,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "AdminB_APOP",
+    "quest": 10617,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "AdminB_APOP.frame1"
+   },
+   {
+    "mapItem": 15545,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Arondight_APOP",
+    "quest": 10611,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Arondight_APOP.frame1"
+   },
+   {
+    "mapItem": 15544,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Yara_APOP",
+    "quest": 10611,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Yara_APOP.frame1"
+   }
+  ],
+  "flamebeyond/warwickforest/town-warwickforest-24Apr26.swf": [
+   {
+    "mapItem": 15661,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Daji_APOP",
+    "quest": 10684,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Daji_APOP.frame1"
+   },
+   {
+    "mapItem": 15658,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Elius_APOP",
+    "quest": 10681,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Elius_APOP.frame1"
+   },
+   {
+    "mapItem": 15659,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "GalanothFiamme_APOP",
+    "quest": 10682,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "GalanothFiamme_APOP.frame1"
+   },
+   {
+    "mapItem": 15656,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Geopetal_APOP",
+    "quest": 10678,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Geopetal_APOP.frame1"
+   },
+   {
+    "mapItem": 15660,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "MuusaFelix_APOP",
+    "quest": 10683,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MuusaFelix_APOP.frame1"
+   },
+   {
+    "mapItem": 15657,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "SongHenry_APOP",
+    "quest": 10679,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "SongHenry_APOP.frame1"
+   }
+  ],
+  "doomsaga/forgecitrinitas/town-ForgeCitrinitas-12June26r1.swf": [
+   {
+    "mapItem": 15820,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Aleister_APOP",
+    "quest": 10726,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Aleister_APOP.frame1"
+   },
+   {
+    "mapItem": 15821,
+    "on": "other",
+    "fn": "frame64",
+    "cls": "mapGuestBook",
+    "quest": 10726,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapGuestBook.frame64"
+   },
+   {
+    "mapItem": 15822,
+    "on": "other",
+    "fn": "frame46",
+    "cls": "mapMedicalTerminal",
+    "quest": 10729,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapMedicalTerminal.frame46"
+   }
+  ],
+  "Nulgath/2023/town-templedelve-3Sep24r1.swf": [
+   {
+    "mapItem": 11166,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Astero_APOP",
+    "quest": 9087,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Astero_APOP.frame1"
+   },
+   {
+    "mapItem": 11130,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Jadzia_APOP",
+    "quest": 9061,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Jadzia_APOP.frame1"
+   },
+   {
+    "mapItem": 11165,
+    "on": "other",
+    "fn": "frame47",
+    "cls": "mapBoss",
+    "quest": 9086,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "mapBoss.frame47"
+   }
+  ],
+  "Nulgath/2023/town-templesiege-25Jan23.swf": [
+   {
+    "mapItem": 11130,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Jadzia_APOP",
+    "quest": 9061,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Jadzia_APOP.frame1"
+   }
+  ],
+  "Legion/2023/town-siegefortress-15Apr25.swf": [
+   {
+    "mapItem": 11315,
+    "on": "other",
+    "fn": "frame1",
+    "cls": "Rand_APOP",
+    "quest": 9140,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "Rand_APOP.frame1"
+   }
+  ],
+  "Firestorm/Pyrewatch/town-pyrewatch-2July24.swf": [
+   {
+    "mapItem": 3163,
+    "on": "event",
+    "event": "monDeath",
+    "quest": 4081,
+    "questValue": null,
+    "monPad": null,
+    "args": null,
+    "where": "MainTimeline.eventTrigger"
+   }
+  ]
+ }
+}

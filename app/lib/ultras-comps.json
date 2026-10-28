@@ -1,0 +1,628 @@
+[
+  {
+    "boss": "UltraEzrajal",
+    "name": "seraph-loo-sc-ap-vhl",
+    "why": "the party alone (LoO, SC, AP, Valen's VHL); everyone hits Ezrajal and stops during his Counter Attack; HP potions first",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "Void Highlord",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraEzrajal",
+    "name": "seraph-loo-sc-ap-ke",
+    "why": "the owner's main in the King's Echo seat (own gear; his potions from 2026-10-22, the owner: \"give my main potions\")",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "King's Echo",
+        "role": "EzrajalAttacker",
+        "potions": [
+          "Fate Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraEngineer",
+    "name": "seraph-loo-sc-ap-vhl",
+    "why": "the party alone; Defense Drone, Attack Drone, then Engineer; LoO debuffs each Attack Drone with Order",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "AttackDroneDebuffer",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "DroneKiller",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "DroneKiller",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "Void Highlord",
+        "role": "DroneKiller",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraEngineer",
+    "name": "seraph-loo-sc-ap-ke",
+    "why": "the owner's main in the King's Echo seat (the fork's 17 s kill had KE + LoO + SC)",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "AttackDroneDebuffer",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "DroneKiller",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "DroneKiller",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "King's Echo",
+        "role": "DroneKiller",
+        "potions": [
+          "Fate Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraWarden",
+    "name": "seraph-loo-sc-ap-vhl",
+    "why": "the party alone; LoO casts Order on the berserk and heals, AP taunts the berserk with Scroll of Enrage",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "BerserkHealer",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "BerserkTaunter",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ],
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole($\"when Warden says \\\"{BerserkCue}\\\"\")"
+        }
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "WardenAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "Void Highlord",
+        "role": "WardenAttacker",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraWarden",
+    "name": "seraph-loo-lr-sc-ap",
+    "why": "the owner's main as the Legion Revenant berserk taunter (the guides' pick: Arcane Shield keeps LR alive)",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "BerserkHealer",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      },
+      {
+        "class": "Legion Revenant",
+        "role": "BerserkTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole($\"when Warden says \\\"{BerserkCue}\\\"\")"
+        },
+        "potions": [
+          "Sage Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "WardenAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "WardenAttacker",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraNulgath",
+    "name": "seraph-ap-vhl-loo-af",
+    "why": "the party alone, efficient method (AQWG + fork loo-lr-sc-dot, 63 s kill): two tanky taunters - AP leads, VHL taunts on every 'Behold the power of the Abyss' (Frailty only ever lands on a taunter); ArchFiend (AQWHub: AF in place of DoT) taps each new Overfiend Blade then hits Nulgath so it dies near 36-44 s, LoO buffs",
+    "entries": [
+      {
+        "class": "ArchPaladin",
+        "role": "LeadTaunter",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ],
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"about 1.5 s into the fight, never at 0 s; then each time the cue taunter's taunt on Nulgath ends\")"
+        }
+      },
+      {
+        "class": "Void Highlord",
+        "role": "CueTaunter",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ],
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"on every \\\"Behold the power of the Abyss!\\\"\")"
+        }
+      },
+      {
+        "class": "Lord of Order",
+        "role": "NulgathAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "ArchFiend",
+        "role": "BladeHitter",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraNulgath",
+    "name": "seraph-ap-vhl-loo-sc",
+    "why": "as seraph-ap-vhl-loo-af with StoneCrusher on the Blade (for a party without ArchFiend)",
+    "entries": [
+      {
+        "class": "ArchPaladin",
+        "role": "LeadTaunter",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ],
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"about 1.5 s into the fight, never at 0 s; then each time the cue taunter's taunt on Nulgath ends\")"
+        }
+      },
+      {
+        "class": "Void Highlord",
+        "role": "CueTaunter",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ],
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"on every \\\"Behold the power of the Abyss!\\\"\")"
+        }
+      },
+      {
+        "class": "Lord of Order",
+        "role": "NulgathAttacker",
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir",
+          "HonorOrMalice"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "BladeHitter",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraAvatarTyndarius",
+    "name": "seraph-loo-ap-lr-vhl",
+    "why": "the owner's recipe (2026-10-26): ArchPaladin and Lord of Order both taunt Tyndarius (12 s loops, 6 s apart), Legion Revenant taunts the left orb, Void Highlord the right orb. The 10-22 line-up left the right orb untaunted and LoO never taunted.",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "TyndariusAttacker",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "every": 12,
+          "atSec": 6
+        },
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "TyndariusTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.Every(12, atSec: 0, beforeTaunt: SealUp, beforeTauntDescription: \"Righteous Seal up\")"
+        },
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ]
+      },
+      {
+        "class": "Legion Revenant",
+        "role": "LeftOrbTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"whenever the left orb is up\")"
+        },
+        "potions": [
+          "Sage Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      },
+      {
+        "class": "Void Highlord",
+        "role": "RightOrbTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"whenever the right orb is up\")"
+        },
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraAvatarTyndarius",
+    "name": "seraph-loo-sc-ap-lr",
+    "why": "the owner's recipe (2026-10-26): ArchPaladin and Lord of Order both taunt Tyndarius (12 s loops, 6 s apart), Legion Revenant taunts the left orb, StoneCrusher the right orb. The 10-22 line-up left the right orb untaunted and LoO never taunted.",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "TyndariusAttacker",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "every": 12,
+          "atSec": 6
+        },
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "TyndariusTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.Every(12, atSec: 0, beforeTaunt: SealUp, beforeTauntDescription: \"Righteous Seal up\")"
+        },
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ]
+      },
+      {
+        "class": "Legion Revenant",
+        "role": "LeftOrbTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"whenever the left orb is up\")"
+        },
+        "potions": [
+          "Sage Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "RightOrbTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"whenever the right orb is up\")"
+        },
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraAvatarTyndarius",
+    "name": "seraph-loo-ap-lr-ke",
+    "why": "the owner's recipe (2026-10-26): ArchPaladin and Lord of Order both taunt Tyndarius (12 s loops, 6 s apart), Legion Revenant taunts the left orb, King's Echo the right orb. The 10-22 line-up left the right orb untaunted and LoO never taunted.",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "TyndariusAttacker",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "every": 12,
+          "atSec": 6
+        },
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      },
+      {
+        "class": "ArchPaladin",
+        "role": "TyndariusTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.Every(12, atSec: 0, beforeTaunt: SealUp, beforeTauntDescription: \"Righteous Seal up\")"
+        },
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir"
+        ]
+      },
+      {
+        "class": "Legion Revenant",
+        "role": "LeftOrbTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"whenever the left orb is up\")"
+        },
+        "potions": [
+          "Sage Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      },
+      {
+        "class": "King's Echo",
+        "role": "RightOrbTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"whenever the right orb is up\")"
+        },
+        "potions": [
+          "Fate Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      }
+    ]
+  },
+  {
+    "boss": "UltraNulgath",
+    "name": "seraph-loo-lr-sc-af",
+    "why": "the owner's main as Legion Revenant (2026-10-22): upstream's loo-lr-sc-dot with ArchFiend on the Overfiend Blade: it hits each Blade until it is dead, then Nulgath, and kills each new one (the owner 2026-10-24: 'make sure there are 2 loo taunting nulgath and 1 focuses the sword first until its dead then attack nulgath then when the sword respawns it kills it again').",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "LeadTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"about 1.5 s into the fight, never at 0 s; then each time the cue taunter's taunt on Nulgath ends\")"
+        },
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      },
+      {
+        "class": "Legion Revenant",
+        "role": "CueTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"on every \\\"Behold the power of the Abyss!\\\"\")"
+        },
+        "potions": [
+          "Sage Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "NulgathAttacker",
+        "potions": [
+          "Sage Tonic",
+          "Potent Honor Potion"
+        ],
+        "taunt": "never"
+      },
+      {
+        "class": "ArchFiend",
+        "role": "BladeAttacker",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ],
+        "taunt": "never"
+      }
+    ]
+  },
+  {
+    "boss": "UltraNulgath",
+    "name": "seraph-loo-lr-sc-vhl",
+    "why": "the owner's main as Legion Revenant (2026-10-22): upstream's loo-lr-sc-dot with Void Highlord on the Overfiend Blade: it hits each Blade until it is dead, then Nulgath, and kills each new one (the owner 2026-10-24: 'make sure there are 2 loo taunting nulgath and 1 focuses the sword first until its dead then attack nulgath then when the sword respawns it kills it again').",
+    "entries": [
+      {
+        "class": "Lord of Order",
+        "role": "LeadTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"about 1.5 s into the fight, never at 0 s; then each time the cue taunter's taunt on Nulgath ends\")"
+        },
+        "potions": [
+          "Body Tonic",
+          "Unstable Divine Elixir"
+        ]
+      },
+      {
+        "class": "Legion Revenant",
+        "role": "CueTaunter",
+        "scroll": "ScrollOfEnrage",
+        "taunt": {
+          "raw": "UltraTaunt.ByRole(\"on every \\\"Behold the power of the Abyss!\\\"\")"
+        },
+        "potions": [
+          "Sage Tonic",
+          "Potent Malevolence Elixir"
+        ]
+      },
+      {
+        "class": "StoneCrusher",
+        "role": "NulgathAttacker",
+        "potions": [
+          "Sage Tonic",
+          "Potent Honor Potion"
+        ],
+        "taunt": "never"
+      },
+      {
+        "class": "Void Highlord",
+        "role": "BladeAttacker",
+        "potions": [
+          "Body Tonic",
+          "Potent Destruction Elixir",
+          "HonorOrMalice"
+        ],
+        "taunt": "never"
+      }
+    ]
+  }
+]

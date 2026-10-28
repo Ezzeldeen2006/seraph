@@ -1,0 +1,8 @@
+/home/seraph/seraph/logs/*.log /home/seraph/seraph/accounts/*/logs/*.log {
+  daily
+  rotate 7
+  compress
+  missingok
+  notifempty
+  copytruncate
+}

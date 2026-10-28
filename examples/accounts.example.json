@@ -1,0 +1,27 @@
+{
+  "accounts": [
+    {
+      "id": "mybot1",
+      "label": "MyBot1",
+      "username": "MyBot1",
+      "owner": "me",
+      "loginFile": "/home/me/seraph/logins.txt",
+      "autostart": true,
+      "status": "active",
+      "kind": "party",
+      "persona": null,
+      "color": "#a78bfa"
+    },
+    {
+      "id": "mymain",
+      "label": "MyMain",
+      "username": "MyMain",
+      "owner": "me",
+      "loginFile": "/home/me/seraph/logins.txt",
+      "autostart": false,
+      "status": "active",
+      "kind": "guest",
+      "helper": true
+    }
+  ]
+}

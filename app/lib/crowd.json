@@ -1,0 +1,80 @@
+{
+  "ladder": true,
+  "_about": "the owner 2026-09-25/27: dailies and content most players farm (void auras, NSoD, Nulgath/Legion farms, boss farms) run on the busy server (Artix) in normal public rooms, so the bots find players, share kills and do the quests with them. Ultras are NEVER public: the bots train to kill them themselves, so ultras stay on the quiet server (Swordhaven) in the party's private room. Everything else is quiet too. In a public room the bots follow `manners` (lib/manners.js). Edit the lists freely; lib/crowd.js reads them at start.",
+  "crowdServer": "Artix",
+  "quietServer": "Swordhaven",
+  "_knock": "the owner 2026-10-05: Artix is never full for long. A character with crowded work (dailies, LoO, void, Nation...) logs out and checks Artix's seats every 2 s, logging in the moment one is free; each character for itself. After knockMinutes it uses the busiest other server with real room (altAfterMin is the same wait for the old stopgap mode, crowdKnockOffline: false in the hub settings).",
+  "knockMinutes": 30,
+  "altAfterMin": 30,
+  "privateMapPatterns": [
+    "^ultra"
+  ],
+  "privateMaps": [
+    "championdrakath"
+  ],
+  "privateScriptPatterns": [
+    "(^|/)Ultras?(v\\d+)?/",
+    "UltraBosses",
+    "IndividualUltras",
+    "^SeraphUltras/",
+    "^SeraphProven/"
+  ],
+  "mapPatterns": [
+    "^void"
+  ],
+  "maps": [
+    "thevoid",
+    "timespace",
+    "shadowrealmpast",
+    "sepulchurebattle",
+    "evilwarnul",
+    "tercessuinotlim",
+    "fiendshard",
+    "doomvault",
+    "doomvaultb",
+    "dagefortress",
+    "legionarena",
+    "underworld",
+    "escherion",
+    "bosschallenge"
+  ],
+  "scriptPatterns": [
+    "VoidAuras",
+    "NSoD",
+    "Nation/",
+    "Legion/",
+    "ArmyFarmVoidAuras",
+    "BossChallenge",
+    "^Dailies/",
+    "Daily-Classes/",
+    "Enhancement/UnlockForgeEnhancements"
+  ],
+  "_forge": "the owner 2026-10-07: 'ultras' are only the weekly-quest bosses that need a party of 4 (Ultras v3). The Forge unlocks' bosses (Ultra Blood Titan, Ultra Akriloth, ULTRA Alteon, ULTRA Sepulchure, Legion Lich Lord...) are farm bosses players camp on Artix, so the Forge script is crowded work; ultra* maps stay private anyway.",
+  "dailies": true,
+  "manners": {
+    "_about": "Public-room rules (the owner 2026-09-27): never open a boss fight in a public room. Join one only when at least minPlayers real players (not our bots) are in the room AND another player hit the boss in the last fightingSec seconds (its HP is dropping). Keep fighting while others still hit it (keepFightingSec). A boss this character has killed alone before may be fought when no stranger stands in its cell. Wait at most maxWaitMin per boss (dailyWaitMin for dailies), then skip that boss for skipHours. Never pull a whole cell of monsters while strangers stand in it. Rooms numbered privateRoomMin and up are private. 2026-09-27 later: a boss the character beat before is simply fought; bots wait outside the boss cell; minInCell strangers standing in the boss cell also count as it being fought; after the wait, a boss under hopelessHpRatio x own HP (and not a party wall) is tried in the party's private room (privateFallback), the public room is left for fallbackMin.",
+    "minPlayers": 5,
+    "fightingSec": 20,
+    "keepFightingSec": 60,
+    "maxWaitMin": 30,
+    "dailyWaitMin": 15,
+    "skipHours": 2,
+    "minInCell": 2,
+    "hopelessHpRatio": 400,
+    "privateFallback": true,
+    "fallbackMin": 60,
+    "privateRoomMin": 1000,
+    "_partyFirst": "the owner 2026-10-05: 'the rule of them must wait for people to join the room applies to only the bosses that no one can solo or cant be defeated by a party of 4'. partyFirst: true = a boss this character never beat solo, but that the party can take (not hopeless, not a party wall), goes straight to the party's private room with no public wait, and the party is called there if the character struggles. The public wait is only for hopeless bosses and party walls.",
+    "partyFirst": true,
+    "_dailiesPublicOnly": "the owner 2026-10-07: 'this boss [Warlord Icewing] should belong to the artix dailies because the bots need help to kill that, the NSoD daily itself should be done at artix, dont start the fight unless there is enough people and make sure to avoid being afk'. true = a daily (incl. Dailies/ scripts like Lord of Order) never goes to the party's private room (no partyFirst, no private fallback): it waits in public for players, then leaves the boss for skipHours. Bosses beaten before are still fought.",
+    "dailiesPublicOnly": true,
+    "_ladder": "the owner 2026-10-09: 'IF A BOSS CAN BE soloed by a bot then he doesnt need to wait for people, if it cant be soloed call the party, if they cant do it as a 4 then the last option is to wait for public people to help.' true = crowded content runs on the quiet server in the party's room (solo; 2 deaths call the party); a task goes to Artix and waits for players only after the party lost to its boss (party wall). Overrides dailiesPublicOnly (10-07), hopelessHpRatio as a reason to skip solo/party (manners, help calls, wall plans) and the 09-25/09-27 'crowded content starts on Artix' routing. false = the old rules.",
+    "ladder": true,
+    "_chainDailies": "the owner 2026-10-09: 'the bots can solo extriki with arch paladin'. Daily quest chains (one story quest a day) are progression, not crowd dailies: dailiesPublicOnly does not apply, their bosses follow partyFirst. Hopeless bosses still wait for a crowd.",
+    "chainDailies": ["Dailies/LordOfOrder.cs"],
+    "_dieTo": "Bosses a quest wants you to die to (no crowd can kill them): attacked at once; those deaths never count as struggling, walls, boss alerts or death caps.",
+    "dieTo": [
+      { "map": "firewar", "boss": "Akriloth", "why": "820M HP, cannot be killed; LoO Confront Akriloth [6299] drops Akriloth Faced (43572) on death" }
+    ]
+  }
+}

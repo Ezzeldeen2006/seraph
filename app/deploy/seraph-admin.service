@@ -1,0 +1,27 @@
+# Seraph Admin: the web dashboard for the bots (http://<laptop>:47180 from the home network or Tailscale).
+# Separate from seraph-bots on purpose: the bots never need it, and it can still show and restart them when their
+# process is down. Install: sudo cp seraph-admin.service /etc/systemd/system/ && sudo systemctl daemon-reload &&
+# sudo systemctl enable --now seraph-admin
+[Unit]
+Description=Seraph Admin dashboard (web)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=seraph
+WorkingDirectory=/home/seraph/seraph/app
+Environment=SERAPH_ROOT=/home/seraph/seraph
+Environment=SERAPH_SCRIPTS=/home/seraph/seraph/Scripts
+Environment=NODE_ENV=production
+Environment=TZ=UTC
+ExecStart=/usr/bin/node /home/seraph/seraph/app/admin/server.js
+Restart=always
+RestartSec=5
+MemoryMax=150M
+Nice=5
+StandardOutput=append:/home/seraph/seraph/logs/admin.log
+StandardError=append:/home/seraph/seraph/logs/admin.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,28 @@
+# Upstream code Seraph builds from but does not ship
+engine/skua-src/
+engine/vendor/
+engine/work/
+
+# Build output
+bin/
+obj/
+app/engine/
+node_modules/
+
+# Vendored Ultras v3 scripts (rebuilt by app/tools/vendor-ultras.js); Seraph's own Seraph*.cs files stay tracked
+app/ultras/SeraphUltras/**
+!app/ultras/SeraphUltras/**/
+!app/ultras/SeraphUltras/**/Seraph*.cs
+
+# Never commit accounts, passwords, tokens or logs
+accounts.json
+accounts/
+logins.txt
+login.txt
+account.txt
+discord.json
+admin.json
+admin-password.txt
+hub.json
+*.log
+app/data/
